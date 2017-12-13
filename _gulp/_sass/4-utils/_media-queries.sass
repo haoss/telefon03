@@ -13,11 +13,83 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1199px)
-  /**/
+  .wave
+    &__wrapper
+      padding-top: 100px
+    &__input
+      width: 240px
+    &__btn
+      width: 240px
+    &__form
+      &-wrapper
+        padding-left: 63px
+        padding-right: 63px
+    &__content
+      &-img
+        width: 476px
+        img
+          &:first-child
+            width: 476px
+            bottom: 12px
+            &+img
+              width: 462px
+              left: -6px
+      &-block
+        width: 213px
+        &>div
+          line-height: 1.2
+          &:first-child
+            width: 132px
+      &-row
+        &>div
+          &+div
+            margin-left: 30px
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px)
-  /**/
+  .wave
+    &__wrapper
+      padding-top: 90px
+    &__form
+      display: none
+    &__title
+      width: 530px
+      margin-bottom: 65px
+      strong
+        margin-left: 68px
+    &__content
+      display: flex
+      flex-direction: column
+      &>div
+        order: 1
+        &:first-child
+          order: 2
+      &-body
+        width: 100%
+        max-width: 610px
+        display: block
+        margin: 0 auto
+      &-img
+        position: relative
+        right: inherit
+        bottom: inherit
+        width: 100%
+        max-width: 462px
+        height: 310px
+        margin: 0 auto
+      &-block
+        width: 290px
+        &>div
+          &:first-child
+            width: 205px
+        br
+          display: none
+      &-row
+        &>div
+          &+div
+            margin-left: 15px
+    &__bottom
+      display: block
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)
@@ -27,9 +99,76 @@
     transform: none !important
     animation: none !important
 
+  .wave
+    padding-top: 0
+    &__title
+      width: 450px
+      font-size: rem(25)
+      strong
+        font-size: rem(45)
+        margin-left: 37px
+    &__content
+      &-body
+        width: 452px
+      &-block
+        width: 217px
+        br
+          display:block
+      &-row
+        margin-bottom: 55px
+      &-img
+        width: 435px
+        img
+          width: 435px !important
+  .content
+    &__head
+      margin-bottom: 45px
+
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 479px)
-  /**/
+  .h1, h1
+    font-size: rem(25)
+  .content
+    &__head
+      &-untitle
+        font-size: rem(16)
+  .wave
+    &__wrapper
+      padding-top: 60px
+    &__content
+      &-img
+        width: 270px
+        height: 182px
+        img
+          width: 270px !important
+      &-body
+        width: 230px
+      &-row
+        display: flex
+        flex-direction: column
+        margin-bottom: 25px
+        &>div
+          &+div
+            margin-left: 0
+            margin-top: 25px
+
+      &-block
+        &>div
+          &:first-child
+            width: 145px
+        img
+          float: right
+    &__title
+      width: auto
+      font-size: rem(20)
+      margin-bottom: 40px
+      strong
+        font-size: rem(30)
+        margin-left: 0
+        text-align: right
+    &__container
+      padding-bottom: 70px
+      padding-top: 0
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 319px)

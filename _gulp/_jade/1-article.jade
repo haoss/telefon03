@@ -1,0 +1,127 @@
+doctype
+
+html(lang="ru")
+  
+  -var active = 'Главная' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Главная' + ' - Телефон03' //title страницы для генерации верстки  
+
+  include ./_include/_head
+
+  body
+    
+    // Preloader
+    include ./_include/_preloader
+    
+    include ./_include/_header
+    
+    .breadcrumbs
+      .container
+        
+        ul.breadcrumbs__list
+          li
+            a(href="#!") Телефон 03
+          li
+            span Название страницы
+    
+    .content
+      .container
+        
+        .content__head
+          h1 Башни сотовой связи вызывают рак
+          .content__head-untitle Бразильские ученые бьют тревогу!
+        
+        .content__container
+          .row
+            .col-lg-10.col-lg-push-1
+              img(src="./img/1-article-img.png", alt="").content__thumb
+                
+              p Внимание бразильских ученых привлекла серия смертей от рака в Бело Хоризонте, третьем по величине городе страны. 80% умерших жили в пределах 400 метров от башни сотовой связи, что натолкнуло ученых на вывод о вредном влиянии электромагнитного излучения башни на здоровье. Профессор Адильза Кондесса Доде прямо заявила, что, чем ближе ты живешь к башне сотовой связи, тем выше твой риск заболеть раком. Ей вторит Международная Ассоциация Исследования Рака, которая выпустила меморандум, в котором башни именуются «возможными канцерогенами» и содержится призыв строить их вдали от жилых массивов. Так что, если ты уже проживаешь в таком массиве, — узнай, соблюден ли при установке близлежащей вышки предельно допустимый уровень электромагнитного излучения.  
+              
+              .clear
+              .content__share
+                div
+                  img(src="./img/share.png", alt="").img-responsive
+
+    .wave
+      .wave__wrapper
+        .wave__container
+          .container
+            
+            .wave__title Заказать ремонт телефона 
+              strong с выездом к вам
+              
+            .wave__content
+              .wave__content-img
+                img(src="./img/wave-car.png", alt="")
+                img(src="./img/wave-phone.png", alt="")
+              .wave__content-body
+                .wave__content-row
+                  .wave__content-block
+                    div Мастер приедет в 
+                      br
+                      | любую точку Москвы в 
+                      br
+                      | течение 1 часа 
+                    div
+                      img(src="./img/wave-icon-1.png", alt="")
+                  .wave__content-block
+                    div Профессиональный 
+                      br
+                      | ремонт при вас за 
+                      br
+                      | 20 минут 
+                    div
+                      img(src="./img/wave-icon-2.png", alt="")
+                .wave__content-row
+                  .wave__content-block
+                    div Используем 
+                      br
+                      | оригинальные детали 
+                      br
+                      | с гарантией 
+                    div
+                      img(src="./img/wave-icon-3.png", alt="")
+                  .wave__content-block
+                    div Можно оплатить 
+                      br
+                      | наличными или 
+                      br
+                      | картой без % 
+                    div
+                      img(src="./img/wave-icon-4.png", alt="")
+            
+            .wave__form
+              .wave__form-wrapper
+                form(action="#!")
+                  .wave__form-body
+                    div
+                      input(type="text" placeholder="Как вас зовут?").wave__input 
+                    div
+                      input(type="text" placeholder="Контактный телефон").wave__input
+                    div
+                      button(type="submit").wave__btn Вызвать мастера
+                  label(for="checkbox").label__checked
+                    input(type="checkbox" checked)#checkbox
+                    i.ion-android-checkbox-outline-blank
+                    i.ion-android-checkbox-outline
+                    span Отправляя данные, я принимаю условия 
+                      a(href="#!") пользовательского соглашения
+            
+            .wave__bottom
+              a(href="#!").wave__btn Вызвать мастера
+
+    
+    include ./_include/_footer
+    div(style="height: 1000px; background-color: #000")
+    
+    //[if gte IE 9]
+      <script src='./js/libs/html5shiv/es5-shim.min.js'>
+      <script src='./js/libs/html5shiv/html5shiv.min.js'>
+      <script src='./js/libs/html5shiv/html5shiv-printshiv.min.js'>
+      <script src='./js/libs/html5shiv/respond.min.js'><![endif]
+
+    // Load Scripts
+    script(src="./js/libs.js")
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+    

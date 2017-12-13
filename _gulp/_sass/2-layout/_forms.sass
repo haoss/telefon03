@@ -2,13 +2,13 @@
 
 input
   &::-webkit-input-placeholder
-    color: $color-gray
+    color: $primary-color
   &::-moz-placeholder
-    color: $color-gray
+    color: $primary-color
   &:-ms-input-placeholder
-    color: $color-gray
+    color: $primary-color
   &:-moz-placeholder
-    color: $color-gray
+    color: $primary-color
 
 button, input, optgroup, select, textarea
   margin: 0
@@ -74,3 +74,31 @@ label
 
   &-error .control-label
     color: #a94442
+
+.label
+  &__checked
+    position: relative
+    padding-left: 20px
+    font-weight: 400
+    font-size: rem(11)
+    cursor: pointer
+    color: #a6a5a5
+    line-height: 1.1
+    margin: -5px 0 0 0
+    input[type="checkbox"]
+      display: none
+      &:checked
+        &~.ion-android-checkbox-outline
+          display: block
+        &~.ion-android-checkbox-outline-blank
+          display: none
+    a
+      color: #a6a5a5
+    .ion-android-checkbox-outline
+      display: none
+    i
+      position: absolute
+      left: 0
+      font-size: rem(14)
+      top: -1px
+      line-height: 1
