@@ -95,9 +95,12 @@ html(lang="ru")
                 form(action="#!")
                   .wave__form-body
                     div
-                      input(type="text" placeholder="Как вас зовут?").wave__input 
+                      //- input(type="text" placeholder="Как вас зовут?").wave__input.has-error
+                      input(type="text" placeholder="Как вас зовут?").wave__input
+                      i.ion-alert-circled
                     div
                       input(type="text" placeholder="Контактный телефон").wave__input
+                      i.ion-alert-circled
                     div
                       button(type="submit").wave__btn Вызвать мастера
                   label(for="checkbox").label__checked

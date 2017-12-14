@@ -44,6 +44,11 @@
         &>div
           &+div
             margin-left: 30px
+  .header
+    &__social
+      margin-right: 13px
+    &__nav
+      padding-right: 295px
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px)
@@ -90,6 +95,78 @@
             margin-left: 15px
     &__bottom
       display: block
+  .header
+    &__nav
+      &-btn
+        display: block
+  .navigation
+    position: absolute
+    width: 260px
+    border-radius: 7px
+    background: $color-red
+    color: $color-white
+    text-align: left
+    box-shadow: 0 0 40px rgba($color-black,.4)
+    margin-top: 10px
+    opacity: 0
+    z-index: -1
+    transform: translateY(10px)
+    transition: transform 0.35s
+    // display: none
+    &::before
+      position: absolute
+      content: ''
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAQCAYAAAD9L+QYAAABGElEQVQ4jbXUPS9DURjA8Z/bxiAhEhYp1YQvICySJkIMGC0mn8HSjcVsYcXUxCRiYCFhMTBYDGzEYDUYavESw703uZr2tqnrn5yckyfn/J+T57x0fS9NaIMSdjCDL1SxgVraoq425AXcYLgufot5vDVbGLQQd+OwgRimcIqeTuQ57GM6ZU45LUEzeS8OsJoijpnFmbB8qfJ+VPCAlTbEMWXcYU1Yyl/yMezhBVsa17gVA9jGPeYgHw2O0deBsBHjOMdigN0MxTE5bAYYylgcMxng5J/ktQDrUl7ZH7gO8IhlvGcsr8ZX8RILeM1I/ISjfCJwJTzcAooYjVoRI1FfkvKXJKjgM18X/MBz1JoxmEiY3EAcuxC+Gz++2C0Tls2gEAAAAABJRU5ErkJggg==') 0 0 no-repeat
+      width: 23px
+      height: 16px
+      top: -7px
+      left: 44px
+    &__ul
+      font-size: rem(20)
+      font-family: $font-roboto
+      padding: 27px 0 21px 0
+      &>li
+        display: block
+        margin: 0
+        &>a,&>span
+          display: block
+          margin: 0
+          color: $color-white
+          height: 36px
+          line-height: 36px
+          padding: 0 28px
+        &>a
+          &:hover
+            color: $color-white
+    &__social
+      display: block
+      background: #ff6651
+      color: #ab2310
+      font-family: $font-roboto-bold
+      font-size: rem(12)
+      text-transform: uppercase
+      padding: 13px 0 13px 28px
+      height: 57px
+      margin-bottom: 1px
+      span
+        display: inline-block
+        width: 85px
+        vertical-align: middle
+        margin-right: 33px
+      a
+        display: inline-block
+        vertical-align: middle
+        svg
+          path
+            fill: #ab2310
+        &+a
+          margin-left: 9px
+    &__phone
+      display: block
+    &.is-active
+      opacity: 1
+      z-index: 1050
+      transform: translateY(0)
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)
@@ -123,6 +200,23 @@
   .content
     &__head
       margin-bottom: 45px
+  .header
+    margin-top: 27px
+    &__top
+      display: block
+    &__phone
+      display: none
+    &__nav
+      padding: 0
+      float: right
+      margin-right: -205px
+    &__social
+      margin-right: 140px
+      margin-top: 10px
+  .navigation
+    right: 13px
+    &::before
+      left: 154px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 479px)
@@ -169,6 +263,23 @@
     &__container
       padding-bottom: 70px
       padding-top: 0
+  .header
+    &__social
+      display: none
+    &__nav
+      margin-right: 0
+      margin-left: 0
+      &-btn
+        width: 30px
+        span
+          display: none
+        i
+          font-size: rem(19)
+          margin: 0
+  .navigation
+    &::before
+      left: inherit
+      right: 5px
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 319px)

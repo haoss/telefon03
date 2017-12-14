@@ -61,6 +61,9 @@ $(document).on('ready', function(){
     midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
   });
 
+  mobileNav();
+  navRemove()
+
   // Chrome Smooth Scroll
   try {
     $.browserSelector();
@@ -81,7 +84,9 @@ $(window).on('load', function() {
 });
 
 // $(window).on('scroll', function() { console.log('scroll'); });
-// $(window).on('resize', function() { console.log('resize'); });
+$(window).on('resize', function() {
+  navRemove();
+});
 
 /*
 version 2015-09-23 14:30 GMT +2
@@ -143,4 +148,35 @@ function simpleForm(form, callback) {
 
     return false;
   });
+}
+
+function mobileNav(){
+  var btn = $('#mobile');
+  var shadow = $('.header__nav-shadow');
+  var nav = $('.navigation');
+
+  btn.on('click', function(){
+    shadow.toggleClass('is-active');
+    nav.toggleClass('is-active');
+    $(this).toggleClass('is-active');
+  });
+
+  shadow.on('click', function(){
+    btn.removeClass('is-active');
+    nav.removeClass('is-active');
+    $(this).removeClass('is-active');
+  });
+}
+
+function navRemove(){
+  var width = $(window).width();
+  var btn = $('#mobile');
+  var shadow = $('.header__nav-shadow');
+  var nav = $('.navigation');
+
+  if (width > 991 && btn.hasClass('is-active')) {
+    btn.removeClass('is-active');
+    nav.removeClass('is-active');
+    shadow.removeClass('is-active');
+  }
 }

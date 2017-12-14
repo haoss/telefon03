@@ -26,7 +26,7 @@
           color: $link-color
 
 .content
-  padding: 50px 0 40px 0
+  padding: 45px 0 40px 0
   &__thumb
     margin: 0 auto 35px
     max-width: 100%
@@ -82,6 +82,7 @@
       &>div
         display: table-cell
         vertical-align: top
+        position: relative
         &+div
           padding-left: 30px
   &__input
@@ -93,6 +94,28 @@
     font-size: rem(15)
     font-family: $font-roboto-light
     width: 263px
+    border: 3px solid transparent
+    &+.ion-alert-circled
+      display: none
+      position: absolute
+      right: 21px
+      top: 14px
+      color: $color-red
+      font-size: rem(16)
+    &.has-error
+      border-color: $color-red-dark
+      color: $color-red
+      padding-right: 50px
+      &::-webkit-input-placeholder
+        color: $color-red
+      &::-moz-placeholder
+        color: $color-red
+      &:-ms-input-placeholder
+        color: $color-red
+      &:-moz-placeholder
+        color: $color-red
+      &+.ion-alert-circled
+        display: block
   &__btn
     border: 0
     border-radius: 65px
@@ -178,3 +201,9 @@
       max-width: 323px
   &__container
     padding-bottom: 85px
+  &__social
+    a
+      display: inline-block
+      width: 30px
+      height: 30px
+      color: $color-white
