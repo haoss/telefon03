@@ -2,7 +2,7 @@
 <html lang="ru">
     <head>
         <meta charset="utf-8">
-        <title>Главная - siteName</title>
+        <title>Главная - Телефон03</title>
         <meta name="description" content="">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -27,25 +27,32 @@
         <meta name="msapplication-config" content="./favicon/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
         <link rel="stylesheet" href="./js/libs/magnific-popup/magnific-popup.css">
+        <link rel="stylesheet" href="./font/fontello/css/fontello.css">
+        <link rel="stylesheet" href="./js/libs/slick/slick.css">
         <link rel="stylesheet" href="./css/main.css">
     </head>
-    <body>
+    <body class="main-body">
         <!-- Preloader-->
         <div class="loader">
             <div class="loader__block"></div>
         </div>
-        <div id="popup1" class="popup popup--master">
+        <div id="popup1" class="popup popup--master mfp-hide">
             <div class="popup__wrapper">
-                <div class="popup__close"></div>
+                <div class="popup__close"><i class="ion-close"></i></div>
                 <div class="popup__container">
                     <div class="popup__title">Здравствуйте!<small>Оставьте номер, и мы Вам перезвоним!</small></div>
                     <form action="#!">
                         <div class="form-group">
-                            <input type="text" placeholder="Как вас зовут?" class="form-control"><i class="ion-alert-circled"></i>
+                            <input type="text" placeholder="Как вас зовут?" class="form-control has-error"><i class="ion-alert-circled"></i>
                         </div>
                         <div class="form-group">
                             <input type="text" placeholder="Контактный телефон" class="form-control"><i class="ion-alert-circled"></i>
                         </div>
+                        <label for="checkbox" class="label__checked">
+                            <input type="checkbox" checked id="checkbox"><i class="ion-android-checkbox-outline-blank"></i><i class="ion-android-checkbox-outline"></i><span>Отправляя данные, я принимаю условия <a href="#!">пользовательского соглашения</a></span>
+                        </label>
+                        <div class="clear15"></div>
+                        <button type="submit" class="btn btn--red">Вызвать мастера</button>
                     </form>
                 </div>
             </div>
@@ -86,12 +93,635 @@
                 </div>
             </div>
         </header>
+        <div class="header__separator"></div>
+        <div class="main-slide">
+            <div class="main-slide__wrapper"><img src="./img/main-slide.png" alt=""></div>
+            <div class="main-slide__form">
+                <div class="wave__form">
+                    <div class="wave__form-wrapper">
+                        <form action="#!">
+                            <div class="wave__form-body">
+                                <div>
+                                    <input type="text" placeholder="Как вас зовут?" class="wave__input"><i class="ion-alert-circled"></i>
+                                </div>
+                                <div>
+                                    <input type="text" placeholder="Контактный телефон" class="wave__input"><i class="ion-alert-circled"></i>
+                                </div>
+                                <div>
+                                    <button type="submit" class="wave__btn">Вызвать мастера</button>
+                                </div>
+                            </div>
+                            <label for="checkbox" class="label__checked">
+                                <input type="checkbox" checked id="checkbox"><i class="ion-android-checkbox-outline-blank"></i><i class="ion-android-checkbox-outline"></i><span>Отправляя данные, я принимаю условия <a href="#!">пользовательского соглашения</a></span>
+                            </label>
+                        </form>
+                    </div>
+                </div>
+                <div class="wave__bottom wave__bottom--main"><a href="#popup1" class="wave__btn open-popup-link">Вызвать мастера</a></div>
+            </div>
+        </div>
         <div class="content">
             <div class="container">
-                <h1>Главная 2</h1>
+                <div class="section no--p">
+                    <div class="content__head">
+                        <div class="h1">Выберите модель устройства и поломку</div>
+                        <div class="content__head-untitle">Цена включает стоимость запчастей и работу</div>
+                    </div>
+                    <div class="price__table">
+                        <div class="price__table-head">
+                            <div>
+                                <div class="price__table-carousel">
+                                    <ul>
+                                        <li role="presentation" class="active"><a href="#tab-pane1" aria-controls="tab-pane1" role="tab" data-toggle="tab" class="price__table-th">5</a></li>
+                                        <li role="presentation"><a href="#tab-pane2" aria-controls="tab-pane2" role="tab" data-toggle="tab" class="price__table-th">5C</a></li>
+                                        <li role="presentation"><a href="#tab-pane3" aria-controls="tab-pane3" role="tab" data-toggle="tab" class="price__table-th">5S</a></li>
+                                        <li role="presentation"><a href="#tab-pane4" aria-controls="tab-pane4" role="tab" data-toggle="tab" class="price__table-th">SE</a></li>
+                                        <li role="presentation"><a href="#tab-pane5" aria-controls="tab-pane5" role="tab" data-toggle="tab" class="price__table-th">6</a></li>
+                                        <li role="presentation"><a href="#tab-pane6" aria-controls="tab-pane6" role="tab" data-toggle="tab" class="price__table-th">6s</a></li>
+                                        <li role="presentation"><a href="#tab-pane7" aria-controls="tab-pane7" role="tab" data-toggle="tab" class="price__table-th">6+</a></li>
+                                        <li role="presentation"><a href="#tab-pane8" aria-controls="tab-pane8" role="tab" data-toggle="tab" class="price__table-th">6S+</a></li>
+                                        <li role="presentation"><a href="#tab-pane9" aria-controls="tab-pane9" role="tab" data-toggle="tab" class="price__table-th">7</a></li>
+                                        <li role="presentation"><a href="#tab-pane10" aria-controls="tab-pane10" role="tab" data-toggle="tab" class="price__table-th">7+</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="price__table-wrapper">
+                            <div class="price__table-carousel2">
+                                <div id="tab-pane1" class="price__table-block tab-pane active">
+                                    <div class="price__table-block__wrapper">
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена дисплея (копия)</span></div>
+                                                    <div><span>2400 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена разъема наушников</span></div>
+                                                    <div><span>1500 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена слухового динамика</span></div>
+                                                    <div><span>1300 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Перепрошивка (доп. услуга)	</span></div>
+                                                    <div><span>1000 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена дисплея (оригинал)</span></div>
+                                                    <div><span>3200 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Наклеить защитное стекло (доп. услуга)</span></div>
+                                                    <div><span>500 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена металлического корпуса</span></div>
+                                                    <div><span>3000 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Пайка (сложный ремонт)</span></div>
+                                                    <div><span>от 3000 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена аккумулятора (оригинал)</span></div>
+                                                    <div><span>1500 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Диагностика</span></div>
+                                                    <div><span>Бесплатно</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена дисплея (копия)</span></div>
+                                                    <div><span>2400 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена разъема наушников</span></div>
+                                                    <div><span>1500 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена слухового динамика</span></div>
+                                                    <div><span>1300 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Перепрошивка (доп. услуга)	</span></div>
+                                                    <div><span>1000 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена дисплея (оригинал)</span></div>
+                                                    <div><span>3200 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Наклеить защитное стекло (доп. услуга)</span></div>
+                                                    <div><span>500 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена металлического корпуса</span></div>
+                                                    <div><span>3000 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Пайка (сложный ремонт)</span></div>
+                                                    <div><span>от 3000 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена аккумулятора (оригинал)</span></div>
+                                                    <div><span>1500 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Диагностика</span></div>
+                                                    <div><span>Бесплатно</span></div></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab-pane2" class="price__table-block tab-pane">
+                                    <div class="price__table-block__wrapper">
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена дисплея (копия) 4</span></div>
+                                                    <div><span>2400 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена разъема наушников 4</span></div>
+                                                    <div><span>1500 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена слухового динамика 2</span></div>
+                                                    <div><span>1300 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Перепрошивка (доп. услуга) 2</span></div>
+                                                    <div><span>1000 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена дисплея (оригинал) 2</span></div>
+                                                    <div><span>3200 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Наклеить защитное стекло (доп. услуга) 2</span></div>
+                                                    <div><span>500 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена металлического корпуса 2</span></div>
+                                                    <div><span>3000 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Пайка (сложный ремонт) 2</span></div>
+                                                    <div><span>от 3000 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена аккумулятора (оригинал) 2</span></div>
+                                                    <div><span>1500 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Диагностика 2</span></div>
+                                                    <div><span>Бесплатно</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена дисплея (копия) 2</span></div>
+                                                    <div><span>2400 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена разъема наушников 2</span></div>
+                                                    <div><span>1500 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена слухового динамика 2</span></div>
+                                                    <div><span>1300 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Перепрошивка (доп. услуга) 2</span></div>
+                                                    <div><span>1000 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена дисплея (оригинал) 2</span></div>
+                                                    <div><span>3200 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Наклеить защитное стекло (доп. услуга) 2</span></div>
+                                                    <div><span>500 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена металлического корпуса 2</span></div>
+                                                    <div><span>3000 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Пайка (сложный ремонт) 2</span></div>
+                                                    <div><span>от 3000 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена аккумулятора (оригинал) 2</span></div>
+                                                    <div><span>1500 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Диагностика 2</span></div>
+                                                    <div><span>Бесплатно</span></div></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab-pane3" class="price__table-block tab-pane">
+                                    <div class="price__table-block__wrapper"> 
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена дисплея (копия) 3</span></div>
+                                                    <div><span>2400 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена разъема наушников 3</span></div>
+                                                    <div><span>1500 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена слухового динамика 3</span></div>
+                                                    <div><span>1300 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Перепрошивка (доп. услуга) 3</span></div>
+                                                    <div><span>1000 р</span></div></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab-pane4" class="price__table-block tab-pane">
+                                    <div class="price__table-block__wrapper">
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена дисплея (копия) 4</span></div>
+                                                    <div><span>2400 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена разъема наушников 4</span></div>
+                                                    <div><span>1500 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена слухового динамика 4</span></div>
+                                                    <div><span>1300 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Перепрошивка (доп. услуга) 4</span></div>
+                                                    <div><span>1000 р</span></div></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab-pane5" class="price__table-block tab-pane">
+                                    <div class="price__table-block__wrapper">
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена дисплея (копия) 5</span></div>
+                                                    <div><span>2400 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена разъема наушников 5</span></div>
+                                                    <div><span>1500 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена слухового динамика 5</span></div>
+                                                    <div><span>1300 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Перепрошивка (доп. услуга) 5</span></div>
+                                                    <div><span>1000 р</span></div></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab-pane6" class="price__table-block tab-pane">
+                                    <div class="price__table-block__wrapper">
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена дисплея (копия) 6</span></div>
+                                                    <div><span>2400 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена разъема наушников 6</span></div>
+                                                    <div><span>1500 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена слухового динамика 6</span></div>
+                                                    <div><span>1300 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Перепрошивка (доп. услуга) 6</span></div>
+                                                    <div><span>1000 р</span></div></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab-pane7" class="price__table-block tab-pane">
+                                    <div class="price__table-block__wrapper">
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена дисплея (копия) 7</span></div>
+                                                    <div><span>2400 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена разъема наушников 7</span></div>
+                                                    <div><span>1500 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена слухового динамика 7</span></div>
+                                                    <div><span>1300 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Перепрошивка (доп. услуга) 7</span></div>
+                                                    <div><span>1000 р</span></div></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab-pane8" class="price__table-block tab-pane">
+                                    <div class="price__table-block__wrapper">
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена дисплея (копия) 8</span></div>
+                                                    <div><span>2400 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена разъема наушников 8</span></div>
+                                                    <div><span>1500 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена слухового динамика 8</span></div>
+                                                    <div><span>1300 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Перепрошивка (доп. услуга) 8</span></div>
+                                                    <div><span>1000 р</span></div></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab-pane9" class="price__table-block tab-pane">
+                                    <div class="price__table-block__wrapper">
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена дисплея (копия) 9</span></div>
+                                                    <div><span>2400 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена разъема наушников 9</span></div>
+                                                    <div><span>1500 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена слухового динамика 9</span></div>
+                                                    <div><span>1300 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Перепрошивка (доп. услуга) 9</span></div>
+                                                    <div><span>1000 р</span></div></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab-pane10" class="price__table-block tab-pane">
+                                    <div class="price__table-block__wrapper">
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена дисплея (копия) 10</span></div>
+                                                    <div><span>2400 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена разъема наушников 10</span></div>
+                                                    <div><span>1500 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена слухового динамика 10</span></div>
+                                                    <div><span>1300 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Перепрошивка (доп. услуга) 10</span></div>
+                                                    <div><span>1000 р</span></div></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab-pane11" class="price__table-block tab-pane">
+                                    <div class="price__table-block__wrapper">
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена дисплея (копия) 11</span></div>
+                                                    <div><span>2400 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена разъема наушников 11</span></div>
+                                                    <div><span>1500 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена слухового динамика 11</span></div>
+                                                    <div><span>1300 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Перепрошивка (доп. услуга) 11</span></div>
+                                                    <div><span>1000 р</span></div></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab-pane12" class="price__table-block tab-pane">
+                                    <div class="price__table-block__wrapper">
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена дисплея (копия) 12</span></div>
+                                                    <div><span>2400 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена разъема наушников 12</span></div>
+                                                    <div><span>1500 р</span></div></a></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 first"><a href="#!" class="price__table-link">
+                                                    <div><span>Замена слухового динамика 12</span></div>
+                                                    <div><span>1300 р</span></div></a></div>
+                                            <div class="col-md-6 last"><a href="#!" class="price__table-link">
+                                                    <div><span>Перепрошивка (доп. услуга) 12</span></div>
+                                                    <div><span>1000 р</span></div></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wave">
+            <div class="wave__wrapper">
+                <div class="wave__container wave__container--main">
+                    <div class="container">
+                        <div class="wave__title">Профессиональный сервис <strong>с выездом к вам</strong></div>
+                        <div class="wave__content">
+                            <div class="wave__content-img"><img src="./img/wave-car.png" alt=""><img src="./img/wave-phone.png" alt=""></div>
+                            <div class="wave__content-body">
+                                <div class="wave__content-row">
+                                    <div class="wave__content-block">
+                                        <div>Мастер приедет в <br>любую точку Москвы в <br>течение 1 часа </div>
+                                        <div><img src="./img/wave-icon-1.svg" alt=""></div>
+                                    </div>
+                                    <div class="wave__content-block">
+                                        <div>Профессиональный <br>ремонт при вас за <br>20 минут </div>
+                                        <div><img src="./img/wave-icon-2.svg" alt=""></div>
+                                    </div>
+                                </div>
+                                <div class="wave__content-row">
+                                    <div class="wave__content-block">
+                                        <div>Используем <br>оригинальные детали <br>с гарантией </div>
+                                        <div><img src="./img/wave-icon-3.svg" alt=""></div>
+                                    </div>
+                                    <div class="wave__content-block">
+                                        <div>Можно оплатить <br>наличными или <br>картой без % </div>
+                                        <div><img src="./img/wave-icon-4.svg" alt=""></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section comments">
+            <div class="container">
+                <p>Что говорят наши клиенты</p>
+            </div>
+        </div>
+        <div class="section faq">
+            <div class="container">
+                <div class="content__head">
+                    <div class="h1">Популярные вопросы</div>
+                </div>
                 <div class="row">
-                    <div class="col-md-4">4 collumns</div>
-                    <div class="col-md-8">8 collumns</div>
+                    <div class="col-md-6">
+                        <div class="faq__row">
+                            <div class="faq__block">
+                                <div class="faq__block-title"><a href="#!"><i class="ion-ios-plus"></i><i class="ion-ios-minus-outline"></i>Вы используете оригинальные запчасти?</a></div>
+                                <div class="faq__block-answer">
+                                    <div class="faq__block-answer__wrapper">
+                                        <p>Заинтересованность работодателя подтверждается одновременно двумя видами уведомлений: по электронному адресу, указанному в резюме, и на вашей странице «Отклики и приглашения». </p>
+                                        <p>Дополнительное уведомление по sms происходит только по желанию работодателя.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq__block">
+                                <div class="faq__block-title"><a href="#!"><i class="ion-ios-plus"></i><i class="ion-ios-minus-outline"></i>Вы даете гарантию на ремонт?</a></div>
+                                <div class="faq__block-answer">
+                                    <div class="faq__block-answer__wrapper">
+                                        <p>Заинтересованность работодателя подтверждается одновременно двумя видами уведомлений: по электронному адресу, указанному в   резюме, и на вашей странице «Отклики и приглашения». </p>
+                                        <p>Дополнительное уведомление по sms происходит только по желанию работодателя.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq__block">
+                                <div class="faq__block-title"><a href="#!"><i class="ion-ios-plus"></i><i class="ion-ios-minus-outline"></i>Сколько по времени в среднем занимает ремонт айфона?</a></div>
+                                <div class="faq__block-answer">
+                                    <div class="faq__block-answer__wrapper">
+                                        <p>Заинтересованность работодателя подтверждается одновременно двумя видами уведомлений: по электронному адресу, указанному в   резюме, и на вашей странице «Отклики и приглашения». </p>
+                                        <p>Дополнительное уведомление по sms происходит только по желанию работодателя.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="faq__row">
+                            <div class="faq__block">
+                                <div class="faq__block-title"><a href="#!"><i class="ion-ios-plus"></i><i class="ion-ios-minus-outline"></i>У меня уже есть купленная деталь, вы сможете ее поставить?</a></div>
+                                <div class="faq__block-answer">
+                                    <div class="faq__block-answer__wrapper">
+                                        <p>Заинтересованность работодателя подтверждается одновременно двумя видами уведомлений: по электронному адресу, указанному в   резюме, и на вашей странице «Отклики и приглашения». </p>
+                                        <p>Дополнительное уведомление по sms происходит только по желанию работодателя.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq__block">
+                                <div class="faq__block-title"><a href="#!"><i class="ion-ios-plus"></i><i class="ion-ios-minus-outline"></i>Мастер приедет ко мне в любое место?</a></div>
+                                <div class="faq__block-answer">
+                                    <div class="faq__block-answer__wrapper"> 
+                                        <p>Заинтересованность работодателя подтверждается одновременно двумя видами уведомлений: по электронному адресу, указанному   в резюме, и на вашей странице «Отклики и приглашения». </p>
+                                        <p>Дополнительное уведомление по sms происходит только по желанию работодателя.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq__block is-active">
+                                <div class="faq__block-title"><a href="#!"><i class="ion-ios-plus"></i><i class="ion-ios-minus-outline"></i>Как оплачивается работа?</a></div>
+                                <div class="faq__block-answer">
+                                    <div class="faq__block-answer__wrapper">   
+                                        <p>Оплата осуществляется только после того как ваше устройство отремонтировано. Вы можете оплатить работы мастеру наличными   или картой без %.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section whe-work no--p-bottom">
+            <div class="whe-work__top">
+                <div class="container"></div>
+            </div>
+            <div class="whe-work__body">
+                <div class="container">
+                    <div class="content__head">
+                        <div class="h1">Как мы работаем</div>
+                    </div>
+                    <div class="whe-work__wrapper">
+                        <div class="whe-work__wrapper-div">
+                            <div class="whe-work__wrapper-block">
+                                <div class="whe-work__wrapper-number">1</div><img src="./img/whe-work-arrow.png" alt="" class="whe-work__wrapper-arrow">
+                                <div class="whe-work__wrapper-img"><img src="./img/whe-work-img-1.svg" alt=""></div>
+                                <div class="whe-work__wrapper-text">Вы оставляете заявку на сайте или звоните нам</div>
+                            </div>
+                        </div>
+                        <div class="whe-work__wrapper-div">
+                            <div class="whe-work__wrapper-block">
+                                <div class="whe-work__wrapper-number">2</div><img src="./img/whe-work-arrow2.png" alt="" class="whe-work__wrapper-arrow whe-work__wrapper-arrow--2">
+                                <div class="whe-work__wrapper-img"><img src="./img/whe-work-img-2.svg" alt=""></div>
+                                <div class="whe-work__wrapper-text">Мастер перезванивает и приезжает в удобное для вас место и время</div>
+                            </div>
+                        </div>
+                        <div class="whe-work__wrapper-div">
+                            <div class="whe-work__wrapper-block">
+                                <div class="whe-work__wrapper-number">3</div><img src="./img/whe-work-arrow.png" alt="" class="whe-work__wrapper-arrow">
+                                <div class="whe-work__wrapper-img"><img src="./img/whe-work-img-3.svg" alt=""></div>
+                                <div class="whe-work__wrapper-text">При вас производится ремонт устройства в течение 20 минут</div>
+                            </div>
+                        </div>
+                        <div class="whe-work__wrapper-div">
+                            <div class="whe-work__wrapper-block">
+                                <div class="whe-work__wrapper-number">4</div>
+                                <div class="whe-work__wrapper-arrow"></div>
+                                <div class="whe-work__wrapper-img"><img src="./img/whe-work-img-4.svg" alt=""></div>
+                                <div class="whe-work__wrapper-text">Вы оплачиваете работу, получаете чек и гарантию</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="whe-work__form">
+                        <div class="wave__form">
+                            <div class="wave__form-wrapper">
+                                <form action="#!">
+                                    <div class="wave__form-body">
+                                        <div>
+                                            <input type="text" placeholder="Как вас зовут?" class="wave__input"><i class="ion-alert-circled"></i>
+                                        </div>
+                                        <div>
+                                            <input type="text" placeholder="Контактный телефон" class="wave__input"><i class="ion-alert-circled"></i>
+                                        </div>
+                                        <div>
+                                            <button type="submit" class="wave__btn">Вызвать мастера</button>
+                                        </div>
+                                    </div>
+                                    <label for="checkbox" class="label__checked">
+                                        <input type="checkbox" checked id="checkbox"><i class="ion-android-checkbox-outline-blank"></i><i class="ion-android-checkbox-outline"></i><span>Отправляя данные, я принимаю условия <a href="#!">пользовательского соглашения</a></span>
+                                    </label>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="wave__bottom wave__bottom--main"><a href="#popup1" class="wave__btn wave__btn--dark open-popup-link">Вызвать мастера</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 hidden-xs hidden-sm"><img src="./img/about-main-img.png" alt="" class="about__img"></div>
+                    <div class="col-md-6 col-sm-8">
+                        <div class="h1">О компании</div>
+                        <div class="about__content">
+                            <div class="about__content-wrapper">
+                                <p>Грамотная диагностика iPhone — это то с чего нужно начинать любой вид ремонта девайсов от Apple. Диагностика позволяет выявить все видимые и не видимые поломки, которые необходимо устранить для того, что бы ваш айфон работал корректно.</p>
+                                <p>В сервисном центре наши мастера смогут провести диагностику вашего айфона абсолютно бесплатно.</p>
+                                <p>Обратите внимание, что диагностика телефона должна быть началом любого ремонта, даже если вы или мастера по ремонту техники Apple точно уверенны в чем проблема.</p>
+                                <p>Грамотная диагностика iPhone — это то с чего нужно начинать любой вид ремонта девайсов от Apple. Диагностика позволяет выявить все видимые и не видимые поломки, которые необходимо устранить для того, что бы ваш айфон работал корректно.</p>
+                                <p>В сервисном центре наши мастера смогут провести диагностику вашего айфона абсолютно бесплатно.</p>
+                                <p>Обратите внимание, что диагностика телефона должна быть началом любого ремонта, даже если вы или мастера по ремонту техники Apple точно уверенны в чем проблема.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4">
+                        <div class="about__info-wrapper">
+                            <div class="contact__block"><img src="./img/contacts-img-1.svg" alt=""><a href="#!">8 (123) 456-78-90</a><span>Звоните круглосуточно</span></div>
+                            <div class="contact__block"><img src="./img/contacts-img-2.svg" alt=""><a href="#!">8 (987) 654-43-21</a><span>Наш WhatsApp</span></div>
+                            <div class="about__info-p">Работаем каждый день с 10.00 до 20.00</div>
+                            <div class="about__info-p">Вы всегда можете приехать к нам в офис</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -102,7 +732,6 @@
                 <div class="footer__development"><a href="#!">Разработано в <img src="./img/piarme.png" alt=""></a></div>
             </div>
         </footer>
-        <div style="height: 1000px; background-color: #000"></div>
         <!--[if gte IE 9]
         <script src='./js/libs/html5shiv/es5-shim.min.js'>
         <script src='./js/libs/html5shiv/html5shiv.min.js'>
@@ -113,6 +742,8 @@
         <!-- Load Scripts-->
         <script src="./js/libs.js"></script>
         <!-- Footer js-->
+        <script src="./js/libs/slick/slick.min.js"></script>
+        <script src="./js/libs/bootstrap/bootstrap.min.js"></script>
         <script src="./js/common.js"></script>
     </body>
 </html>

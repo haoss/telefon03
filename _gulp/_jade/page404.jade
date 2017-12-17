@@ -1,0 +1,73 @@
+doctype
+
+html(lang="ru")
+  
+  -var active = 'Ошибка 404' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Ошибка 404' + ' - Телефон03' //title страницы для генерации верстки  
+
+  include ./_include/_head
+
+  body
+    
+    // Preloader
+    include ./_include/_preloader
+    
+    include ./_include/_header
+    
+    .breadcrumbs
+      .container
+        
+        ul.breadcrumbs__list
+          li
+            a(href="#!") Телефон 03
+          li
+            span Название страницы
+    
+    .content
+      .container
+        
+        .content__head
+          h1 Страница не найдена...
+          .content__head-untitle Ошибка 404
+        
+        .content__container
+          .row
+            .col-lg-10.col-lg-push-1
+              img(src="./img/page-404.png", alt="").content__thumb
+                
+              p Что-то пошло не так. Возможно, вы ошиблись, набирая адрес в строке браузера — так бывает. Если вы уверены, что адрес набран верно, то страница, скорее всего, была удалена и ее больше нет.
+              p 
+                strong Но не отчаивайтесь! 
+                | Смело обращайтесь 
+                a(href="#!") за помощью
+                | &nbsp;к нам или перейдите на 
+                a(href="#!") главную страницу
+                | .
+              
+              ul.list
+                li
+                  a(href="#!") Цена 
+                li
+                  a(href="#!") Преимущества
+                li
+                  a(href="#!") Отзывы
+                li
+                  a(href="#!") Статьи
+
+    include ./_include/_wave
+
+    
+    include ./_include/_footer
+    //- div(style="height: 1000px; background-color: #000")
+    
+    //[if gte IE 9]
+      <script src='./js/libs/html5shiv/es5-shim.min.js'>
+      <script src='./js/libs/html5shiv/html5shiv.min.js'>
+      <script src='./js/libs/html5shiv/html5shiv-printshiv.min.js'>
+      <script src='./js/libs/html5shiv/respond.min.js'><![endif]
+
+    // Load Scripts
+    script(src="./js/libs.js")
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+    

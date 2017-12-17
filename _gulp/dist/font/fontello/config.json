@@ -1,0 +1,28 @@
+{
+  "name": "",
+  "css_prefix_text": "fa-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "243424d56528e83e4fe9ef6e6347a2ef",
+      "css": "rouble",
+      "code": 61784,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "486b835e9eebf54eee78ed12b4291b86",
+      "css": "euro",
+      "code": 61779,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "026007bd17bfc67f3fe013199676f620",
+      "css": "dollar",
+      "code": 61781,
+      "src": "fontawesome"
+    }
+  ]
+}

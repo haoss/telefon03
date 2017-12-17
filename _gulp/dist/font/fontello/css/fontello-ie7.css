@@ -1,0 +1,15 @@
+[class^="fa-"], [class*=" fa-"] {
+  font-family: 'fontello';
+  font-style: normal;
+  font-weight: normal;
+ 
+  /* fix buttons height */
+  line-height: 1em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+}
+ 
+.fa-euro { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf153;&nbsp;'); }
+.fa-dollar { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf155;&nbsp;'); }
+.fa-rouble { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf158;&nbsp;'); }

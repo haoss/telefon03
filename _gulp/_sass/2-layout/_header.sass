@@ -3,6 +3,12 @@
   background-color: $color-white
   height: 80px
   padding: 15px 0
+  position: absolute
+  left: 0
+  width: 100%
+  top: 0
+
+  // z-index: 100
   +clearfix
   &__nav
     &-btn
@@ -28,6 +34,7 @@
     text-align: center
     height: 27px
     line-height: 26px
+    margin-top: -27px
     i
       font-size: rem(16)
       margin-right: 9px
@@ -62,9 +69,10 @@
     strong
       font-weight: 400
       font-family: $font-roboto-medium
-    &:hover
+    &:hover, &:focus
       color: $color-red
       background: $color-white
+      text-decoration: none
   &__social
     float: right
     margin-right: 44px
@@ -126,8 +134,15 @@
       opacity: 0
       z-index: -1
       transition: opacity 0.15s
-      // display: none
+      cursor: pointer
+      display: none
       &.is-active
-        // display: block
+        display: block
         z-index: 1000
         opacity: 1
+  &__separator
+    height: 80px
+
+.main-body
+  .header
+    box-shadow: 0 3px 7px rgba($color-black,.1)

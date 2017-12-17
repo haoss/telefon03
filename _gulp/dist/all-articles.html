@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Все новости - Телефон03</title>
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="./favicon/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="./favicon/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="./favicon/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="./favicon/manifest.json">
+        <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="./favicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-TileImage" content="./favicon/mstile-144x144.png">
+        <meta name="msapplication-config" content="./favicon/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="stylesheet" href="./js/libs/magnific-popup/magnific-popup.css">
+        <link rel="stylesheet" href="./font/fontello/css/fontello.css">
+        <link rel="stylesheet" href="./js/libs/slick/slick.css">
+        <link rel="stylesheet" href="./css/main.css">
+    </head>
+    <body>
+        <!-- Preloader-->
+        <div class="loader">
+            <div class="loader__block"></div>
+        </div>
+        <div id="popup1" class="popup popup--master mfp-hide">
+            <div class="popup__wrapper">
+                <div class="popup__close"><i class="ion-close"></i></div>
+                <div class="popup__container">
+                    <div class="popup__title">Здравствуйте!<small>Оставьте номер, и мы Вам перезвоним!</small></div>
+                    <form action="#!">
+                        <div class="form-group">
+                            <input type="text" placeholder="Как вас зовут?" class="form-control has-error"><i class="ion-alert-circled"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Контактный телефон" class="form-control"><i class="ion-alert-circled"></i>
+                        </div>
+                        <label for="checkbox" class="label__checked">
+                            <input type="checkbox" checked id="checkbox"><i class="ion-android-checkbox-outline-blank"></i><i class="ion-android-checkbox-outline"></i><span>Отправляя данные, я принимаю условия <a href="#!">пользовательского соглашения</a></span>
+                        </label>
+                        <div class="clear15"></div>
+                        <button type="submit" class="btn btn--red">Вызвать мастера</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Header-->
+        <header class="header">
+            <div class="header__top">
+                <div class="container"><a href="#!"><i class="ion-android-call"></i>+7 (123) <strong>456-78-90</strong></a></div>
+            </div>
+            <div class="container">
+                <div class="header__logo"><a href="#!"><img src="./img/logo.png" alt=""></a></div><a href="#!" class="header__phone"><i class="ion-android-call"></i><span>+7 (123) <strong>456-78-90</strong></span></a>
+                <div class="header__social"><a href="#!">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.2" viewbox="0 0 50 50">
+                            <path d="M25.002 0C11.192 0 0 11.192 0 25.002 0 38.808 11.192 50 25.002 50 38.808 50 50 38.808 50 25.002 50 11.192 38.808 0 25.002 0zm9.536 12.73l-3.458.003c-2.712 0-3.236 1.289-3.236 3.18v4.168h6.466l-.003 6.531h-6.463v16.754H21.1V26.61h-5.637v-6.53H21.1v-4.814c0-5.587 3.414-8.632 8.4-8.632l5.04.007v6.09h-.002zm0 0"></path>
+                        </svg></a><a href="#!">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.2" viewBox="0 0 50 50">
+                            <path d="M25.002 0C11.195 0 0 11.192 0 25.002 0 38.808 11.195 50 25.002 50 38.808 50 50 38.808 50 25.002 50 11.192 38.808 0 25.002 0zm12.68 27.704c1.166 1.138 2.398 2.21 3.444 3.464.462.557.9 1.132 1.234 1.778.474.92.045 1.931-.78 1.986l-5.122-.003c-1.321.11-2.375-.422-3.262-1.326-.709-.722-1.366-1.49-2.048-2.238-.28-.305-.572-.592-.922-.82-.699-.453-1.306-.314-1.706.416-.406.741-.5 1.563-.539 2.39-.055 1.206-.42 1.523-1.63 1.578-2.591.123-5.049-.27-7.332-1.576-2.012-1.151-3.574-2.777-4.933-4.618-2.644-3.584-4.67-7.522-6.49-11.571-.41-.912-.11-1.402.896-1.419 1.671-.033 3.342-.03 5.015-.002.68.01 1.13.4 1.392 1.041.904 2.223 2.01 4.338 3.399 6.3.37.521.746 1.043 1.283 1.41.595.407 1.047.272 1.327-.39.177-.419.255-.871.294-1.32.133-1.547.15-3.09-.082-4.631-.142-.962-.684-1.584-1.643-1.766-.49-.093-.417-.275-.18-.554.412-.482.8-.782 1.57-.782h5.79c.912.18 1.114.59 1.24 1.506l.004 6.431c-.01.355.177 1.409.817 1.643.512.168.849-.241 1.156-.566 1.387-1.471 2.376-3.21 3.26-5.01.392-.792.729-1.614 1.056-2.436.243-.61.622-.91 1.31-.896l5.57.005c.166 0 .333.002.493.03.94.16 1.196.564.907 1.48-.457 1.44-1.347 2.638-2.216 3.842-.929 1.286-1.923 2.528-2.844 3.821-.847 1.182-.78 1.776.272 2.803zm0 0" fill-rule="evenodd"></path>
+                        </svg></a></div>
+                <div class="header__nav">
+                    <button id="mobile" type="button" class="header__nav-btn"><i class="ion-android-menu"></i><span>Меню</span></button>
+                    <div class="header__nav-shadow"></div>
+                    <nav role="navigation" class="navigation">
+                        <ul class="navigation__ul">
+                            <li><a href="#" title="Цена">Цена</a></li>
+                            <li><a href="#" title="преимущества">преимущества</a></li>
+                            <li><a href="#" title="отзывы">отзывы</a></li>
+                            <li><a href="#" title="статьи">статьи</a></li>
+                        </ul>
+                        <div class="navigation__social"><span>следите за нами в сети</span><a href="#!">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.2" viewbox="0 0 50 50">
+                                    <path d="M25.002 0C11.192 0 0 11.192 0 25.002 0 38.808 11.192 50 25.002 50 38.808 50 50 38.808 50 25.002 50 11.192 38.808 0 25.002 0zm9.536 12.73l-3.458.003c-2.712 0-3.236 1.289-3.236 3.18v4.168h6.466l-.003 6.531h-6.463v16.754H21.1V26.61h-5.637v-6.53H21.1v-4.814c0-5.587 3.414-8.632 8.4-8.632l5.04.007v6.09h-.002zm0 0"></path>
+                                </svg></a><a href="#!">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.2" viewBox="0 0 50 50">
+                                    <path d="M25.002 0C11.195 0 0 11.192 0 25.002 0 38.808 11.195 50 25.002 50 38.808 50 50 38.808 50 25.002 50 11.192 38.808 0 25.002 0zm12.68 27.704c1.166 1.138 2.398 2.21 3.444 3.464.462.557.9 1.132 1.234 1.778.474.92.045 1.931-.78 1.986l-5.122-.003c-1.321.11-2.375-.422-3.262-1.326-.709-.722-1.366-1.49-2.048-2.238-.28-.305-.572-.592-.922-.82-.699-.453-1.306-.314-1.706.416-.406.741-.5 1.563-.539 2.39-.055 1.206-.42 1.523-1.63 1.578-2.591.123-5.049-.27-7.332-1.576-2.012-1.151-3.574-2.777-4.933-4.618-2.644-3.584-4.67-7.522-6.49-11.571-.41-.912-.11-1.402.896-1.419 1.671-.033 3.342-.03 5.015-.002.68.01 1.13.4 1.392 1.041.904 2.223 2.01 4.338 3.399 6.3.37.521.746 1.043 1.283 1.41.595.407 1.047.272 1.327-.39.177-.419.255-.871.294-1.32.133-1.547.15-3.09-.082-4.631-.142-.962-.684-1.584-1.643-1.766-.49-.093-.417-.275-.18-.554.412-.482.8-.782 1.57-.782h5.79c.912.18 1.114.59 1.24 1.506l.004 6.431c-.01.355.177 1.409.817 1.643.512.168.849-.241 1.156-.566 1.387-1.471 2.376-3.21 3.26-5.01.392-.792.729-1.614 1.056-2.436.243-.61.622-.91 1.31-.896l5.57.005c.166 0 .333.002.493.03.94.16 1.196.564.907 1.48-.457 1.44-1.347 2.638-2.216 3.842-.929 1.286-1.923 2.528-2.844 3.821-.847 1.182-.78 1.776.272 2.803zm0 0" fill-rule="evenodd"></path>
+                                </svg></a></div>
+                        <div class="navigation__phone"><small>Нужна помощь? звоните!</small><a href="#!"><i class="ion-android-call"></i>+7 (123) <strong>456-78-90</strong></a></div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="header__separator"></div>
+        <div class="breadcrumbs">
+            <div class="container">
+                <ul class="breadcrumbs__list">
+                    <li><a href="#!">Телефон 03</a></li>
+                    <li><span>Название страницы</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="container">
+                <div class="content__head">
+                    <h1>Полезные советы для владельцев</h1>
+                    <div class="content__head-untitle">Рекомендации, советы и просто интересные материалы</div>
+                </div>
+                <div class="articles">
+                    <div class="articles__wrapper">
+                        <div class="articles__block">
+                            <div class="articles__block-wrapper">
+                                <div class="articles__block-img"><a href="#!"><span>Подробнее</span></a><img src="./img/articles-list-img-1.png" alt="" class="img-responsive"></div>
+                                <div class="articles__block-info"><a href="#!">Вспомни армию и выиграй телефон для экстремалов!</a></div>
+                            </div>
+                        </div>
+                        <div class="articles__block">
+                            <div class="articles__block-wrapper">
+                                <div class="articles__block-img"><a href="#!"><span>Подробнее</span></a><img src="./img/articles-list-img-2.png" alt="" class="img-responsive"></div>
+                                <div class="articles__block-info"><a href="#!">Любовь и сеть: как не дать интернету испортить твои отношения</a></div>
+                            </div>
+                        </div>
+                        <div class="articles__block">
+                            <div class="articles__block-wrapper">
+                                <div class="articles__block-img"><a href="#!"><span>Подробнее</span></a><img src="./img/articles-list-img-3.png" alt="" class="img-responsive"></div>
+                                <div class="articles__block-info"><a href="#!">Почему Sony Walkman стал дороже iPhone</a></div>
+                            </div>
+                        </div>
+                        <div class="articles__block">
+                            <div class="articles__block-wrapper">
+                                <div class="articles__block-img"><a href="#!"><span>Подробнее</span></a><img src="./img/articles-list-img-4.png" alt="" class="img-responsive"></div>
+                                <div class="articles__block-info"><a href="#!">Любовь на расстоянии: как сохранить отношения в телефонном формате</a></div>
+                            </div>
+                        </div>
+                        <div class="articles__block">
+                            <div class="articles__block-wrapper">
+                                <div class="articles__block-img"><a href="#!"><span>Подробнее</span></a><img src="./img/articles-list-img-5.png" alt="" class="img-responsive"></div>
+                                <div class="articles__block-info"><a href="#!">Зависимость от смартфона: проверь, не на крючке ли ты?</a></div>
+                            </div>
+                        </div>
+                        <div class="articles__block">
+                            <div class="articles__block-wrapper">
+                                <div class="articles__block-img"><a href="#!"><span>Подробнее</span></a><img src="./img/articles-list-img-6.png" alt="" class="img-responsive"></div>
+                                <div class="articles__block-info"><a href="#!">10 признаков нормального смартфона 2018 года</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center"><a href="#!" class="btn btn--red btn--small btn--border btn--wauto"><i class="ion-refresh"></i><span>загрузить еще</span></a></div>
+            </div>
+        </div>
+        <div class="wave">
+            <div class="wave__wrapper">
+                <div class="wave__container">
+                    <div class="container">
+                        <div class="wave__title">Заказать ремонт телефона <strong>с выездом к вам</strong></div>
+                        <div class="wave__content">
+                            <div class="wave__content-img"><img src="./img/wave-car.png" alt=""><img src="./img/wave-phone.png" alt=""></div>
+                            <div class="wave__content-body">
+                                <div class="wave__content-row">
+                                    <div class="wave__content-block">
+                                        <div>Мастер приедет в <br>любую точку Москвы в <br>течение 1 часа </div>
+                                        <div><img src="./img/wave-icon-1.svg" alt=""></div>
+                                    </div>
+                                    <div class="wave__content-block">
+                                        <div>Профессиональный <br>ремонт при вас за <br>20 минут </div>
+                                        <div><img src="./img/wave-icon-2.svg" alt=""></div>
+                                    </div>
+                                </div>
+                                <div class="wave__content-row">
+                                    <div class="wave__content-block">
+                                        <div>Используем <br>оригинальные детали <br>с гарантией </div>
+                                        <div><img src="./img/wave-icon-3.svg" alt=""></div>
+                                    </div>
+                                    <div class="wave__content-block">
+                                        <div>Можно оплатить <br>наличными или <br>картой без % </div>
+                                        <div><img src="./img/wave-icon-4.svg" alt=""></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wave__form">
+                            <div class="wave__form-wrapper">
+                                <form action="#!">
+                                    <div class="wave__form-body">
+                                        <div>
+                                            <input type="text" placeholder="Как вас зовут?" class="wave__input"><i class="ion-alert-circled"></i>
+                                        </div>
+                                        <div>
+                                            <input type="text" placeholder="Контактный телефон" class="wave__input"><i class="ion-alert-circled"></i>
+                                        </div>
+                                        <div>
+                                            <button type="submit" class="wave__btn">Вызвать мастера</button>
+                                        </div>
+                                    </div>
+                                    <label for="checkbox" class="label__checked">
+                                        <input type="checkbox" checked id="checkbox"><i class="ion-android-checkbox-outline-blank"></i><i class="ion-android-checkbox-outline"></i><span>Отправляя данные, я принимаю условия <a href="#!">пользовательского соглашения</a></span>
+                                    </label>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="wave__bottom"><a href="#popup1" class="wave__btn open-popup-link">Вызвать мастера</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__copyright">© Ремонт iPhone 2009 - 2017. Все права защищены</div>
+                <div class="footer__development"><a href="#!">Разработано в <img src="./img/piarme.png" alt=""></a></div>
+            </div>
+        </footer>
+        <!--[if gte IE 9]
+        <script src='./js/libs/html5shiv/es5-shim.min.js'>
+        <script src='./js/libs/html5shiv/html5shiv.min.js'>
+        <script src='./js/libs/html5shiv/html5shiv-printshiv.min.js'>
+        <script src='./js/libs/html5shiv/respond.min.js'><![endif]
+        
+        -->
+        <!-- Load Scripts-->
+        <script src="./js/libs.js"></script>
+        <!-- Footer js-->
+        <script src="./js/libs/slick/slick.min.js"></script>
+        <script src="./js/libs/bootstrap/bootstrap.min.js"></script>
+        <script src="./js/common.js"></script>
+    </body>
+</html>

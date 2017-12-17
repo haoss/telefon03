@@ -1,0 +1,4 @@
+
+.fa-euro { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf153;&nbsp;'); }
+.fa-dollar { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf155;&nbsp;'); }
+.fa-rouble { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf158;&nbsp;'); }

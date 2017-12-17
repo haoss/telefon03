@@ -1,17 +1,27 @@
 .loader
   .loader__block
 
-#popup1.popup.popup--master
+#popup1.popup.popup--master.mfp-hide
   .popup__wrapper
     .popup__close
+      i.ion-close
     .popup__container
       .popup__title Здравствуйте!
         small Оставьте номер, и мы Вам перезвоним!
       
       form(action="#!")
         .form-group
-          input(type="text" placeholder="Как вас зовут?").form-control
+          input(type="text" placeholder="Как вас зовут?").form-control.has-error
           i.ion-alert-circled
         .form-group
           input(type="text" placeholder="Контактный телефон").form-control
           i.ion-alert-circled
+            
+        label(for="checkbox").label__checked
+          input(type="checkbox" checked)#checkbox
+          i.ion-android-checkbox-outline-blank
+          i.ion-android-checkbox-outline
+          span Отправляя данные, я принимаю условия 
+            a(href="#!") пользовательского соглашения
+        .clear15
+        button(type="submit").btn.btn--red Вызвать мастера

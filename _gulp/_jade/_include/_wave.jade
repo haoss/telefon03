@@ -1,0 +1,70 @@
+.wave
+  .wave__wrapper
+    .wave__container
+      .container
+        
+        .wave__title Заказать ремонт телефона 
+          strong с выездом к вам
+          
+        .wave__content
+          .wave__content-img
+            img(src="./img/wave-car.png", alt="")
+            img(src="./img/wave-phone.png", alt="")
+          .wave__content-body
+            .wave__content-row
+              .wave__content-block
+                div Мастер приедет в 
+                  br
+                  | любую точку Москвы в 
+                  br
+                  | течение 1 часа 
+                div
+                  img(src="./img/wave-icon-1.svg", alt="")
+              .wave__content-block
+                div Профессиональный 
+                  br
+                  | ремонт при вас за 
+                  br
+                  | 20 минут 
+                div
+                  img(src="./img/wave-icon-2.svg", alt="")
+            .wave__content-row
+              .wave__content-block
+                div Используем 
+                  br
+                  | оригинальные детали 
+                  br
+                  | с гарантией 
+                div
+                  img(src="./img/wave-icon-3.svg", alt="")
+              .wave__content-block
+                div Можно оплатить 
+                  br
+                  | наличными или 
+                  br
+                  | картой без % 
+                div
+                  img(src="./img/wave-icon-4.svg", alt="")
+        
+        .wave__form
+          .wave__form-wrapper
+            form(action="#!")
+              .wave__form-body
+                div
+                  //- input(type="text" placeholder="Как вас зовут?").wave__input.has-error
+                  input(type="text" placeholder="Как вас зовут?").wave__input
+                  i.ion-alert-circled
+                div
+                  input(type="text" placeholder="Контактный телефон").wave__input
+                  i.ion-alert-circled
+                div
+                  button(type="submit").wave__btn Вызвать мастера
+              label(for="checkbox").label__checked
+                input(type="checkbox" checked)#checkbox
+                i.ion-android-checkbox-outline-blank
+                i.ion-android-checkbox-outline
+                span Отправляя данные, я принимаю условия 
+                  a(href="#!") пользовательского соглашения
+        
+        .wave__bottom
+          a(href="#popup1").wave__btn.open-popup-link Вызвать мастера

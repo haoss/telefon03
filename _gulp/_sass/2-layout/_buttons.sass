@@ -1,31 +1,71 @@
 /* buttons */
 
 .btn
-  display: inline-block
-  padding: 0 15px
-  margin-bottom: 0
-  font-size: rem(14)
-  font-weight: 400
-  text-align: center
-  white-space: nowrap
-  vertical-align: middle
-  touch-action: manipulation
-  cursor: pointer
-  user-select: none
-  background:
-    image: none
-    color: $color-gray
-  border: 1px solid $color-white
-  border-radius: 3px
-  height: 40px
-  line-height: 40px
+  border: 0
+  border-radius: 65px
+  height: 66px
+  line-height: 66px
   text-decoration: none
-  transition: color 0.35s, background 0.35s, border 0.35s
+  color: $color-white
+  background: #303030
+  width: 100%
+  max-width: 263px
+  display: inline-block
+  text-align: center
+  font-family: $font-roboto-medium
+  font-size: rem(16)
+  text-transform: uppercase
+  transition: background 0.35s, box-shadow 0.35s, border 0.35s, color 0.35s
+  box-shadow: 0 0 10px $color-gray
+  padding: 0
+  &:hover, &:focus
+    background: $color-gray
+    box-shadow: 0 0 0 $color-gray
+    color: $color-white
+    text-decoration: none
 
-  &:hover, &:focus, &:active
-    outline: none
+  &--red
+    color: $color-white
+    background: $color-red
+    box-shadow: 0 0 20px $color-red-dark
+    &:hover, &:focus
+      background: $color-red-dark
+      box-shadow: 0 0 0 $color-red
 
-  &--default
-    color: #333
-    background-color: $color-white
-    border-color: $color-gray
+  &--small
+    height: 30px
+    min-width: 166px
+    line-height: 30px
+    font-size: rem(10)
+    padding: 0 15px
+    i
+      margin-right: 5px
+      font-size: rem(16)
+      vertical-align: -2px
+    &:hover, &:focus
+      color: $color-white
+
+    &.btn--border
+      line-height: 28px
+
+  &--border
+    box-shadow: none
+    border: 1px solid transparent
+    &:hover, &:focus
+      background: $color-white
+      border-color: $color-red
+      color: $color-red
+
+  &--wauto
+    width: auto
+    max-width: inherit
+
+  &--master
+    max-width: 323px
+    box-shadow: 0 0 20px rgba(#232323,0.46)
+    &:hover, &:focus
+      color: $color-white
+      background-color: $color-black
+      box-shadow: 0 0 0px rgba(#232323,0.46)
+      text-decoration: none
+  

@@ -26,7 +26,7 @@
           color: $link-color
 
 .content
-  padding: 45px 0 40px 0
+  padding: 45px 0 25px 0
   &__thumb
     margin: 0 auto 35px
     max-width: 100%
@@ -62,6 +62,9 @@
     min-height: 630px
     padding-bottom: 88px
     background: #eaf0f3 linear-gradient(to bottom, #eaf0f3, $color-white)
+    &--main
+      padding-bottom: 80px
+      min-height: inherit
   &__form
     padding: 15px
     background: rgba($color-white, 0.4)
@@ -103,7 +106,7 @@
       color: $color-red
       font-size: rem(16)
     &.has-error
-      border-color: $color-red-dark
+      border-color: #913629
       color: $color-red
       padding-right: 50px
       &::-webkit-input-placeholder
@@ -131,12 +134,18 @@
     font-size: rem(16)
     text-transform: uppercase
     transition: background 0.35s, box-shadow 0.35s
-    box-shadow: 0 0 10px $color-red-dark
-    &:hover
+    box-shadow: 0 0 20px rgba($color-red-dark,1)
+    &:hover, &:focus
       background: $color-red-dark
-      box-shadow: 0 0 0 $color-red
+      box-shadow: 0 0 0 rgba($color-red-dark,1)
       color: $color-white
       text-decoration: none
+    &--dark
+      background: #303030
+      box-shadow: 0 0 20px rgba($color-black,.2)
+      &:hover, &:focus
+        background: $color-black
+        box-shadow: 0 0 0px rgba($color-black,.2)
   &__title
     font-size: rem(38)
     font-family: $font-roboto
@@ -151,6 +160,10 @@
       line-height: 1
       margin-left: 260px
       white-space: nowrap
+    &--why
+      max-width: 470px
+      strong
+        margin-left: 147px
   &__content
     position: relative
     &-img
@@ -207,3 +220,631 @@
       width: 30px
       height: 30px
       color: $color-white
+
+.popup
+  max-width: 327px
+  position: relative
+  margin: 0 auto
+  // background: $primary-color
+  // border: 15px solid rgba($color-white,.4)
+  border-radius: 10px
+  box-shadow: 0 0 0 15px rgba($color-white,.4), 0 0 60px rgba($color-black,.5)
+  &__wrapper
+    color: $color-white
+    background: #232323
+    border-radius: 10px
+    padding: 37px 30px 40px 30px
+    +clearfix
+  &__title
+    text-align: center
+    text-transform: uppercase
+    font-size: rem(26)
+    font-family: $font-roboto-medium
+    margin-bottom: 20px
+    small
+      display: inline-block
+      font-size: rem(14)
+      font-family: $font-roboto-light
+      text-transform: none
+      line-height: 18px
+      max-width: 185px
+      margin-top: 7px
+  &__close
+    width: 40px
+    height: 40px
+    line-height: 40px
+    border-radius: 50%
+    background: $color-red
+    color: $color-white
+    text-align: center
+    cursor: pointer
+    position: absolute
+    right: -23px
+    top: -23px
+    transition: background 0.35s
+    &:hover
+      background: $color-red-dark
+    i
+      line-height: 1
+      display: inline-block
+      vertical-align: 0
+
+.articles
+  &__wrapper
+    display: flex
+    flex-wrap: wrap
+    margin: 0 -15px
+  &__block
+    display: inline-block
+    vertical-align: top
+    width: 33.3%
+    padding: 0 15px
+    max-width: 360px
+    margin: 0 auto 50px
+    &:hover
+      .articles__block-img
+        a
+          opacity: 1
+          z-index: 100
+    &-info
+      font-size: rem(18)
+      font-family: $font-roboto-bold
+      padding-top: 20px
+      a
+        text-decoration: none
+        text-transform: uppercase
+        color: $primary-color
+        display: inline-block
+        line-height: 22px
+        &:hover
+          color: $color-red
+    &-img
+      position: relative
+      a
+        display: block
+        position: absolute
+        top: 0
+        right: 0
+        left: 0
+        bottom: 0
+        background: linear-gradient(135deg, rgba(230,114,53,.8) 0%,rgba(240,60,77,.8) 100%)
+        text-decoration: none
+        opacity: 0
+        z-index: -1
+        transition: opacity 0.5s
+        span
+          background: $color-white
+          width: 166px
+          height: 30px
+          line-height: 30px
+          text-transform: uppercase
+          font-size: rem(10)
+          font-family: $font-roboto-bold
+          display: block
+          position: absolute
+          left: 50%
+          top: 50%
+          transform: translate(-50%,-50%)
+          border-radius: 35px
+          text-align: center
+          box-shadow: 0 0 20px $color-red
+
+.contact
+  &__wrapper
+    display: table
+    &>div
+      display: table-cell
+      vertical-align: top
+  &__block
+    position: relative
+    padding-left: 52px
+    font-size: rem(12)
+    min-height: 40px
+    margin-bottom: 20px
+    white-space: nowrap
+    img
+      position: absolute
+      left: 0
+      top: 0
+    a
+      text-decoration: none
+      color: $primary-color
+      font-size: rem(20)
+      font-family: $font-roboto-medium
+      display: inline-block
+      line-height: 1
+      &:hover
+        color: $color-red
+    span
+      display: block
+  &__body
+    &-one
+      margin-left: 72px
+    &-two
+      margin-left: 168px
+  &__img
+    margin: 0 6px
+  &__social
+    margin-bottom: 10px
+
+.product
+  &__wrapper
+    margin-bottom: 50px
+    +clearfix
+  &__img
+    float: left
+    padding-left: 10px
+  &__info
+    float: right
+    &-wrapper
+      width: 262px
+      border: 6px solid #303030
+      background: $color-white
+      padding: 24px 16px
+      border-radius: 25px 0 25px 0
+      box-shadow: 0 0 15px rgba($color-black,.25)
+    &-block
+      position: relative
+      padding-right: 66px
+      font-size: rem(14)
+      line-height: 16px
+      padding-top: 2px
+      height: 50px
+      margin-bottom: 24px
+      &:last-child
+        margin-bottom: 0
+      img
+        position: absolute
+        right: 0
+        top: 0
+        background: $color-red
+        border-radius: 50%
+  &__center
+    padding-left: 390px
+    padding-right: 292px
+  &__title
+    font-size: rem(18)
+    text-transform: uppercase
+    font-family: $font-roboto-bold
+    margin-bottom: 40px
+    span
+      color: $color-red
+      display: block
+      line-height: 1
+      margin-bottom: 15px
+    strong
+      display: block
+      text-transform: none
+      font-size: rem(38)
+      color: $primary-color
+      font-family: $font-roboto
+      line-height: 1
+  &__price
+    min-width: 264px
+    height: 70px
+    background: $color-red
+    color: $color-white
+    font-size: rem(45)
+    font-family: $font-roboto-bold
+    padding-left: 66px
+    padding-right: 25px
+    white-space: nowrap
+    border-top: 2px dotted $color-white
+    border-bottom: 2px dotted $color-white
+    overflow: hidden
+    position: relative
+    display: inline-block
+    &::before, &::after
+      position: absolute
+      background: $color-white
+      content: ''
+      top: 50%
+      width: 36px
+      height: 36px
+      border-radius: 50%
+      margin-top: -18px
+    &::before
+      left: -18px
+    &::after
+      right: -18px
+    &>span
+      position: absolute
+      top: 5px
+      width: 0
+      height: 57px
+      border-right: 2px dotted $color-white
+      left: 35px
+    .fa-rouble
+      line-height: 1
+      color: $color-white
+      font-size: rem(39)
+  &__form
+    margin-bottom: 55px
+    &-img
+      position: relative
+      width: 100%
+    img
+      position: absolute
+      bottom: -40px
+      margin-left: 293px
+      left: 0
+  &__content
+    height: 210px
+    overflow: hidden
+    position: relative
+    pointer-events: none
+    // margin-bottom: 84px
+    &::after
+      font-size: rem(16)
+      pointer-events: all
+      content: "Подробнее..."
+      color: $color-red
+      cursor: pointer
+      -webkit-box-sizing: content-box
+      box-sizing: content-box
+      float: right
+      position: absolute
+      right: 0px
+      bottom: 5px
+      width: 550px
+      text-align: center
+      background-size: 100% 100%
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), white 30%, white)
+    &-wrapper
+      // float: left
+      width: 100%
+      position: relative
+      padding-right: 20px
+    &.is-active
+      &::after
+        display: none
+  &__btn
+    padding-top: 40px
+    display: none
+
+.price
+  &__table
+    margin-bottom: 50px
+    &-wrapper
+      border: 1px solid $color-red
+      padding: 45px 0 30px 0
+      border-radius: 25px
+      margin-top: -25px
+      +clearfix
+    &-th
+      display: block
+      cursor: pointer
+      width: 50px
+      height: 50px
+      text-align: center
+      line-height: 48px
+      border: 1px solid $color-white
+      background: $color-white
+      font-size: rem(16)
+      font-family: $font-roboto-light
+      border-radius: 50%
+      color: $primary-color
+      &:hover, &:focus
+        border-color: $color-red
+        color: $color-red
+        text-decoration: none
+    &-head
+      text-align: center
+      overflow: hidden
+      display: flex
+      justify-content: center
+      &>div
+        // display: inline-block
+        background: $color-white
+        padding: 0 30px
+      &.is-carousel
+        &>div
+          // padding: 0
+    &-carousel
+      text-align: left
+      white-space: nowrap
+      // max-width: 450px
+      &>ul
+        margin: 0
+        padding: 0
+      .slick-slide
+        width: 50px
+        &:focus
+          outline: none
+        &.slick-current
+          .price__table-th
+            background: $color-red
+            color: $color-white
+            border-color: $color-red
+      li
+        list-style: none
+        margin: 0
+        display: inline-block
+        &.active
+          .price__table-th
+            background: $color-red
+            color: $color-white
+            border-color: $color-red
+      &--w320
+        width: 150px
+      &--w480
+        width: 250px
+      &--w767
+        width: 450px
+      &--w991
+        width: 550px
+      .slick-prev, .slick-next
+        position: absolute
+        border: 0
+        width: 25px
+        height: 25px
+        font-size: rem(0)
+        z-index: 25
+        padding: 0
+        // background: pink
+        background: none
+        top: 12px
+        left: -30px
+        &::before
+          line-height: 1
+          font-size: rem(30)
+          content: "\f360"
+          font-family: $font-ionicons
+          color: $color-red
+          position: absolute
+          left: 0
+          top: -2px
+      .slick-next
+        left: inherit
+        right: -30px
+        &::before
+          content: "\f362"
+    &-link
+      display: table
+      width: 100%
+      color: $primary-color
+      text-decoration: none
+      font-size: rem(16)
+      border-top: 1px solid #e5e5e5
+      padding: 15px 0
+      &:hover, &:focus
+        text-decoration: none
+      &>div
+        display: table-cell
+        vertical-align: middle
+    &-block
+      &__wrapper
+        [class*="col-md-"]
+          &.first
+            .price__table-link
+              &>div
+                &:first-child
+                  padding-left: 34px
+          &.first, &.last
+            .price__table-link
+              &>div
+                width: 100%
+                &:last-child
+                  min-width: 120px
+                  white-space: nowrap
+        &>.row
+          &:first-child
+            .price__table-link
+              border-top: 0
+    &-see-all
+      text-align: center
+      position: relative
+      &>a
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        display: inline-block
+        margin-top: 15px
+
+.tab-pane
+  display: none
+  &.active
+    display: block
+
+.main-slide
+  margin-top: -27px
+  padding-bottom: 35px
+  &__wrapper
+    overflow: hidden
+    img
+      max-width: 100%
+      height: auto
+  &__form
+    margin-top: -161px
+
+.comments
+  padding-bottom: 240px
+  background:
+    color: #eaf0f3
+    image: url('../img/comments.png')
+    position: bottom center
+    repeat: no-repeat
+
+.about
+  &__content
+    height: 210px
+    overflow: hidden
+    position: relative
+    pointer-events: none
+    // margin-bottom: 84px
+    &::after
+      font-size: rem(13)
+      pointer-events: all
+      content: "Подробнее..."
+      color: $color-red
+      cursor: pointer
+      box-sizing: content-box
+      float: right
+      position: absolute
+      right: 0px
+      bottom: 0px
+      width: 100%
+      text-align: left
+      background: $color-white
+    &-wrapper
+      // float: left
+      width: 100%
+      position: relative
+      font-size: rem(13)
+      p
+        line-height: 21px
+        margin-bottom: 15px
+    &.is-active
+      &::after
+        display: none
+  &__info
+    float: right
+    &-wrapper
+      width: 292px
+      margin-left: -15px
+      margin-top: 15px
+      border: 6px solid #303030
+      background: $color-white
+      padding: 24px 16px
+      border-radius: 25px 0 25px 0
+      box-shadow: 0 0 15px rgba($color-black,.25)
+    &-block
+      position: relative
+      padding-right: 66px
+      font-size: rem(14)
+      line-height: 16px
+      padding-top: 2px
+      height: 50px
+      margin-bottom: 24px
+      &:last-child
+        margin-bottom: 0
+      img
+        position: absolute
+        right: 0
+        top: 0
+        background: $color-red
+        border-radius: 50%
+    &-p
+      font-size: rem(12)
+      line-height: 21px
+      font-family: $font-roboto
+  &__img
+    margin-top: 25px
+    max-width: 100%
+    height: auto
+    display: block
+
+.faq
+  padding-top: 30px
+  &__row
+    margin-bottom: 30px
+    &:last-child
+      margin-bottom: 0
+  &__block
+    margin-bottom: 15px
+    font-family: $font-roboto
+    p
+      margin-bottom: 10px
+      &:last-child
+        margin-bottom: 0
+    &-answer
+      display: none
+      padding-top: 1px
+      // opacity: 0
+      &__wrapper
+        margin-top: -25px
+        border: 1px solid $color-red
+        margin-left: 6px
+        padding: 30px 25px
+        font-size: rem(14)
+        color: $color-red
+        border-radius: 0 25px 25px 25px
+        opacity: 0
+        transition: opacity 0.35s
+        p
+          line-height: 21px
+          &:last-child
+            margin-bottom: 0
+    &-title
+      min-height: 35px
+      background: $color-white
+      display: inline-block
+      position: relative
+      padding-right: 15px
+      padding-bottom: 5px
+      margin-right: 30px
+      a
+        display: inline-block
+        color: $primary-color
+        padding-left: 22px
+        position: relative
+        &:hover, &:focus
+          text-decoration: none
+          color: $primary-color
+      i
+        color: $color-red
+        margin-right: 10px
+        display: inline-block
+        vertical-align: 0
+        position: absolute
+        left: 0
+        top: 0
+      .ion-ios-minus-outline
+        display: none
+    &.is-active
+      .faq__block-title
+        .ion-ios-plus
+          display: none
+        .ion-ios-minus-outline
+          display: inline-block
+      .faq__block-answer
+        &__wrapper
+          opacity: 1
+
+.whe-work
+  &__body
+    padding-top: 140px
+    min-height: 544px
+    background:
+      image: url('../img/whe-work.png')
+      position: top center
+      repeat: no-repeat
+      // size: cover
+    .h1, h1
+      color: $color-white
+      margin-bottom: 45px
+  &__wrapper
+    display: flex
+    color: $color-white
+    font-size: rem(14)
+    min-height: 220px
+    &-div
+      width: 25%
+      padding: 0 15px
+    &-block
+      position: relative
+      padding-left: 50px
+    &-number
+      font-size: rem(80)
+      font-family: $font-roboto-bold
+      position: absolute
+      left: -5px
+      color: rgba($color-white,0.1)
+      line-height: 1
+      top: 94px
+    &-arrow
+      position: absolute
+      right: -15px
+      transform: translateX(50%)
+      margin-top: 26px
+      &--2
+        margin-top: 58px
+    &-img
+      margin-bottom: 30px
+      padding-left: 45px
+      img
+        display: block
+    &-text
+      line-height: 17px
+  &__form
+    margin-top: 25px

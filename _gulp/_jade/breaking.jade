@@ -1,0 +1,784 @@
+doctype
+
+html(lang="ru")
+  
+  -var active = 'Замена аккумулятора' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Замена аккумулятора' + ' - Телефон03' //title страницы для генерации верстки  
+
+  include ./_include/_head
+
+  body
+    
+    // Preloader
+    include ./_include/_preloader
+    
+    include ./_include/_header
+    
+    .breadcrumbs
+      .container
+        
+        ul.breadcrumbs__list
+          li
+            a(href="#!") Телефон 03
+          li
+            span Название страницы
+    
+    .content
+      .container
+        
+        .product
+          .product__wrapper
+            .product__title.visible-xs
+              span iPhone 7 и 7 Plus
+              strong Замена аккумулятора
+            
+            .product__img
+              img(src="./img/product-phone.png", alt="")
+            
+            .product__info
+              .product__info-wrapper
+                
+                .product__info-block Мастер приедет в 
+                  br
+                  | любую точку Москвы в 
+                  br
+                  | течение 1 часа 
+                  img(src="./img/product-icon-1.svg", alt="")
+                .product__info-block Используем 
+                  br
+                  | оригинальные детали 
+                  br
+                  | с гарантией 
+                  img(src="./img/product-icon-2.svg", alt="")
+                .product__info-block Профессиональный 
+                  br
+                  | ремонт при вас за 
+                  br
+                  | 20 минут 
+                  img(src="./img/product-icon-3.svg", alt="")
+                .product__info-block Можно оплатить 
+                  br
+                  | наличными или 
+                  br
+                  | картой без % 
+                  img(src="./img/product-icon-4.svg", alt="")
+                
+            .product__center
+              .product__title.hidden-xs
+                span iPhone 7 и 7 Plus
+                strong Замена аккумулятора
+            
+              .product__price
+                span
+                | 1 500
+                i.fa-rouble
+              
+              .product__btn
+                a(href="#popup1").open-popup-link.btn.btn--master Вызвать мастера
+
+          .product__form
+            .product__form-img
+              img(src="./img/product-phone-img.png", alt="")
+            .wave__form
+              .wave__form-wrapper
+                form(action="#!")
+                  .wave__form-body
+                    div
+                      //- input(type="text" placeholder="Как вас зовут?").wave__input.has-error
+                      input(type="text" placeholder="Как вас зовут?").wave__input
+                      i.ion-alert-circled
+                    div
+                      input(type="text" placeholder="Контактный телефон").wave__input
+                      i.ion-alert-circled
+                    div
+                      button(type="submit").wave__btn Вызвать мастера
+                  label(for="checkbox").label__checked
+                    input(type="checkbox" checked)#checkbox
+                    i.ion-android-checkbox-outline-blank
+                    i.ion-android-checkbox-outline
+                    span Отправляя данные, я принимаю условия 
+                      a(href="#!") пользовательского соглашения
+            
+
+
+          .content__container
+            .row
+              .col-lg-10.col-lg-push-1
+          
+                .product__content
+                  .product__content-wrapper
+                    p iPhone 7 – тот, который с 4,7-дюймовым экраном, iPhone 7 Plus – тот, который с 5,5-дюймовым, здесь мы не удивлены. Слухи опять подтвердились, ничего нового. Что касается разрешения: 1334 х 750 и 1920 х 1080 соответственно. Разница с разрешением iPhone 6 и iPhone 6 Plus никакая, хотелось бы Full HD в «семерке». Apple на этот раз не уделила внимание размерам, сделав новые iPhone такими же, как прошлое поколение. Толщина iPhone 7 составляет всего 6,9 миллиметра, iPhone 7 Plus немного больше – 7,3 миллиметра. Скоро новые устройства от Apple будут толщиной с лист бумаги, забавно. Но тенденция хорошая, не поспоришь. А вот аудиоразъем все же убрали: наушники EarPods теперь подключаются по Lightning. Есть, конечно, и адаптер в комплекте для тех, кто не хочет продавать свои наушники с интерфейсом 3,5 мм. А если захотите подключить наушники по Bluetooth, Apple представила беспроводные AirPods. 
+                    p iPhone 7 – тот, который с 4,7-дюймовым экраном, iPhone 7 Plus – тот, который с 5,5-дюймовым, здесь мы не удивлены. Слухи опять подтвердились, ничего нового. Что касается разрешения: 1334 х 750 и 1920 х 1080 соответственно. Разница с разрешением iPhone 6 и iPhone 6 Plus никакая, хотелось бы Full HD в «семерке». Apple на этот раз не уделила внимание размерам, сделав новые iPhone такими же, как прошлое поколение. Толщина iPhone 7 составляет всего 6,9 миллиметра, iPhone 7 Plus немного больше – 7,3 миллиметра. Скоро новые устройства от Apple будут толщиной с лист бумаги, забавно. Но тенденция хорошая, не поспоришь. А вот аудиоразъем все же убрали: наушники EarPods теперь подключаются по Lightning. Есть, конечно, и адаптер в комплекте для тех, кто не хочет продавать свои наушники с интерфейсом 3,5 мм. А если захотите подключить наушники по Bluetooth, Apple представила беспроводные AirPods. 
+
+        .section.no--p-bottom
+          
+          .content__head
+            .h1 Другая неисправность?
+            .content__head-untitle Цена включает стоимость запчастей и работу
+        
+          .price__table
+            .price__table-head
+              div
+              
+                .price__table-carousel
+                  ul
+                    li(role="presentation").active
+                      a(href="#tab-pane1" aria-controls="tab-pane1" role="tab" data-toggle="tab").price__table-th 5
+                    li(role="presentation")
+                      a(href="#tab-pane2" aria-controls="tab-pane2" role="tab" data-toggle="tab").price__table-th 5C
+                    li(role="presentation")
+                      a(href="#tab-pane3" aria-controls="tab-pane3" role="tab" data-toggle="tab").price__table-th 5S
+                    li(role="presentation")
+                      a(href="#tab-pane4" aria-controls="tab-pane4" role="tab" data-toggle="tab").price__table-th SE
+                    li(role="presentation")
+                      a(href="#tab-pane5" aria-controls="tab-pane5" role="tab" data-toggle="tab").price__table-th 6
+                    li(role="presentation")
+                      a(href="#tab-pane6" aria-controls="tab-pane6" role="tab" data-toggle="tab").price__table-th 6s
+                    li(role="presentation")
+                      a(href="#tab-pane7" aria-controls="tab-pane7" role="tab" data-toggle="tab").price__table-th 6+
+                    li(role="presentation")
+                      a(href="#tab-pane8" aria-controls="tab-pane8" role="tab" data-toggle="tab").price__table-th 6S+
+                    li(role="presentation")
+                      a(href="#tab-pane9" aria-controls="tab-pane9" role="tab" data-toggle="tab").price__table-th 7
+                    li(role="presentation")
+                      a(href="#tab-pane10" aria-controls="tab-pane10" role="tab" data-toggle="tab").price__table-th 7+
+                    li(role="presentation")
+                      a(href="#tab-pane11" aria-controls="tab-pane11" role="tab" data-toggle="tab").price__table-th 7
+                    li(role="presentation")
+                      a(href="#tab-pane12" aria-controls="tab-pane12" role="tab" data-toggle="tab").price__table-th 7+
+              
+            .price__table-wrapper
+              
+              .price__table-carousel2
+                
+                #tab-pane1.price__table-block.tab-pane.active
+                  .price__table-block__wrapper
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена дисплея (копия)
+                          div
+                            span 2400 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Замена разъема наушников
+                          div
+                            span 1500 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена слухового динамика
+                          div
+                            span 1300 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Перепрошивка (доп. услуга)	
+                          div
+                            span 1000 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена дисплея (оригинал)
+                          div
+                            span 3200 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Наклеить защитное стекло (доп. услуга)
+                          div
+                            span 500 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена металлического корпуса
+                          div
+                            span 3000 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Пайка (сложный ремонт)
+                          div
+                            span от 3000 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена аккумулятора (оригинал)
+                          div
+                            span 1500 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Диагностика
+                          div
+                            span Бесплатно
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена дисплея (копия)
+                          div
+                            span 2400 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Замена разъема наушников
+                          div
+                            span 1500 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена слухового динамика
+                          div
+                            span 1300 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Перепрошивка (доп. услуга)	
+                          div
+                            span 1000 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена дисплея (оригинал)
+                          div
+                            span 3200 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Наклеить защитное стекло (доп. услуга)
+                          div
+                            span 500 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена металлического корпуса
+                          div
+                            span 3000 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Пайка (сложный ремонт)
+                          div
+                            span от 3000 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена аккумулятора (оригинал)
+                          div
+                            span 1500 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Диагностика
+                          div
+                            span Бесплатно
+                #tab-pane2.price__table-block.tab-pane
+                  .price__table-block__wrapper
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена дисплея (копия) 4
+                          div
+                            span 2400 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Замена разъема наушников 4
+                          div
+                            span 1500 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена слухового динамика 2
+                          div
+                            span 1300 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Перепрошивка (доп. услуга) 2
+                          div
+                            span 1000 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена дисплея (оригинал) 2
+                          div
+                            span 3200 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Наклеить защитное стекло (доп. услуга) 2
+                          div
+                            span 500 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена металлического корпуса 2
+                          div
+                            span 3000 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Пайка (сложный ремонт) 2
+                          div
+                            span от 3000 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена аккумулятора (оригинал) 2
+                          div
+                            span 1500 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Диагностика 2
+                          div
+                            span Бесплатно
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена дисплея (копия) 2
+                          div
+                            span 2400 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Замена разъема наушников 2
+                          div
+                            span 1500 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена слухового динамика 2
+                          div
+                            span 1300 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Перепрошивка (доп. услуга) 2
+                          div
+                            span 1000 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена дисплея (оригинал) 2
+                          div
+                            span 3200 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Наклеить защитное стекло (доп. услуга) 2
+                          div
+                            span 500 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена металлического корпуса 2
+                          div
+                            span 3000 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Пайка (сложный ремонт) 2
+                          div
+                            span от 3000 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена аккумулятора (оригинал) 2
+                          div
+                            span 1500 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Диагностика 2
+                          div
+                            span Бесплатно
+                #tab-pane3.price__table-block.tab-pane
+                  .price__table-block__wrapper 
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена дисплея (копия) 3
+                          div
+                            span 2400 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Замена разъема наушников 3
+                          div
+                            span 1500 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена слухового динамика 3
+                          div
+                            span 1300 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Перепрошивка (доп. услуга) 3
+                          div
+                            span 1000 р
+                #tab-pane4.price__table-block.tab-pane
+                  .price__table-block__wrapper
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена дисплея (копия) 4
+                          div
+                            span 2400 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Замена разъема наушников 4
+                          div
+                            span 1500 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена слухового динамика 4
+                          div
+                            span 1300 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Перепрошивка (доп. услуга) 4
+                          div
+                            span 1000 р
+                #tab-pane5.price__table-block.tab-pane
+                  .price__table-block__wrapper
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена дисплея (копия) 5
+                          div
+                            span 2400 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Замена разъема наушников 5
+                          div
+                            span 1500 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена слухового динамика 5
+                          div
+                            span 1300 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Перепрошивка (доп. услуга) 5
+                          div
+                            span 1000 р
+                #tab-pane6.price__table-block.tab-pane
+                  .price__table-block__wrapper
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена дисплея (копия) 6
+                          div
+                            span 2400 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Замена разъема наушников 6
+                          div
+                            span 1500 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена слухового динамика 6
+                          div
+                            span 1300 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Перепрошивка (доп. услуга) 6
+                          div
+                            span 1000 р
+                #tab-pane7.price__table-block.tab-pane
+                  .price__table-block__wrapper
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена дисплея (копия) 7
+                          div
+                            span 2400 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Замена разъема наушников 7
+                          div
+                            span 1500 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена слухового динамика 7
+                          div
+                            span 1300 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Перепрошивка (доп. услуга) 7
+                          div
+                            span 1000 р
+                #tab-pane8.price__table-block.tab-pane
+                  .price__table-block__wrapper
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена дисплея (копия) 8
+                          div
+                            span 2400 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Замена разъема наушников 8
+                          div
+                            span 1500 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена слухового динамика 8
+                          div
+                            span 1300 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Перепрошивка (доп. услуга) 8
+                          div
+                            span 1000 р
+                #tab-pane9.price__table-block.tab-pane
+                  .price__table-block__wrapper
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена дисплея (копия) 9
+                          div
+                            span 2400 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Замена разъема наушников 9
+                          div
+                            span 1500 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена слухового динамика 9
+                          div
+                            span 1300 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Перепрошивка (доп. услуга) 9
+                          div
+                            span 1000 р
+                #tab-pane10.price__table-block.tab-pane
+                  .price__table-block__wrapper
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена дисплея (копия) 10
+                          div
+                            span 2400 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Замена разъема наушников 10
+                          div
+                            span 1500 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена слухового динамика 10
+                          div
+                            span 1300 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Перепрошивка (доп. услуга) 10
+                          div
+                            span 1000 р
+                #tab-pane11.price__table-block.tab-pane
+                  .price__table-block__wrapper
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена дисплея (копия) 11
+                          div
+                            span 2400 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Замена разъема наушников 11
+                          div
+                            span 1500 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена слухового динамика 11
+                          div
+                            span 1300 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Перепрошивка (доп. услуга) 11
+                          div
+                            span 1000 р
+                #tab-pane12.price__table-block.tab-pane
+                  .price__table-block__wrapper
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена дисплея (копия) 12
+                          div
+                            span 2400 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Замена разъема наушников 12
+                          div
+                            span 1500 р
+                    .row
+                      .col-md-6.first
+                        a(href="#!").price__table-link
+                          div
+                            span Замена слухового динамика 12
+                          div
+                            span 1300 р
+                      .col-md-6.last
+                        a(href="#!").price__table-link
+                          div
+                            span Перепрошивка (доп. услуга) 12
+                          div
+                            span 1000 р
+
+    .wave
+      .wave__wrapper
+        .wave__container
+          .container
+            
+            .wave__title.wave__title--why Почему мы? 
+              strong потому что!
+              
+            .wave__content
+              .wave__content-img
+                img(src="./img/wave-car.png", alt="")
+                img(src="./img/wave-phone.png", alt="")
+              .wave__content-body
+                .wave__content-row
+                  .wave__content-block
+                    div Мастер приедет в 
+                      br
+                      | любую точку Москвы в 
+                      br
+                      | течение 1 часа 
+                    div
+                      img(src="./img/wave-icon-1.svg", alt="")
+                  .wave__content-block
+                    div Профессиональный 
+                      br
+                      | ремонт при вас за 
+                      br
+                      | 20 минут 
+                    div
+                      img(src="./img/wave-icon-2.svg", alt="")
+                .wave__content-row
+                  .wave__content-block
+                    div Используем 
+                      br
+                      | оригинальные детали 
+                      br
+                      | с гарантией 
+                    div
+                      img(src="./img/wave-icon-3.svg", alt="")
+                  .wave__content-block
+                    div Можно оплатить 
+                      br
+                      | наличными или 
+                      br
+                      | картой без % 
+                    div
+                      img(src="./img/wave-icon-4.svg", alt="")
+            
+            .wave__form
+              .wave__form-wrapper
+                form(action="#!")
+                  .wave__form-body
+                    div
+                      //- input(type="text" placeholder="Как вас зовут?").wave__input.has-error
+                      input(type="text" placeholder="Как вас зовут?").wave__input
+                      i.ion-alert-circled
+                    div
+                      input(type="text" placeholder="Контактный телефон").wave__input
+                      i.ion-alert-circled
+                    div
+                      button(type="submit").wave__btn Вызвать мастера
+                  label(for="checkbox").label__checked
+                    input(type="checkbox" checked)#checkbox
+                    i.ion-android-checkbox-outline-blank
+                    i.ion-android-checkbox-outline
+                    span Отправляя данные, я принимаю условия 
+                      a(href="#!") пользовательского соглашения
+            
+            .wave__bottom
+              a(href="#popup1").wave__btn.open-popup-link Вызвать мастера
+
+    
+    include ./_include/_footer
+    //- div(style="height: 1000px; background-color: #000")
+    
+    //[if gte IE 9]
+      <script src='./js/libs/html5shiv/es5-shim.min.js'>
+      <script src='./js/libs/html5shiv/html5shiv.min.js'>
+      <script src='./js/libs/html5shiv/html5shiv-printshiv.min.js'>
+      <script src='./js/libs/html5shiv/respond.min.js'><![endif]
+
+    // Load Scripts
+    script(src="./js/libs.js")
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+    
