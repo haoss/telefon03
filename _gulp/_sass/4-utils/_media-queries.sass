@@ -99,6 +99,44 @@
         padding-left: 20px
   .main-slide__form
     margin-top: -80px
+  .whe-work
+    &__top
+      &-wrapper
+        height: 285px
+      &-img
+        height: 285px
+        &--1
+          // background: pink
+          img
+            height: 292px
+            margin-left: 0
+            &+img
+              height: 275px
+        &--2
+          // background: pink
+          img
+            bottom: -3px
+            height: 250px
+            &+img
+              height: 250px
+        &--3
+          // background: pink
+          img
+            bottom: -48px
+            height: 336px
+            &+img
+              height: 341px
+        &--4
+          // background: pink
+          img
+            margin: 0
+            // bottom: -48px
+            height: 300px
+            &+img
+              height: 300px
+      &-auto
+        margin-top: 55px
+        width: 700px
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px)
@@ -298,7 +336,9 @@
       &-wrapper
         padding-left: 30px
         width: 250px
-
+  .whe-work
+    &__top
+      display: none
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)
@@ -396,11 +436,6 @@
       padding-left: 170px
     &__btn
       padding-top: 26px
-    &__content
-      &::after
-        width: 200px
-        text-align: right
-        background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white)
   .btn
     &--master
       max-width: 264px
@@ -559,6 +594,10 @@
           width: 60px
     &__form
       margin-top: 0
+  .price
+    &__model
+      &-head
+        width: 270px
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 319px)

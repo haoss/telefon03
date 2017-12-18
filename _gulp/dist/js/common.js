@@ -80,9 +80,19 @@ $(document).on('ready', function(){
     $('.about__content-wrapper div').css({float: 'none', margin: '0'});
   });
 
-  priceTable();
+  priceModelCarousel();
   priceTableCarousel();
   faq();
+  priceTable();
+
+  $('.whe-work__top-img').each(function(){
+    var _this = $(this);
+
+    _this.on('click', function(){
+      $('.whe-work__top-img').removeClass('is-active');
+      _this.toggleClass('is-active');
+    });
+  })
 
   // Chrome Smooth Scroll
   try {
@@ -101,9 +111,15 @@ $(document).on('ready', function(){
 $(window).on('load', function() {
   // $(".loader_inner").fadeOut();
   $(".loader").delay(400).fadeOut("slow");
+
+  $('.price__table-carousel ul').on('setPosition', function() {
+  	$(this).find('.slick-slide').height('auto');
+  	var slickTrack = $(this).find('.slick-track');
+  	var slickTrackHeight = $(slickTrack).height();
+  	$(this).find('.slick-slide').css('height', slickTrackHeight + 'px');
+  });
 });
 
-// $(window).on('scroll', function() { console.log('scroll'); });
 $(window).on('resize', function() {
   navRemove();
   // priceTableCarousel();
@@ -230,85 +246,131 @@ function priceTable(){
 function priceTableCarousel(){
   var width = $(window).width();
   var carousel = $('.price__table-carousel ul');
-  var li = carousel.find('li');
-  var liLength = li.length;
 
-  if (liLength > 3 && width < 480) {
-    li.removeClass('active');
-    carousel.parent().addClass('price__table-carousel--w320');
-    carousel.parents('.price__table-head').addClass('is-carousel');
-    $('.price__table-carousel ul').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      dots: false,
-      centerMode: true,
-      focusOnSelect: true,
-      infinite: true,
-      arrows: true,
-      variableWidth: true,
-      centerPadding: '0px'
+  carousel.each(function(){
+    var _this = $(this);
+    var li = _this.find('li');
+    var liLength = li.length;
+
+    if (liLength > 3 && width < 480) {
+      li.removeClass('active');
+      _this.parent().addClass('price__table-carousel--w320');
+      _this.parents('.price__table-head').addClass('is-carousel');
+      _this.slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: false,
+        centerMode: true,
+        focusOnSelect: true,
+        infinite: true,
+        arrows: true,
+        variableWidth: true,
+        centerPadding: '0px',
+        swipe: false,
+        adaptiveHeight: true
+      });
+    }
+
+    if (liLength > 5 && width > 480 && width <= 767) {
+      li.removeClass('active');
+      _this.parent().addClass('price__table-carousel--w480');
+      _this.parents('.price__table-head').addClass('is-carousel');
+      _this.slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        dots: false,
+        centerMode: true,
+        focusOnSelect: true,
+        infinite: true,
+        arrows: true,
+        variableWidth: true,
+        centerPadding: '0px',
+        swipe: false,
+        adaptiveHeight: true
+      });
+    }
+
+    if (liLength > 8 && width > 767 && width <= 991) {
+      li.removeClass('active');
+      _this.parent().addClass('price__table-carousel--w767');
+      _this.parents('.price__table-head').addClass('is-carousel');
+      _this.slick({
+        slidesToShow: 8,
+        slidesToScroll: 1,
+        dots: false,
+        centerMode: true,
+        focusOnSelect: true,
+        infinite: true,
+        arrows: true,
+        variableWidth: true,
+        centerPadding: '0px',
+        swipe: false,
+        adaptiveHeight: true
+      });
+    }
+
+    if (liLength > 10 && width > 991) {
+      li.removeClass('active');
+      _this.parent().addClass('price__table-carousel--w991');
+      _this.parents('.price__table-head').addClass('is-carousel');
+      _this.slick({
+        slidesToShow: 10,
+        slidesToScroll: 1,
+        dots: false,
+        centerMode: true,
+        focusOnSelect: true,
+        infinite: true,
+        arrows: true,
+        variableWidth: true,
+        centerPadding: '0px',
+        swipe: false,
+        adaptiveHeight: true
+      });
+    }
+
+    _this.find('.slick-slide').on('click', function() {
+      _this.find('.slick-slide').removeClass('active');
     });
-  }
 
-  if (liLength > 5 && width > 480 && width <= 767) {
-    li.removeClass('active');
-    carousel.parent().addClass('price__table-carousel--w480');
-    carousel.parents('.price__table-head').addClass('is-carousel');
-    $('.price__table-carousel ul').slick({
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      dots: false,
-      centerMode: true,
-      focusOnSelect: true,
-      infinite: true,
-      arrows: true,
-      variableWidth: true,
-      centerPadding: '0px'
+    _this.on('beforeChange', function(event,slick,slide,nextSlide) {
+      _this.find('.slick-slide').eq(nextSlide).find('a').trigger('click');
     });
-  }
+  })
 
-  if (liLength > 8 && width > 767 && width <= 991) {
-    li.removeClass('active');
-    carousel.parent().addClass('price__table-carousel--w767');
-    carousel.parents('.price__table-head').addClass('is-carousel');
-    $('.price__table-carousel ul').slick({
-      slidesToShow: 8,
-      slidesToScroll: 1,
-      dots: false,
-      centerMode: true,
-      focusOnSelect: true,
-      infinite: true,
-      arrows: true,
-      variableWidth: true,
-      centerPadding: '0px'
-    });
-  }
+}
 
-  if (liLength > 10 && width > 991) {
-    li.removeClass('active');
-    carousel.parent().addClass('price__table-carousel--w991');
-    carousel.parents('.price__table-head').addClass('is-carousel');
-    $('.price__table-carousel ul').slick({
-      slidesToShow: 10,
-      slidesToScroll: 1,
-      dots: false,
-      centerMode: true,
-      focusOnSelect: true,
-      infinite: true,
-      arrows: true,
-      variableWidth: true,
-      centerPadding: '0px'
-    });
-  }
-
-  $('.price__table-carousel ul .slick-slide').on('click', function() {
-    $('.price__table-carousel .slick-slide').removeClass('active');
+function priceModelCarousel() {
+  $('.price__model-head ul').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: false,
+    centerMode: false,
+    focusOnSelect: true,
+    infinite: true,
+    arrows: false,
+    centerPadding: '0px',
+    swipe: false,
+    adaptiveHeight: true,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          arrows: true,
+          // centerMode: true
+        }
+      }
+    ]
   });
 
-  $('.price__table-carousel ul').on('beforeChange', function(event,slick,slide,nextSlide) {
-    $('.price__table-carousel').find('.slick-slide').eq(nextSlide).find('a').trigger( 'click' );
+  $('.price__model-head ul .slick-slide').on('click', function() {
+    $('.price__model-head ul .slick-slide').removeClass('active');
   });
 
+  $('.price__model-head ul').on('beforeChange', function(event,slick,slide,nextSlide) {
+    $('.price__model-head ul').find('.slick-slide').eq(nextSlide).find('a').trigger( 'click' );
+  });
 }
 
 function faq(){

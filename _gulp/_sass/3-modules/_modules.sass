@@ -1,5 +1,6 @@
 /* modules */
 
+
 .breadcrumbs
   font-size: rem(9)
   background: $color-gray
@@ -142,10 +143,10 @@
       text-decoration: none
     &--dark
       background: #303030
-      box-shadow: 0 0 20px rgba($color-black,.2)
+      box-shadow: 0 0 20px rgba($color-black,.46)
       &:hover, &:focus
         background: $color-black
-        box-shadow: 0 0 0px rgba($color-black,.2)
+        box-shadow: 0 0 0px rgba($color-black,.46)
   &__title
     font-size: rem(38)
     font-family: $font-roboto
@@ -486,10 +487,10 @@
       position: absolute
       right: 0px
       bottom: 5px
-      width: 550px
-      text-align: center
+      width: 100%
+      text-align: right
       background-size: 100% 100%
-      background: linear-gradient(to right, rgba(255, 255, 255, 0), white 30%, white)
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), white 0%, white)
     &-wrapper
       // float: left
       width: 100%
@@ -640,11 +641,71 @@
         transform: translateX(-50%)
         display: inline-block
         margin-top: 15px
+  &__model
+    &-head
+      border: 1px solid $color-red
+      border-radius: 25px
+      width: 460px
+      margin: 0 auto 38px
+      padding: 0 34px
+      ul
+        margin: 0
+        padding: 0
+      .slick-prev, .slick-next
+        position: absolute
+        border: 0
+        width: 25px
+        height: 25px
+        font-size: rem(0)
+        z-index: 25
+        padding: 0
+        // background: pink
+        background: $color-white
+        top: 12px
+        left: -45px
+        &::before
+          line-height: 1
+          font-size: rem(30)
+          content: "\f360"
+          font-family: $font-ionicons
+          color: $color-red
+          position: absolute
+          left: 0
+          top: -2px
+      .slick-next
+        left: inherit
+        right: -45px
+        &::before
+          content: "\f362"
+    &-th
+      display: block
+      height: 48px
+      line-height: 48px
+      text-align: center
+      font-size: rem(16)
+      border-radius: 35px
+      &:hover, &:focus
+        text-decoration: none
+    .slick-current
+      .price__model-th
+        background: $color-red
+        color: $color-white
 
-.tab-pane
-  display: none
-  &.active
-    display: block
+
+.tab-content .tab-pane
+  display: block
+  height: 0
+  margin-bottom: 0
+  overflow: hidden
+
+.tab-content .tab-pane.active
+  height: auto
+  overflow: visible
+
+.tab-content.slider-dotted
+  padding-bottom: 30px
+  .slick-dotted.slick-slider
+    margin-bottom: 0
 
 .main-slide
   margin-top: -27px
@@ -805,6 +866,9 @@
   &__body
     padding-top: 140px
     min-height: 544px
+    margin-top: -53px
+    position: relative
+    z-index: 10
     background:
       image: url('../img/whe-work.png')
       position: top center
@@ -848,3 +912,75 @@
       line-height: 17px
   &__form
     margin-top: 25px
+  &__top
+    &-wrapper
+      height: 365px
+      position: relative
+    &-auto
+      width: 100%
+      height: 100%
+      position: absolute
+      left: 0
+      top: 0
+      margin-top: 115px
+      img
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+    &-images
+      position: relative
+      z-index: 5
+      +clearfix
+      &>div
+        float: left
+        width: 25%
+    &-img
+      position: relative
+      width: 100%
+      height: 100%
+      height: 365px
+      cursor: pointer
+      img
+        position: absolute
+        opacity: 1
+        bottom: 0
+        left: 50%
+        transform: translateX(-50%)
+        z-index: 0
+        transition: opacity 0.5s
+        &+img
+          opacity: 0
+          z-index: 5
+      &--1
+        // background: pink
+        img
+          margin-left: -15px
+          &+img
+            bottom: 11px
+      &--2
+        // background: pink
+        img
+          &+img
+            bottom: 0px
+      &--3
+        // background: pink
+        img
+          bottom: -47px
+      &--4
+        // background: pink
+        img
+          bottom: -52px
+          margin-right: 12px
+          &+img
+            bottom: -25px
+            // margin-left: 39px
+      // &:hover
+      //   img
+      //     opacity: 0
+      //     &+img
+      //       opacity: 1
+      &.is-active
+        img
+          opacity: 0
+          &+img
+            opacity: 1
