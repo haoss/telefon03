@@ -92,7 +92,9 @@ $(document).on('ready', function(){
       $('.whe-work__top-img').removeClass('is-active');
       _this.toggleClass('is-active');
     });
-  })
+  });
+
+  commentCarousel();
 
   // Chrome Smooth Scroll
   try {
@@ -281,7 +283,7 @@ function priceTableCarousel(){
         dots: false,
         centerMode: true,
         focusOnSelect: true,
-        infinite: true,
+        infinite: false,
         arrows: true,
         variableWidth: true,
         centerPadding: '0px',
@@ -300,7 +302,7 @@ function priceTableCarousel(){
         dots: false,
         centerMode: true,
         focusOnSelect: true,
-        infinite: true,
+        infinite: false,
         arrows: true,
         variableWidth: true,
         centerPadding: '0px',
@@ -319,7 +321,7 @@ function priceTableCarousel(){
         dots: false,
         centerMode: true,
         focusOnSelect: true,
-        infinite: true,
+        infinite: false,
         arrows: true,
         variableWidth: true,
         centerPadding: '0px',
@@ -396,5 +398,24 @@ function faq(){
       _this.parents(faqBlock).removeClass('is-active');
       _this.next(faqBlockAnswer).hide();
     }
+  });
+}
+
+function commentCarousel(){
+    $('.comment__top').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.comment__carousel-bottom ul'
+  });
+  $('.comment__carousel-bottom ul').slick({
+    slidesToShow: 7,
+    slidesToScroll: 1,
+    asNavFor: '.comment__top',
+    dots: false,
+    centerMode: true,
+    focusOnSelect: true,
+    centerPadding: '0px',
   });
 }

@@ -5315,6 +5315,78 @@ label {
     .whe-work__top-img.is-active img + img {
       opacity: 1; }
 
+.comment__carousel-bottom {
+  position: relative;
+  padding: 0 293px; }
+  .comment__carousel-bottom ul {
+    margin: 0;
+    padding: 0; }
+  .comment__carousel-bottom .slick-prev, .comment__carousel-bottom .slick-next {
+    position: absolute;
+    border: 0;
+    width: 25px;
+    height: 25px;
+    font-size: 0rem;
+    z-index: 25;
+    padding: 0;
+    background: none;
+    top: 39px;
+    left: -40px; }
+    .comment__carousel-bottom .slick-prev::before, .comment__carousel-bottom .slick-next::before {
+      line-height: 1;
+      font-size: 1.875rem;
+      content: "\f360";
+      font-family: "Ionicons";
+      color: #ff4931;
+      position: absolute;
+      left: 0;
+      top: -2px; }
+  .comment__carousel-bottom .slick-next {
+    left: inherit;
+    right: -40px; }
+    .comment__carousel-bottom .slick-next::before {
+      content: "\f362"; }
+  .comment__carousel-bottom .slick-slide {
+    padding: 20px 0 35px 0; }
+    .comment__carousel-bottom .slick-slide:focus {
+      outline: none; }
+    .comment__carousel-bottom .slick-slide.slick-current .comment__bottom-block {
+      width: 66px;
+      height: 66px;
+      margin-top: 0;
+      margin-bottom: 0; }
+      .comment__carousel-bottom .slick-slide.slick-current .comment__bottom-block-img {
+        border-width: 5px;
+        margin: 0;
+        width: 66px;
+        height: 66px; }
+      .comment__carousel-bottom .slick-slide.slick-current .comment__bottom-block-name {
+        display: block; }
+
+.comment__bottom-block {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  margin: 8px auto; }
+  .comment__bottom-block-img {
+    width: 50px;
+    height: 50px;
+    border: 0px solid #ff4931;
+    border-radius: 50%;
+    overflow: hidden; }
+    .comment__bottom-block-img img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%; }
+  .comment__bottom-block-name {
+    display: none;
+    font-family: "RobotoMedium";
+    font-size: 0.8125rem;
+    color: #ff4931;
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 7px; }
+
 /* clear */
 .clear, .clear1, .clear2, .clear3, .clear4, .clear5, .clear6, .clear7, .clear8, .clear9, .clear10, .clear11, .clear12, .clear13, .clear14, .clear15, .clear16, .clear17, .clear18, .clear19, .clear20, .clear21, .clear22, .clear23, .clear24, .clear25, .clear26, .clear27, .clear28, .clear29, .clear30, .clear31, .clear32, .clear33, .clear34, .clear35, .clear36, .clear37, .clear38, .clear39, .clear40, .clear41, .clear42, .clear43, .clear44, .clear45, .clear46, .clear47, .clear48, .clear49, .clear50, .clear51, .clear52, .clear53, .clear54, .clear55, .clear56, .clear57, .clear58, .clear59, .clear60, .clear61, .clear62, .clear63, .clear64, .clear65, .clear66, .clear67, .clear68, .clear69, .clear70, .clear71, .clear72, .clear73, .clear74, .clear75, .clear76, .clear77, .clear78, .clear79, .clear80, .clear81, .clear82, .clear83, .clear84, .clear85, .clear86, .clear87, .clear88, .clear89, .clear90, .clear91, .clear92, .clear93, .clear94, .clear95, .clear96, .clear97, .clear98, .clear99, .clear100, .clear-hr {
   background: none !important;
