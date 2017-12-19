@@ -264,7 +264,7 @@ function priceTableCarousel(){
         dots: false,
         centerMode: true,
         focusOnSelect: true,
-        infinite: true,
+        infinite: false,
         arrows: true,
         variableWidth: true,
         centerPadding: '0px',
@@ -402,20 +402,35 @@ function faq(){
 }
 
 function commentCarousel(){
-    $('.comment__top').slick({
+    $('.comments__top').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    fade: true,
-    asNavFor: '.comment__carousel-bottom ul'
+    fade: false,
+    asNavFor: '.comments__carousel-bottom ul',
+    adaptiveHeight: true
   });
-  $('.comment__carousel-bottom ul').slick({
+  $('.comments__carousel-bottom ul').slick({
     slidesToShow: 7,
     slidesToScroll: 1,
-    asNavFor: '.comment__top',
+    asNavFor: '.comments__top',
     dots: false,
     centerMode: true,
     focusOnSelect: true,
     centerPadding: '0px',
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 5
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3
+        }
+      }
+    ]
   });
 }
