@@ -3,6 +3,9 @@
 // Document ready
 $(document).on('ready', function(){
 
+  var controller = null;
+  var width = $(window).width();
+
   // SVG Fallback
   if(!Modernizr.svg) {
     $("img[src*='svg']").attr("src", function() {
@@ -96,15 +99,186 @@ $(document).on('ready', function(){
 
   commentCarousel();
 
-  // Chrome Smooth Scroll
-  try {
-    $.browserSelector();
-    if($("html").hasClass("chrome")) {
-      $.smoothScroll();
-    }
-  } catch(err) {
+  $('.readmore').readmore({
+    speed: 75,
+    collapsedHeight: 200,
+    moreLink: '<div class="readmore__bottom readmore__bottom--down"><a href="#">Подробнее</a></div>',
+    lessLink: '<div class="readmore__bottom readmore__bottom--up"><a href="#">Свернуть</a></div>'
+  });
 
-  };
+  var masterTimeline = new TimelineMax({ paused:true }),
+      headerTl = new TimelineMax();
+
+  headerTl
+    .to('#body .loader', 0.4, {autoAlpha: 0}, 0.4)
+    .fromTo($('#body .header'), 1, {autoAlpha: 0, top: -15}, {autoAlpha: 1, top: 0}, 'header')
+    .from($('.main-slide__form'), 1, {autoAlpha: 0, y: 30}, 'header')
+  ;
+
+  masterTimeline.add([headerTl]);
+
+  if( width > 1199) {
+    $(window).on('load', function(){
+      masterTimeline.play();
+    });
+    initScrollMagic()
+  } else if ( width < 1200 ) {
+    $("#body .loader").delay(400).fadeOut("slow");
+    TweenLite.set($('.header'), {clearProps:"all"});
+    TweenLite.set($('.main-slide__form'), {clearProps:"all"});
+    TweenLite.set($('#tabCarousel'), {clearProps:"all"});
+    TweenLite.set($('#wave'), {clearProps:"all"});
+    TweenLite.set($('.wave__content-block--one'), {clearProps:"all"});
+    TweenLite.set($('.wave__content-block--two'), {clearProps:"all"});
+    TweenLite.set($('#comments'), {clearProps:"all"});
+    TweenLite.set($('#faq'), {clearProps:"all"});
+    TweenLite.set($('#about'), {clearProps:"all"});
+    TweenLite.set($('#whe-work .whe-work__body .content__head'), {clearProps:"all"});
+    TweenLite.set($('#whe-work .whe-work__form'), {clearProps:"all"});
+    TweenLite.set($('.footer'), {clearProps:"all"});
+  }
+
+  function initScrollMagic(){
+    var controller = new ScrollMagic.Controller(),
+      tabCarousel = $('#tabCarousel'),
+      wave = $('#wave'),
+      waveBlockOne = $('.wave__content-block--one'),
+      waveBlockTwo = $('.wave__content-block--two'),
+      comments = $('#comments'),
+      faq = $('#faq'),
+      wheWork = $('#whe-work .whe-work__body'),
+      about = $('#about')
+    ;
+
+    var tabCarouselTl = new TimelineMax();
+    tabCarouselTl
+      .from(tabCarousel, 1, {autoAlpha: 0, y: 150, force3D: true})
+    ;
+    var typeScene = new ScrollMagic.Scene({
+      triggerElement: '#tabCarousel',
+      triggerHook: 0.5,
+      reverse: false
+  	})
+  		.setTween(tabCarouselTl)
+  		.addIndicators({
+        name: 'type',
+        colorStart: 'red',
+        colorEnd: 'red',
+        colorTrigger: 'red'
+      })
+  		.addTo(controller)
+    ;
+
+    var waveTl = new TimelineMax();
+    waveTl
+      .from(wave, 2, {autoAlpha: 0, y: 100}, 'wave1')
+      .from($('.wave__title'), 2, {autoAlpha: 0, y: -200}, 'wave1')
+      .from($('.wave__content-img'), 1.5, {autoAlpha: 0, x: -100}, 'wave2')
+      .staggerFrom(waveBlockOne, 1, {autoAlpha: 0, y: -50}, 0.3, 'wave2', '-=0.5')
+      .staggerFrom(waveBlockTwo, 1, {autoAlpha: 0, y: -50}, 0.3, '-=1')
+    ;
+    var typeScene = new ScrollMagic.Scene({
+      triggerElement: '#wave',
+      triggerHook: 0.5,
+      reverse: false
+  	})
+  		.setTween(waveTl)
+  		.addIndicators({
+        name: 'type',
+        colorStart: 'red',
+        colorEnd: 'red',
+        colorTrigger: 'red'
+      })
+  		.addTo(controller)
+    ;
+
+    var commentsTl = new TimelineMax();
+    commentsTl
+      .from(comments, 1.5, {autoAlpha: 0, y: 50})
+    ;
+    var typeScene = new ScrollMagic.Scene({
+      triggerElement: '#comments',
+      triggerHook: 0.5,
+      reverse: false
+  	})
+  		.setTween(commentsTl)
+  		.addIndicators({
+        name: 'type',
+        colorStart: 'red',
+        colorEnd: 'red',
+        colorTrigger: 'red'
+      })
+  		.addTo(controller)
+    ;
+
+    var faqTl = new TimelineMax();
+    faqTl
+      .from(faq, 1.5, {autoAlpha: 0, y: 50})
+    ;
+    var typeScene = new ScrollMagic.Scene({
+      triggerElement: '#faq',
+      triggerHook: 0.5,
+      reverse: false
+  	})
+  		.setTween(faqTl)
+  		.addIndicators({
+        name: 'type',
+        colorStart: 'red',
+        colorEnd: 'red',
+        colorTrigger: 'red'
+      })
+  		.addTo(controller)
+    ;
+
+    var wheWorkTl = new TimelineMax();
+    wheWorkTl
+      .from($('#whe-work .whe-work__body .content__head'), 2, {autoAlpha: 0, y: -50})
+      .from($('#whe-work .whe-work__wrapper-block--one'), 1, {autoAlpha: 0, y: 50}, 0.5, 'wave1')
+      .staggerFrom($('#whe-work .whe-work__wrapper-block--one .whe-work__wrapper-arrow'), 0.2, {autoAlpha: 0}, 'wave1')
+      .from($('#whe-work .whe-work__wrapper-block--two'), 1, {autoAlpha: 0, y: 50}, 1, 'wave1')
+      .staggerFrom($('#whe-work .whe-work__wrapper-block--two .whe-work__wrapper-arrow'), 0.2, {autoAlpha: 0}, '-=1')
+      .from($('#whe-work .whe-work__wrapper-block--three'), 1, {autoAlpha: 0, y: 50}, 1.5, 'wave1')
+      .staggerFrom($('#whe-work .whe-work__wrapper-block--three .whe-work__wrapper-arrow'), 0.2, {autoAlpha: 0}, '-=1')
+      .from($('#whe-work .whe-work__wrapper-block--four'), 1, {autoAlpha: 0, y: 50}, 2, 'wave1')
+      .staggerFrom($('#whe-work .whe-work__wrapper-block--four .whe-work__wrapper-arrow'), 0.2, {autoAlpha: 0}, '-=1')
+      .from($('#whe-work .whe-work__form'), 0.5, {autoAlpha: 0, y: 30})
+    ;
+    var typeScene = new ScrollMagic.Scene({
+      triggerElement: '#whe-work .whe-work__body',
+      triggerHook: 0.5,
+      reverse: false
+  	})
+  		.setTween(wheWorkTl)
+  		.addIndicators({
+        name: 'type',
+        colorStart: 'red',
+        colorEnd: 'red',
+        colorTrigger: 'red'
+      })
+  		.addTo(controller)
+    ;
+
+    var aboutTl = new TimelineMax();
+    aboutTl
+      .from(about, 1.5, {autoAlpha: 0, y: 50})
+      .from('.footer', 1.5, {autoAlpha: 0, y: -50})
+    ;
+    var typeScene = new ScrollMagic.Scene({
+      triggerElement: '#about',
+      triggerHook: 0.8,
+      reverse: false
+  	})
+  		.setTween(aboutTl)
+  		.addIndicators({
+        name: 'type',
+        colorStart: 'red',
+        colorEnd: 'red',
+        colorTrigger: 'red'
+      })
+  		.addTo(controller)
+    ;
+
+  }
 
   // simpleForm version 2015-09-23 14:30 GMT +2
   simpleForm('form.form-callback');
@@ -112,7 +286,7 @@ $(document).on('ready', function(){
 
 $(window).on('load', function() {
   // $(".loader_inner").fadeOut();
-  $(".loader").delay(400).fadeOut("slow");
+  $(".body .loader").delay(400).fadeOut("slow");
 
   $('.price__table-carousel ul').on('setPosition', function() {
   	$(this).find('.slick-slide').height('auto');
@@ -388,8 +562,12 @@ function faq(){
   });
 
   faqBlockTitle.on('click', function(e){
+    $(faqBlock).removeClass('is-active');
+    faqBlockAnswer.hide();
+
     e.preventDefault();
     var _this = $(this);
+
 
     if (!_this.parents(faqBlock).hasClass('is-active')) {
       _this.parents(faqBlock).addClass('is-active');

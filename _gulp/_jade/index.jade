@@ -7,7 +7,7 @@ html(lang="ru")
 
   include ./_include/_head
 
-  body.main-body
+  body#body
     
     // Preloader
     include ./_include/_preloader
@@ -17,34 +17,40 @@ html(lang="ru")
     .main-slide
       .main-slide__wrapper
         img(src="./img/main-slide.png", alt="")
-      .main-slide__form
-        .wave__form
-          .wave__form-wrapper
-            form(action="#!")
-              .wave__form-body
-                div
-                  //- input(type="text" placeholder="Как вас зовут?").wave__input.has-error
-                  input(type="text" placeholder="Как вас зовут?").wave__input
-                  i.ion-alert-circled
-                div
-                  input(type="text" placeholder="Контактный телефон").wave__input
-                  i.ion-alert-circled
-                div
-                  button(type="submit").wave__btn Вызвать мастера
-              label(for="checkbox").label__checked
-                input(type="checkbox" checked)#checkbox
-                i.ion-android-checkbox-outline-blank
-                i.ion-android-checkbox-outline
-                span Отправляя данные, я принимаю условия 
-                  a(href="#!") пользовательского соглашения
-                  
-        .wave__bottom.wave__bottom--main
-          a(href="#popup1").wave__btn.open-popup-link Вызвать мастера
+      
+      .main-banner
+      
+      .container
+        .main-slide__form
+          .wave__form
+            .wave__form-wrapper
+              form(action="#!")
+                .wave__form-body
+                  div
+                    //- input(type="text" placeholder="Как вас зовут?").wave__input.has-error
+                    input(type="text" placeholder="Как вас зовут?").wave__input.has-error
+                    i.ion-alert-circled
+                  div
+                    input(type="text" placeholder="Контактный телефон").wave__input
+                    i.ion-alert-circled
+                  div
+                    button(type="submit").wave__btn Вызвать мастера
+                label(for="checkbox111").label__checked
+                  input(type="checkbox" checked)#checkbox111
+                  i.ion-android-checkbox-outline-blank
+                  i.ion-android-checkbox-outline
+                  span Отправляя данные, я принимаю условия 
+                    a(href="#!") пользовательского соглашения
+                    
+          .wave__bottom.wave__bottom--main
+            a(href="#popup1").wave__btn.open-popup-link Вызвать мастера
+    
+    
     
     .content
       .container
         
-        .section.no--p
+        #tabCarousel.section.no--p
           
           .content__head
             .h1 Выберите модель устройства и поломку
@@ -1793,7 +1799,7 @@ html(lang="ru")
                                 div
                                   span 1000 р
 
-    .wave
+    #wave.wave
       .wave__wrapper
         .wave__container.wave__container--main
           .container
@@ -1807,7 +1813,7 @@ html(lang="ru")
                 img(src="./img/wave-phone.png", alt="")
               .wave__content-body
                 .wave__content-row
-                  .wave__content-block
+                  .wave__content-block.wave__content-block--one
                     div Мастер приедет в 
                       br
                       | любую точку Москвы в 
@@ -1815,7 +1821,7 @@ html(lang="ru")
                       | течение 1 часа 
                     div
                       img(src="./img/wave-icon-1.svg", alt="")
-                  .wave__content-block
+                  .wave__content-block.wave__content-block--two
                     div Профессиональный 
                       br
                       | ремонт при вас за 
@@ -1824,7 +1830,7 @@ html(lang="ru")
                     div
                       img(src="./img/wave-icon-2.svg", alt="")
                 .wave__content-row
-                  .wave__content-block
+                  .wave__content-block.wave__content-block--one
                     div Используем 
                       br
                       | оригинальные детали 
@@ -1832,7 +1838,7 @@ html(lang="ru")
                       | с гарантией 
                     div
                       img(src="./img/wave-icon-3.svg", alt="")
-                  .wave__content-block
+                  .wave__content-block.wave__content-block--two
                     div Можно оплатить 
                       br
                       | наличными или 
@@ -1841,7 +1847,7 @@ html(lang="ru")
                     div
                       img(src="./img/wave-icon-4.svg", alt="")
 
-    .section.comments
+    #comments.section.comments
         
       .comments__wrapper
         
@@ -2013,7 +2019,7 @@ html(lang="ru")
                     div
                     div
         
-    .section.faq
+    #faq.section.faq
       .container
         
         .content__head
@@ -2085,7 +2091,7 @@ html(lang="ru")
                   .faq__block-answer__wrapper    
                     p Оплата осуществляется только после того как ваше устройство отремонтировано. Вы можете оплатить работы мастеру наличными   или картой без %.
         
-    .section.whe-work.no--p
+    #whe-work.section.whe-work.no--p
       
       .whe-work__top
         .container
@@ -2119,28 +2125,28 @@ html(lang="ru")
             
           .whe-work__wrapper
             .whe-work__wrapper-div
-              .whe-work__wrapper-block
+              .whe-work__wrapper-block.whe-work__wrapper-block--one
                 .whe-work__wrapper-number 1
                 img(src="./img/whe-work-arrow.png", alt="").whe-work__wrapper-arrow
                 .whe-work__wrapper-img
                   img(src="./img/whe-work-img-1.svg", alt="")
                 .whe-work__wrapper-text Вы оставляете заявку на сайте или звоните нам
             .whe-work__wrapper-div
-              .whe-work__wrapper-block
+              .whe-work__wrapper-block.whe-work__wrapper-block--two
                 .whe-work__wrapper-number 2
                 img(src="./img/whe-work-arrow2.png", alt="").whe-work__wrapper-arrow.whe-work__wrapper-arrow--2
                 .whe-work__wrapper-img
                   img(src="./img/whe-work-img-2.svg", alt="")
                 .whe-work__wrapper-text Мастер перезванивает и приезжает в удобное для вас место и время
             .whe-work__wrapper-div
-              .whe-work__wrapper-block
+              .whe-work__wrapper-block.whe-work__wrapper-block--three
                 .whe-work__wrapper-number 3
                 img(src="./img/whe-work-arrow.png", alt="").whe-work__wrapper-arrow
                 .whe-work__wrapper-img
                   img(src="./img/whe-work-img-3.svg", alt="")
                 .whe-work__wrapper-text При вас производится ремонт устройства в течение 20 минут
             .whe-work__wrapper-div
-              .whe-work__wrapper-block
+              .whe-work__wrapper-block.whe-work__wrapper-block--four
                 .whe-work__wrapper-number 4
                 .whe-work__wrapper-arrow
                 .whe-work__wrapper-img
@@ -2154,15 +2160,15 @@ html(lang="ru")
                   .wave__form-body
                     div
                       //- input(type="text" placeholder="Как вас зовут?").wave__input.has-error
-                      input(type="text" placeholder="Как вас зовут?").wave__input
+                      input(type="text" placeholder="Как вас зовут?").wave__input.has-error
                       i.ion-alert-circled
                     div
                       input(type="text" placeholder="Контактный телефон").wave__input
                       i.ion-alert-circled
                     div
                       button(type="submit").wave__btn Вызвать мастера
-                  label(for="checkbox").label__checked
-                    input(type="checkbox" checked)#checkbox
+                  label(for="checkbox222").label__checked
+                    input(type="checkbox" checked)#checkbox222
                     i.ion-android-checkbox-outline-blank
                     i.ion-android-checkbox-outline
                     span Отправляя данные, я принимаю условия 
@@ -2171,7 +2177,7 @@ html(lang="ru")
             .wave__bottom.wave__bottom--main
               a(href="#popup1").wave__btn.wave__btn--dark.open-popup-link Вызвать мастера
     
-    .section.about
+    #about.section.about
       .container
         
         .row
@@ -2182,10 +2188,8 @@ html(lang="ru")
             .h1 О компании
             
             .about__content
-              .about__content-wrapper
-                p Грамотная диагностика iPhone — это то с чего нужно начинать любой вид ремонта девайсов от Apple. Диагностика позволяет выявить все видимые и не видимые поломки, которые необходимо устранить для того, что бы ваш айфон работал корректно.
-                p В сервисном центре наши мастера смогут провести диагностику вашего айфона абсолютно бесплатно.
-                p Обратите внимание, что диагностика телефона должна быть началом любого ремонта, даже если вы или мастера по ремонту техники Apple точно уверенны в чем проблема.
+              .about__content-wrapper.readmore
+                p Грамотная диагностика iPhone — это то с чего нужно начинать любой вид ремонта девайсов от Apple. Диагностика позволяет выявить все видимые и не видимые поломки, которые необходимо устранить для того, что бы ваш айфон работал корректно. В сервисном центре наши мастера смогут провести диагностику вашего айфона абсолютно бесплатно. Обратите внимание, что диагностика телефона должна быть началом любого ремонта, даже если вы или мастера по ремонту техники Apple точно уверенны в чем проблема.
                 p Грамотная диагностика iPhone — это то с чего нужно начинать любой вид ремонта девайсов от Apple. Диагностика позволяет выявить все видимые и не видимые поломки, которые необходимо устранить для того, что бы ваш айфон работал корректно.
                 p В сервисном центре наши мастера смогут провести диагностику вашего айфона абсолютно бесплатно.
                 p Обратите внимание, что диагностика телефона должна быть началом любого ремонта, даже если вы или мастера по ремонту техники Apple точно уверенны в чем проблема.

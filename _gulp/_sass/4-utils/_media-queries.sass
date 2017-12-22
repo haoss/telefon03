@@ -91,14 +91,16 @@
         line-height: 18px
         &+.about__info-p
           margin-top: 5px
-    &__content
-      height: 220px
   .whe-work
     &__wrapper
       &-img
         padding-left: 20px
-  .main-slide__form
-    margin-top: -80px
+  .main-slide
+    margin-top: 0
+    &__form
+      margin-top: -92px
+    &__wrapper
+      display: none
   .whe-work
     &__top
       &-wrapper
@@ -146,6 +148,10 @@
         left: 94px
       &__quote
         right: 90px
+  .main-banner
+    display: block
+    background-image: url('../img/main-slide/main-slide-1170.jpg')
+
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px)
@@ -363,6 +369,12 @@
         width: 550px
     &--document
       padding-bottom: 64px !important
+  .main-banner
+    height: 374px
+    background-image: url('../img/main-slide/main-slide-750.jpg')
+  .main-slide
+    &__form
+      margin-top: -73px
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)
@@ -482,11 +494,7 @@
         width: 290px
         margin: 0 auto
     &__content
-      margin-bottom: 40px
-      &::after
-        height: 20px
-        padding-top: 20px
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white 50%, white)
+      margin-bottom: 25px
   .whe-work
     &__body
       background-size: cover
@@ -529,6 +537,13 @@
     &__carousel
       &-bottom
         width: 380px
+  .main-banner
+    height: 336px
+    background-image: url('../img/main-slide/main-slide-480.jpg')
+    background-size: auto
+  .main-slide
+    &__form
+      margin-top: -68px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 479px)
@@ -605,6 +620,8 @@
     &__wrapper
       padding-left: 15px
       padding-right: 15px
+    &__close
+      right: -16px
   .product
     &__img
       float: none
@@ -664,6 +681,8 @@
         p
           line-height: 22px
       &__input
+        width: 230px
+        bottom: 50px
         input
           float: none
           width: 100%
@@ -673,7 +692,11 @@
     &__carousel
       &-bottom
         width: 260px
-
+  .main
+    &-slider
+      margin-bottom: 0
+    &-banner
+      background-image: url('../img/main-slide/main-slide-320.jpg')
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 319px)
