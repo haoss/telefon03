@@ -1,6 +1,5 @@
 /* modules */
 
-
 .breadcrumbs
   font-size: rem(9)
   background: $color-gray
@@ -367,6 +366,11 @@
     margin: 0 6px
   &__social
     margin-bottom: 10px
+    img
+      opacity: 1
+      transition: opacity 0.35s
+      &:hover
+        opacity: 0.8
 
 .product
   &__wrapper
@@ -375,6 +379,11 @@
   &__img
     float: left
     padding-left: 10px
+    width: 361px
+    img
+      max-width: 100%
+      height: auto
+      display: block
   &__info
     float: right
     &-wrapper
@@ -691,15 +700,139 @@
     margin-bottom: 0
 
 .main-slide
-  margin-top: -27px
-  padding-bottom: 35px
+  // margin-top: -27px
+  padding-bottom: 0
+  margin-bottom: -50px
   &__wrapper
     overflow: hidden
-    img
-      max-width: 100%
-      height: auto
+    position: relative
+    height: 910px
+    width: 100%
+    &-body
+      height: 910px
+      background: url('../img/main-slider/ms-background.jpg') 0 0 no-repeat
+      position: absolute
+      width: 1920px
+      left: 50%
+      transform: translateX(-50%)
   &__form
-    margin-top: -161px
+    margin-top: -221px
+
+  &__blockRight
+    position: absolute
+    right: 0
+    top: 0
+    bottom: 0
+    img
+      position: absolute
+      right: 0
+      top: 0
+      display: none
+      &.main-slide__blockRight-img1
+        display: block
+        margin-right: 50px
+        margin-top: 159px
+        z-index: 25
+      &.main-slide__blockRight-img2
+        display: block
+        margin-right: 54px
+        margin-top: 57px
+        z-index: 5
+      &.main-slide__blockRight-img3
+        display: block
+        margin-right: 125px
+        margin-top: 120px
+        z-index: 10
+      &.main-slide__blockRight-img4
+        display: block
+        margin-right: 313px
+        margin-top: 348px
+        z-index: 15
+      &.main-slide__blockRight-img5
+        display: block
+        // margin-right: 313px
+        margin-top: 560px
+        z-index: 35
+      &.main-slide__blockRight-img6
+        display: block
+        margin-top: 677px
+        margin-right: 488px
+  &__blockCenter
+    img
+      position: absolute
+      right: 0
+      top: 0
+      display: none
+      &.main-slide__blockCenter-img1
+        display: block
+        right: inherit
+        margin-left: 580px
+        margin-top: 160px
+        z-index: 20
+      &.main-slide__blockCenter-img2
+        display: block
+        right: inherit
+        right: 650px
+        margin-top: 62px
+        z-index: 10
+      &.main-slide__blockCenter-img3
+        display: block
+        margin-top: -26px
+        margin-right: 537px
+        z-index: 1
+      &.main-slide__blockCenter-img4
+        display: block
+        margin-top: 63px
+        margin-right: 463px
+      &.main-slide__blockCenter-img5
+        display: block
+        z-index: 19
+        margin-right: 699px
+        margin-top: 63px
+      &.main-slide__blockCenter-img6
+        display: block
+        margin-top: -24px
+        margin-right: 885px
+      &.main-slide__blockCenter-img7
+        display: block
+        margin-top: 122px
+        margin-right: 682px
+        z-index: 25
+      &.main-slide__blockCenter-img8
+        display: block
+        margin-top: 112px
+        margin-right: 743px
+        z-index: 17
+  &__blockLeft
+    position: absolute
+    left: 0
+    top: 0
+    bottom: 0
+    img
+      position: absolute
+      left: 0
+      top: 0
+      display: none
+      &.main-slide__blockLeft-img1
+        display: block
+        margin-left: 10px
+        margin-top: 123px
+        z-index: 20
+      &.main-slide__blockLeft-img2
+        display: block
+        margin-top: 10px
+        margin-left: 136px
+        z-index: 5
+      &.main-slide__blockLeft-img3
+        display: block
+        margin-top: 378px
+        // margin-left: 136px
+        z-index: 25
+      &.main-slide__blockLeft-img4
+        display: block
+        margin-top: 604px
+        margin-left: 365px
+        z-index: 15
 
 .comments
   padding-bottom: 160px
@@ -882,20 +1015,41 @@
   &__form
     margin-top: 25px
   &__top
+    // overflow: hidden
+    position: relative
     &-wrapper
-      height: 365px
-      position: relative
     &-auto
-      width: 100%
-      height: 100%
+      overflow: hidden
+      height: 365px
       position: absolute
-      left: 0
-      top: 0
-      margin-top: 115px
-      img
+      width: 100%
+      &--top
+        margin-top: 100px
+      &--bottom
+        z-index: 50
+        margin-top: 150px
+      &-body
         position: absolute
-        left: 50%
-        transform: translateX(-50%)
+        width: 747px
+        &--bottom
+          // right: 0
+          // transform: translateX(100%)
+
+        // left: 50%
+        // transform: translateX(-50%)
+      &-wheel
+        position: absolute
+        left: 110px
+        bottom: 37px
+        &--12
+          left: 515px
+        &--21
+          bottom: 38px
+          left: 156px
+        &--22
+          bottom: 38px
+          left: 560px
+
     &-images
       position: relative
       z-index: 5
@@ -1001,8 +1155,10 @@
             margin-left: -1px
             &--form
               .comments__bottom-block-img
-                &::after
-                  opacity: 1 !important
+                svg
+                  width: 26px
+                  height: 26px
+                  opacity: 1
           .comments__bottom-block__bubble
             opacity: 1
             z-index: 5
@@ -1022,6 +1178,9 @@
                   opacity: 0
               &-name
                 display: block
+          .comments__bottom-block__bubble
+            opacity: 1
+
   &__bottom
     &-block
       cursor: pointer
@@ -1046,17 +1205,15 @@
         position: relative
         z-index: 10
         background: $color-red
-        &::after
-          position: absolute
-          content: ''
+        svg
           width: 19px
           height: 19px
-          background: url('data:image/svg+xml;utf8,<svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" viewBox="197.5 387.5 19 19"><path fill="#FFF" d="M214.6 387.5h-15.2c-1.05 0-1.89.85-1.89 1.9l-.01 17.1 3.8-3.8h13.3a1.9 1.9 0 0 0 1.9-1.9v-11.4a1.9 1.9 0 0 0-1.9-1.9zm-13.3 11.4v-2.351l6.536-6.536a.474.474 0 0 1 .67 0l1.682 1.681a.474.474 0 0 1 0 .67l-6.536 6.536H201.3zm11.4 0h-7.125l1.9-1.9h5.225v1.9z"/></svg>') 0 0 no-repeat
+          position: absolute
           left: 50%
           top: 50%
           transform: translate(-50%,-50%)
-          opacity: 0
-          display: none
+          path
+            fill: $color-white
         img
           display: block
           margin: 0 auto
@@ -1083,13 +1240,19 @@
       &__bubble
         opacity: 0
         position: absolute
-        z-index: -1
-        left: 0
+        // z-index: -1
+        // left: 0
         width: 66px
         height: 66px
-        top: -21px
+        // top: -21px
         // background: pink
-        transition: opacity 0.35s
+        transition: all 1s
+        transition-delay: 0.3s
+
+        left: 50%
+        transform: translateX(-33px) translateY(-5px)
+        bottom: -27px
+        // opacity: 1
         &>div
           position: absolute
           border-radius: 50%
@@ -1100,11 +1263,21 @@
             height: 21px
             right: -10px
             top: -10px
-          &:last-child
-            width: 10px
-            height: 10px
-            top: 13px
-            right: 10px
+            &+div
+              width: 10px
+              height: 10px
+              top: 13px
+              right: 10px
+              &+div
+                width: 10px
+                height: 10px
+                top: 13px
+                right: 10px
+                background: $color-red
+                transform: translateY(5px)
+                opacity: 0
+                transition: all 1s
+                transition-delay: 0.5s
   &__top
     z-index: 10
     &-block
@@ -1116,6 +1289,15 @@
         margin: 0 auto
         padding-bottom: 40px
         padding-top: 30px
+        &.is-input
+          .comments__top-block__input
+            transform: translateX(-50%) translateY(0px)
+            opacity: 1
+          .comments__top-block__content
+            box-shadow: 0 10px 30px rgba($color-black,0.36)
+          .comments__bottom-block__bubble > div:first-child + div + div
+            transform: translateY(0)
+            opacity: 1
       &__title
         color: $color-white
         background: $color-red
@@ -1156,6 +1338,7 @@
         font-style: italic
         padding: 42px 52px 38px 52px
         text-align: center
+        transition: box-shadow 0.35s
         p
           line-height: 30px
           &:last-child
@@ -1185,9 +1368,11 @@
         font-style: normal
         position: absolute
         left: 50%
-        transform: translateX(-50%)
+        transform: translateX(-50%) translateY(20px)
+        opacity: 0
         bottom: 28px
         z-index: 100
+        transition: all 1s
         +clearfix
         input
           background: none
@@ -1218,6 +1403,10 @@
             color: $color-red
             background: $color-white
             border-color: red
+      &.slick-current
+        .comments__bottom-block__bubble
+          opacity: 1
+          transform: translateX(-33px) translateY(0px)
 
 .readmore__bottom
   width: 100%
@@ -1241,3 +1430,8 @@
 
 #tabCarousel
   will-change: transform
+
+.nowrap
+  white-space: nowrap !important
+.mfp-close-btn-in .mfp-close
+  display: none !important

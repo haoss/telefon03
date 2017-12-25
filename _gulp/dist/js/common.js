@@ -3,9 +3,6 @@
 // Document ready
 $(document).on('ready', function(){
 
-  var controller = null;
-  var width = $(window).width();
-
   // SVG Fallback
   if(!Modernizr.svg) {
     $("img[src*='svg']").attr("src", function() {
@@ -64,7 +61,12 @@ $(document).on('ready', function(){
     showCloseBtn: false
   });
 
-  $('.popup__close').on('click', function(){
+  $('.ajax-popup-link').magnificPopup({
+    type: 'ajax', // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+    showCloseBtn: false
+  });
+
+  $(document).on('click', '.popup__close', function(){
     $.magnificPopup.close();
   });
 
@@ -88,15 +90,6 @@ $(document).on('ready', function(){
   faq();
   priceTable();
 
-  $('.whe-work__top-img').each(function(){
-    var _this = $(this);
-
-    _this.on('click', function(){
-      $('.whe-work__top-img').removeClass('is-active');
-      _this.toggleClass('is-active');
-    });
-  });
-
   commentCarousel();
 
   $('.readmore').readmore({
@@ -106,182 +99,14 @@ $(document).on('ready', function(){
     lessLink: '<div class="readmore__bottom readmore__bottom--up"><a href="#">Свернуть</a></div>'
   });
 
-  var masterTimeline = new TimelineMax({ paused:true }),
-      headerTl = new TimelineMax();
+  commentFormInput();
 
-  headerTl
-    .to('#body .loader', 0.4, {autoAlpha: 0}, 0.4)
-    .fromTo($('#body .header'), 1, {autoAlpha: 0, top: -15}, {autoAlpha: 1, top: 0}, 'header')
-    .from($('.main-slide__form'), 1, {autoAlpha: 0, y: 30}, 'header')
-  ;
-
-  masterTimeline.add([headerTl]);
-
-  if( width > 1199) {
-    $(window).on('load', function(){
-      masterTimeline.play();
-    });
-    initScrollMagic()
-  } else if ( width < 1200 ) {
-    $("#body .loader").delay(400).fadeOut("slow");
-    TweenLite.set($('.header'), {clearProps:"all"});
-    TweenLite.set($('.main-slide__form'), {clearProps:"all"});
-    TweenLite.set($('#tabCarousel'), {clearProps:"all"});
-    TweenLite.set($('#wave'), {clearProps:"all"});
-    TweenLite.set($('.wave__content-block--one'), {clearProps:"all"});
-    TweenLite.set($('.wave__content-block--two'), {clearProps:"all"});
-    TweenLite.set($('#comments'), {clearProps:"all"});
-    TweenLite.set($('#faq'), {clearProps:"all"});
-    TweenLite.set($('#about'), {clearProps:"all"});
-    TweenLite.set($('#whe-work .whe-work__body .content__head'), {clearProps:"all"});
-    TweenLite.set($('#whe-work .whe-work__form'), {clearProps:"all"});
-    TweenLite.set($('.footer'), {clearProps:"all"});
-  }
-
-  function initScrollMagic(){
-    var controller = new ScrollMagic.Controller(),
-      tabCarousel = $('#tabCarousel'),
-      wave = $('#wave'),
-      waveBlockOne = $('.wave__content-block--one'),
-      waveBlockTwo = $('.wave__content-block--two'),
-      comments = $('#comments'),
-      faq = $('#faq'),
-      wheWork = $('#whe-work .whe-work__body'),
-      about = $('#about')
-    ;
-
-    var tabCarouselTl = new TimelineMax();
-    tabCarouselTl
-      .from(tabCarousel, 1, {autoAlpha: 0, y: 150, force3D: true})
-    ;
-    var typeScene = new ScrollMagic.Scene({
-      triggerElement: '#tabCarousel',
-      triggerHook: 0.5,
-      reverse: false
-  	})
-  		.setTween(tabCarouselTl)
-  		.addIndicators({
-        name: 'type',
-        colorStart: 'red',
-        colorEnd: 'red',
-        colorTrigger: 'red'
-      })
-  		.addTo(controller)
-    ;
-
-    var waveTl = new TimelineMax();
-    waveTl
-      .from(wave, 2, {autoAlpha: 0, y: 100}, 'wave1')
-      .from($('.wave__title'), 2, {autoAlpha: 0, y: -200}, 'wave1')
-      .from($('.wave__content-img'), 1.5, {autoAlpha: 0, x: -100}, 'wave2')
-      .staggerFrom(waveBlockOne, 1, {autoAlpha: 0, y: -50}, 0.3, 'wave2', '-=0.5')
-      .staggerFrom(waveBlockTwo, 1, {autoAlpha: 0, y: -50}, 0.3, '-=1')
-    ;
-    var typeScene = new ScrollMagic.Scene({
-      triggerElement: '#wave',
-      triggerHook: 0.5,
-      reverse: false
-  	})
-  		.setTween(waveTl)
-  		.addIndicators({
-        name: 'type',
-        colorStart: 'red',
-        colorEnd: 'red',
-        colorTrigger: 'red'
-      })
-  		.addTo(controller)
-    ;
-
-    var commentsTl = new TimelineMax();
-    commentsTl
-      .from(comments, 1.5, {autoAlpha: 0, y: 50})
-    ;
-    var typeScene = new ScrollMagic.Scene({
-      triggerElement: '#comments',
-      triggerHook: 0.5,
-      reverse: false
-  	})
-  		.setTween(commentsTl)
-  		.addIndicators({
-        name: 'type',
-        colorStart: 'red',
-        colorEnd: 'red',
-        colorTrigger: 'red'
-      })
-  		.addTo(controller)
-    ;
-
-    var faqTl = new TimelineMax();
-    faqTl
-      .from(faq, 1.5, {autoAlpha: 0, y: 50})
-    ;
-    var typeScene = new ScrollMagic.Scene({
-      triggerElement: '#faq',
-      triggerHook: 0.5,
-      reverse: false
-  	})
-  		.setTween(faqTl)
-  		.addIndicators({
-        name: 'type',
-        colorStart: 'red',
-        colorEnd: 'red',
-        colorTrigger: 'red'
-      })
-  		.addTo(controller)
-    ;
-
-    var wheWorkTl = new TimelineMax();
-    wheWorkTl
-      .from($('#whe-work .whe-work__body .content__head'), 2, {autoAlpha: 0, y: -50})
-      .from($('#whe-work .whe-work__wrapper-block--one'), 1, {autoAlpha: 0, y: 50}, 0.5, 'wave1')
-      .staggerFrom($('#whe-work .whe-work__wrapper-block--one .whe-work__wrapper-arrow'), 0.2, {autoAlpha: 0}, 'wave1')
-      .from($('#whe-work .whe-work__wrapper-block--two'), 1, {autoAlpha: 0, y: 50}, 1, 'wave1')
-      .staggerFrom($('#whe-work .whe-work__wrapper-block--two .whe-work__wrapper-arrow'), 0.2, {autoAlpha: 0}, '-=1')
-      .from($('#whe-work .whe-work__wrapper-block--three'), 1, {autoAlpha: 0, y: 50}, 1.5, 'wave1')
-      .staggerFrom($('#whe-work .whe-work__wrapper-block--three .whe-work__wrapper-arrow'), 0.2, {autoAlpha: 0}, '-=1')
-      .from($('#whe-work .whe-work__wrapper-block--four'), 1, {autoAlpha: 0, y: 50}, 2, 'wave1')
-      .staggerFrom($('#whe-work .whe-work__wrapper-block--four .whe-work__wrapper-arrow'), 0.2, {autoAlpha: 0}, '-=1')
-      .from($('#whe-work .whe-work__form'), 0.5, {autoAlpha: 0, y: 30})
-    ;
-    var typeScene = new ScrollMagic.Scene({
-      triggerElement: '#whe-work .whe-work__body',
-      triggerHook: 0.5,
-      reverse: false
-  	})
-  		.setTween(wheWorkTl)
-  		.addIndicators({
-        name: 'type',
-        colorStart: 'red',
-        colorEnd: 'red',
-        colorTrigger: 'red'
-      })
-  		.addTo(controller)
-    ;
-
-    var aboutTl = new TimelineMax();
-    aboutTl
-      .from(about, 1.5, {autoAlpha: 0, y: 50})
-      .from('.footer', 1.5, {autoAlpha: 0, y: -50})
-    ;
-    var typeScene = new ScrollMagic.Scene({
-      triggerElement: '#about',
-      triggerHook: 0.8,
-      reverse: false
-  	})
-  		.setTween(aboutTl)
-  		.addIndicators({
-        name: 'type',
-        colorStart: 'red',
-        colorEnd: 'red',
-        colorTrigger: 'red'
-      })
-  		.addTo(controller)
-    ;
-
-  }
+  indexAnimate();
 
   // simpleForm version 2015-09-23 14:30 GMT +2
-  simpleForm('form.form-callback');
+  simpleForm('form.form-master');
+  simpleForm('form.form-master-block');
+  simpleForm('form.form-сomment');
 });
 
 $(window).on('load', function() {
@@ -298,7 +123,7 @@ $(window).on('load', function() {
 
 $(window).on('resize', function() {
   navRemove();
-  // priceTableCarousel();
+  commentFormInput();
 });
 
 /*
@@ -580,13 +405,16 @@ function faq(){
 }
 
 function commentCarousel(){
-    $('.comments__top').slick({
+  $('.comments__top').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
     fade: false,
     asNavFor: '.comments__carousel-bottom ul',
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    touchMove: false,
+    swipe: false,
+    swipeToSlide: false
   });
   $('.comments__carousel-bottom ul').slick({
     slidesToShow: 7,
@@ -611,4 +439,289 @@ function commentCarousel(){
       }
     ]
   });
+}
+
+function commentFormInput(){
+  var width = $(window).width();
+  var wrapper = $('.comments__top-block__wrapper');
+  var textarea = wrapper.find('.textarea');
+
+  if ($('.textarea').length <= 0) return;
+
+  if (textarea.val().length > 0) {
+    wrapper.addClass('is-input');
+  } else {
+    wrapper.removeClass('is-input');
+  }
+
+  textarea.on('input', function(){
+    if ($(this).parents(wrapper).hasClass('is-input') && $(this).val().length == 0) {
+      $(this).parents(wrapper).removeClass('is-input');
+    } else {
+      $(this).parents(wrapper).addClass('is-input');
+    }
+  });
+}
+
+function indexAnimate(){
+  var controller = null;
+  var width = $(window).width();
+
+  // TweenMax.set($('.main-slide__blockLeft-img1'), {opacity: 0});
+  // TweenMax.set($('.main-slide__blockLeft-img2'), {opacity: 0});
+  // TweenMax.set($('.main-slide__blockLeft-img3'), {opacity: 0});
+  // TweenMax.set($('.main-slide__blockLeft-img4'), {opacity: 0});
+  // TweenMax.set($('.main-slide__blockRight-img1'), {opacity: 0});
+  // TweenMax.set($('.main-slide__blockRight-img2'), {opacity: 0});
+  // TweenMax.set($('.main-slide__blockRight-img3'), {opacity: 0});
+  // TweenMax.set($('.main-slide__blockRight-img4'), {opacity: 0});
+  // TweenMax.set($('.main-slide__blockRight-img5'), {opacity: 0});
+  // TweenMax.set($('.main-slide__blockRight-img6'), {opacity: 0});
+  // TweenMax.set($('.main-slide__blockRight-img7'), {opacity: 0});
+  // TweenMax.set($('.main-slide__blockCenter-img1'), {opacity: 0});
+  // TweenMax.set($('.main-slide__blockCenter-img2'), {opacity: 0});
+  // TweenMax.set($('.main-slide__blockCenter-img3'), {opacity: 0});
+  // TweenMax.set($('.main-slide__blockCenter-img4'), {opacity: 0});
+  // TweenMax.set($('.main-slide__blockCenter-img5'), {opacity: 0});
+  // TweenMax.set($('.main-slide__blockCenter-img6'), {opacity: 0});
+  // TweenMax.set($('.main-slide__blockCenter-img7'), {opacity: 0});
+  // TweenMax.set($('.main-slide__blockCenter-img8'), {opacity: 0});
+  // TweenMax.set($('.main-slide__form'), {opacity: 0});
+
+  var masterTimeline = new TimelineMax({ paused:true }),
+      headerTl = new TimelineMax();
+
+  headerTl
+    .to('#body .loader', 0.4, {autoAlpha: 0}, 0.4)
+    .fromTo($('#body .header'), 1, {autoAlpha: 0, y: -15}, {autoAlpha: 1, y: 0}, 'header')
+    .from($('#body .main-slide__blockLeft-img2'), 1, {autoAlpha: 0, x: -45}, 'header')
+    .from($('#body .main-slide__blockLeft-img3'), 1, {autoAlpha: 0, x: -35}, 'header')
+    .from($('#body .main-slide__blockLeft-img4'), 1, {autoAlpha: 0, y: 35}, 'header')
+    .from($('#body .main-slide__blockRight-img2'), 1, {autoAlpha: 0, x: 35}, 'header')
+    .from($('#body .main-slide__blockRight-img3'), 1, {autoAlpha: 0, x: 35}, 'header')
+    .from($('#body .main-slide__blockRight-img4'), 1, {autoAlpha: 0, x: 35}, 'header')
+    .from($('#body .main-slide__blockRight-img5'), 1, {autoAlpha: 0, x: 35}, 'header')
+    .from($('#body .main-slide__blockRight-img6'), 1, {autoAlpha: 0, y: 45}, 'header')
+    .from($('#body .main-slide__blockRight-img7'), 1, {autoAlpha: 0, x: 35}, 'header')
+    .from($('#body .main-slide__blockCenter-img1'), 2.5, {left: '-100%', rotation: '-420deg', transformOrigin:"50% 50%"}, 'header', '+=2')
+    .from($('#body .main-slide__blockCenter-img2'), 2.5, {right: '-100%', rotation: '420deg', transformOrigin:"50% 50%"}, 'header', '+=2')
+    .from($('.main-slide__blockCenter-img8'), 0.5, {autoAlpha: 0})
+    .from($('#body .main-slide__blockLeft-img1'), 0.5, {autoAlpha: 0, x: -45}, '-=0.5', 'people')
+    .from($('#body .main-slide__blockRight-img1'), 0.5, {autoAlpha: 0, x: 45}, '-=0.5', 'people')
+    .from($('.main-slide__blockCenter-img5'), 0.3, {autoAlpha: 0})
+    .from($('.main-slide__blockCenter-img6'), 0.3, {autoAlpha: 0})
+    .from($('.main-slide__blockCenter-img7'), 0.3, {autoAlpha: 0})
+    .from($('.main-slide__blockCenter-img3'), 0.3, {autoAlpha: 0})
+    .from($('.main-slide__blockCenter-img4'), 0.3, {autoAlpha: 0})
+    .from($('#body .main-slide__form'), 0.5, {autoAlpha: 0, y: 30})
+  ;
+
+  masterTimeline.add([headerTl]);
+
+  if( width > 767) {
+    $(window).on('load', function(){
+      masterTimeline.play();
+    });
+    initScrollMagic()
+  } else if ( width < 768 ) {
+    $("#body .loader").delay(400).fadeOut("slow");
+    TweenMax.set($('#body .header'), {clearProps:"all"});
+    TweenMax.set($('#body .main-slide__form'), {clearProps:"all"});
+    TweenMax.set($('#body #tabCarousel'), {clearProps:"all"});
+    TweenMax.set($('#body #wave'), {clearProps:"all"});
+    TweenMax.set($('#body .wave__content-block--one'), {clearProps:"all"});
+    TweenMax.set($('#body .wave__content-block--two'), {clearProps:"all"});
+    TweenMax.set($('#body #comments'), {clearProps:"all"});
+    TweenMax.set($('#body #faq'), {clearProps:"all"});
+    TweenMax.set($('#body #about'), {clearProps:"all"});
+    TweenMax.set($('#body #whe-work .whe-work__body .content__head'), {clearProps:"all"});
+    TweenMax.set($('#body #whe-work .whe-work__form'), {clearProps:"all"});
+    TweenMax.set($('#body .footer'), {clearProps:"all"});
+    TweenMax.set($('#body .main-slide__blockLeft-img1'), {clearProps:"all"});
+    TweenMax.set($('#body .main-slide__blockLeft-img2'), {clearProps:"all"});
+    TweenMax.set($('#body .main-slide__blockLeft-img3'), {clearProps:"all"});
+    TweenMax.set($('#body .main-slide__blockLeft-img4'), {clearProps:"all"});
+    TweenMax.set($('#body .main-slide__blockLeft-img5'), {clearProps:"all"});
+    TweenMax.set($('#body .whe-work__top-auto-body--top'), {clearProps:"all"});
+    TweenMax.set($('#body .whe-work__top-auto-body--bottom'), {clearProps:"all"});
+  } else if (width < 991) {
+    TweenMax.set($('#body .whe-work__top-auto-body--top'), {clearProps:"all"});
+    TweenMax.set($('#body .whe-work__top-auto-body--bottom'), {clearProps:"all"});
+  }
+
+  function initScrollMagic(){
+    var controller = new ScrollMagic.Controller(),
+      tabCarousel = $('#body #tabCarousel'),
+      wave = $('#body #wave'),
+      waveBlockOne = $('#body .wave__content-block--one'),
+      waveBlockTwo = $('#body .wave__content-block--two'),
+      comments = $('#body #comments'),
+      faq = $('#body #faq'),
+      wheWork = $('#body #whe-work .whe-work__body'),
+      about = $('#body #about'),
+      auto1 = $('#body .whe-work__top-auto-body--top'),
+      auto2 = $('#body .whe-work__top-auto-body--bottom'),
+      wheel11 = $('#body .whe-work__top-auto-body--top .whe-work__top-auto-wheel--11'),
+      wheel12 = $('#body .whe-work__top-auto-body--top .whe-work__top-auto-wheel--12'),
+      wheel21 = $('#body .whe-work__top-auto-body--bottom .whe-work__top-auto-wheel--21'),
+      wheel22 = $('#body .whe-work__top-auto-body--bottom .whe-work__top-auto-wheel--22')
+    ;
+
+    var tabCarouselTl = new TimelineMax();
+    tabCarouselTl
+      .from(tabCarousel, 1, {autoAlpha: 0, y: 100})
+    ;
+    var typeScene = new ScrollMagic.Scene({
+      triggerElement: '#body #tabCarousel',
+      // triggerHook: 0.5,
+      reverse: false
+  	})
+  		.setTween(tabCarouselTl)
+  		// .addIndicators({
+      //   name: 'tab',
+      //   colorStart: 'red',
+      //   colorEnd: 'red',
+      //   colorTrigger: 'red'
+      // })
+  		.addTo(controller)
+    ;
+
+    var waveTl = new TimelineMax();
+    waveTl
+      .from(wave, 2, {autoAlpha: 0, y: 100}, 'wave1')
+      .from($('#body .wave__title'), 2, {autoAlpha: 0, y: -200}, 'wave1')
+      .from($('#body .wave__content-img'), 1.5, {autoAlpha: 0, x: -100}, 'wave2')
+      .staggerFrom(waveBlockOne, 1, {autoAlpha: 0, y: -50}, 0.3, 'wave2', '-=0.5')
+      .staggerFrom(waveBlockTwo, 1, {autoAlpha: 0, y: -50}, 0.3, '-=1')
+    ;
+    var typeScene = new ScrollMagic.Scene({
+      triggerElement: '#body #wave',
+      triggerHook: 0.5,
+      reverse: false
+  	})
+  		.setTween(waveTl)
+  		// .addIndicators({
+      //   name: 'wave',
+      //   colorStart: 'red',
+      //   colorEnd: 'red',
+      //   colorTrigger: 'red'
+      // })
+  		.addTo(controller)
+    ;
+
+    var commentsTl = new TimelineMax();
+    commentsTl
+      .from(comments, 1.5, {autoAlpha: 0, y: 50})
+    ;
+    var typeScene = new ScrollMagic.Scene({
+      triggerElement: '#body #comments',
+      triggerHook: 0.5,
+      reverse: false
+  	})
+  		.setTween(commentsTl)
+  		// .addIndicators({
+      //   name: 'comments',
+      //   colorStart: 'red',
+      //   colorEnd: 'red',
+      //   colorTrigger: 'red'
+      // })
+  		.addTo(controller)
+    ;
+
+    var faqTl = new TimelineMax();
+    faqTl
+      .from(faq, 1.5, {autoAlpha: 0, y: 50})
+    ;
+    var typeScene = new ScrollMagic.Scene({
+      triggerElement: '#body #faq',
+      triggerHook: 0.5,
+      reverse: false
+  	})
+  		.setTween(faqTl)
+  		// .addIndicators({
+      //   name: 'faq',
+      //   colorStart: 'red',
+      //   colorEnd: 'red',
+      //   colorTrigger: 'red'
+      // })
+  		.addTo(controller)
+    ;
+
+    var wheWorkAutoTl = new TimelineMax();
+    wheWorkAutoTl
+      .fromTo(auto2, 3, {marginLeft:'100%', x: '100%'}, {marginLeft:'0%', x: '-100%', ease: Power0.easeNone})
+      .to(wheel21, 4, {rotation: '-1220deg', transformOrigin: "50% 50%", ease: Power0.easeNone}, 0)
+      .to(wheel22, 4, {rotation: '-1220deg', transformOrigin: "50% 50%", ease: Power0.easeNone}, 0)
+      .fromTo(auto1, 3, {marginLeft:'0%', x: '-100%'}, {marginLeft:'100%', x: '100%', ease: Power0.easeNone}, 'auto1', '-=7')
+      .to(wheel11, 4, {rotation: '1220deg', transformOrigin: "50% 50%", ease: Power0.easeNone}, 'auto1', 0)
+      .to(wheel12, 4, {rotation: '1220deg', transformOrigin: "50% 50%", ease: Power0.easeNone}, 'auto1', 0)
+      .set($('.whe-work__top-img--1'), {className: '+=is-active'}, '-=3.5')
+      .set($('.whe-work__top-img--2'), {className: '+=is-active'}, '-=3.2')
+      .set($('.whe-work__top-img--3'), {className: '+=is-active'}, '-=2.9')
+      .set($('.whe-work__top-img--4'), {className: '+=is-active'}, '-=2.6')
+    ;
+    var typeScene = new ScrollMagic.Scene({
+      triggerElement: '#body #whe-work',
+      triggerHook: 1,
+      reverse: false
+  	})
+  		.setTween(wheWorkAutoTl)
+  		.addIndicators({
+        name: 'auto',
+        colorStart: 'red',
+        colorEnd: 'red',
+        colorTrigger: 'red'
+      })
+  		.addTo(controller)
+    ;
+
+    var wheWorkTl = new TimelineMax();
+    wheWorkTl
+      .from($('#body #whe-work .whe-work__body .content__head'), 2, {autoAlpha: 0, y: -50})
+      .from($('#body #whe-work .whe-work__wrapper-block--one'), 1, {autoAlpha: 0, y: 50}, 0.5, 'wave1')
+      .staggerFrom($('#body #whe-work .whe-work__wrapper-block--one .whe-work__wrapper-arrow'), 0.2, {autoAlpha: 0}, 'wave1')
+      .from($('#body #whe-work .whe-work__wrapper-block--two'), 1, {autoAlpha: 0, y: 50}, 1, 'wave1')
+      .staggerFrom($('#body #whe-work .whe-work__wrapper-block--two .whe-work__wrapper-arrow'), 0.2, {autoAlpha: 0}, '-=1')
+      .from($('#body #whe-work .whe-work__wrapper-block--three'), 1, {autoAlpha: 0, y: 50}, 1.5, 'wave1')
+      .staggerFrom($('#body #whe-work .whe-work__wrapper-block--three .whe-work__wrapper-arrow'), 0.2, {autoAlpha: 0}, '-=1')
+      .from($('#body #whe-work .whe-work__wrapper-block--four'), 1, {autoAlpha: 0, y: 50}, 2, 'wave1')
+      .staggerFrom($('#body #whe-work .whe-work__wrapper-block--four .whe-work__wrapper-arrow'), 0.2, {autoAlpha: 0}, '-=1')
+      .from($('#body #whe-work .whe-work__form'), 0.5, {autoAlpha: 0, y: 30})
+    ;
+    var typeScene = new ScrollMagic.Scene({
+      triggerElement: '#body #whe-work .whe-work__body',
+      triggerHook: 0.5,
+      reverse: false
+  	})
+  		.setTween(wheWorkTl)
+  		// .addIndicators({
+      //   name: 'whe-work list',
+      //   colorStart: 'red',
+      //   colorEnd: 'red',
+      //   colorTrigger: 'red'
+      // })
+  		.addTo(controller)
+    ;
+
+    var aboutTl = new TimelineMax();
+    aboutTl
+      .from(about, 1.5, {autoAlpha: 0, y: 50})
+      .from('#body .footer', 1.5, {autoAlpha: 0, y: -50})
+    ;
+    var typeScene = new ScrollMagic.Scene({
+      triggerElement: '#body #about',
+      triggerHook: 0.8,
+      reverse: false
+  	})
+  		.setTween(aboutTl)
+  		// .addIndicators({
+      //   name: 'about',
+      //   colorStart: 'red',
+      //   colorEnd: 'red',
+      //   colorTrigger: 'red'
+      // })
+  		.addTo(controller)
+    ;
+
+  }
 }

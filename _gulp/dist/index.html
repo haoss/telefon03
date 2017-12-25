@@ -59,10 +59,10 @@
         <!-- Header-->
         <header class="header">
             <div class="header__top">
-                <div class="container"><a href="#!"><i class="ion-android-call"></i>+7 (123) <strong>456-78-90</strong></a></div>
+                <div class="container"><a href="#!"><i class="ion-android-call"></i><span>+7 (123) <strong>456-78-90</strong></span></a></div>
             </div>
             <div class="container">
-                <div class="header__logo"><a href="#!"><img src="./img/logo.png" alt=""></a></div><a href="#!" class="header__phone"><i class="ion-android-call"></i><span>+7 (123) <strong>456-78-90</strong></span></a>
+                <div class="header__logo"><a href="#!"><img src="./img/logo.png" alt=""></a></div><a href="#!"><i class="ion-android-call"></i><span>+7 (123) <strong>456-78-90</strong></span></a>
                 <div class="header__social"><a href="#!">
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.2" viewbox="0 0 50 50">
                             <path d="M25.002 0C11.192 0 0 11.192 0 25.002 0 38.808 11.192 50 25.002 50 38.808 50 50 38.808 50 25.002 50 11.192 38.808 0 25.002 0zm9.536 12.73l-3.458.003c-2.712 0-3.236 1.289-3.236 3.18v4.168h6.466l-.003 6.531h-6.463v16.754H21.1V26.61h-5.637v-6.53H21.1v-4.814c0-5.587 3.414-8.632 8.4-8.632l5.04.007v6.09h-.002zm0 0"></path>
@@ -94,8 +94,14 @@
         </header>
         <div class="header__separator"></div>
         <div class="main-slide">
-            <div class="main-slide__wrapper"><img src="./img/main-slide.png" alt=""></div>
-            <div class="main-banner"></div>
+            <div class="main-slide__wrapper">
+                <div class="main-slide__wrapper-body">
+                    <div class="main-slide__blockLeft"><img src="./img/main-slider/ms-man-left.png" alt="" class="main-slide__blockLeft-img1"><img src="./img/main-slider/ms-bubble-left-1.png" alt="" class="main-slide__blockLeft-img2"><img src="./img/main-slider/ms-bubble-left-2.png" alt="" class="main-slide__blockLeft-img3"><img src="./img/main-slider/ms-bubble-left-3.png" alt="" class="main-slide__blockLeft-img4"></div>
+                    <div class="main-slide__blockCenter"><img src="./img/main-slider/ms-mobile-left.png" alt="" class="main-slide__blockCenter-img1"><img src="./img/main-slider/ms-mobile-right.png" alt="" class="main-slide__blockCenter-img2"><img src="./img/main-slider/ms-glass-1.png" alt="" class="main-slide__blockCenter-img3"><img src="./img/main-slider/ms-glass-2.png" alt="" class="main-slide__blockCenter-img4"><img src="./img/main-slider/ms-glass-3.png" alt="" class="main-slide__blockCenter-img5"><img src="./img/main-slider/ms-glass-4.png" alt="" class="main-slide__blockCenter-img6"><img src="./img/main-slider/ms-glass-5.png" alt="" class="main-slide__blockCenter-img7"><img src="./img/main-slider/ms-glass-6.png" alt="" class="main-slide__blockCenter-img8"></div>
+                    <div class="main-slide__blockRight"><img src="./img/main-slider/ms-woman-right.png" alt="" class="main-slide__blockRight-img1"><img src="./img/main-slider/ms-bubble-right-1.png" alt="" class="main-slide__blockRight-img2"><img src="./img/main-slider/ms-bubble-right-2.png" alt="" class="main-slide__blockRight-img3"><img src="./img/main-slider/ms-bubble-right-3.png" alt="" class="main-slide__blockRight-img4"><img src="./img/main-slider/ms-bubble-right-4.png" alt="" class="main-slide__blockRight-img5"><img src="./img/main-slider/ms-bubble-right-5.png" alt="" class="main-slide__blockRight-img6"></div>
+                </div>
+            </div>
+            <div class="main-banner main-banner--mobile"></div>
             <div class="container">
                 <div class="main-slide__form">
                     <div class="wave__form">
@@ -1290,12 +1296,37 @@
             <div class="comments__wrapper">
                 <div class="comments__carousel">
                     <div class="comments__top">
+                        <div class="comments__top-block"> 
+                            <div class="comments__top-block__wrapper">
+                                <div class="comments__top-block__title">Напишите отзыв</div>
+                                <div class="comments__top-block__quote">“</div>
+                                <div class="comments__top-block__content">
+                                    <form action="#!">
+                                        <textarea name="" cols="30" rows="10" placeholder="Введите текстовое сообщение" class="textarea"></textarea>
+                                        <div class="comments__top-block__input">
+                                            <input type="text" name="name" placeholder="Ваше имя">
+                                            <button type="button">отправить</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="comments__bottom-block__bubble">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="comments__top-block">
                             <div class="comments__top-block__wrapper">
                                 <div class="comments__top-block__title">Что говорят наши клиенты</div>
                                 <div class="comments__top-block__quote">“</div>
                                 <div class="comments__top-block__content">
                                     <p>Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!</p>
+                                    <div class="comments__bottom-block__bubble">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1307,29 +1338,10 @@
                                     <p>Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. </p>
                                     <p>Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="comments__top-block"> 
-                            <div class="comments__top-block__wrapper">
-                                <div class="comments__top-block__title">Что говорят наши клиенты</div>
-                                <div class="comments__top-block__quote">“</div>
-                                <div class="comments__top-block__content">
-                                    <p>Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="comments__top-block"> 
-                            <div class="comments__top-block__wrapper">
-                                <div class="comments__top-block__title">Напишите отзыв</div>
-                                <div class="comments__top-block__quote">“</div>
-                                <div class="comments__top-block__content">
-                                    <form action="#!">
-                                        <textarea name="" cols="30" rows="10" placeholder="Введите текстовое сообщение"></textarea>
-                                        <div class="comments__top-block__input">
-                                            <input type="text" name="name" placeholder="Ваше имя">
-                                            <button type="button">отправить</button>
-                                        </div>
-                                    </form>
+                                <div class="comments__bottom-block__bubble">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
                                 </div>
                             </div>
                         </div>
@@ -1340,14 +1352,10 @@
                                 <div class="comments__top-block__content">
                                     <p>Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="comments__top-block"> 
-                            <div class="comments__top-block__wrapper">
-                                <div class="comments__top-block__title">Что говорят наши клиенты</div>
-                                <div class="comments__top-block__quote">“</div>
-                                <div class="comments__top-block__content">
-                                    <p>Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!</p>
+                                <div class="comments__bottom-block__bubble">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
                                 </div>
                             </div>
                         </div>
@@ -1358,14 +1366,10 @@
                                 <div class="comments__top-block__content">
                                     <p>Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="comments__top-block"> 
-                            <div class="comments__top-block__wrapper">
-                                <div class="comments__top-block__title">Что говорят наши клиенты</div>
-                                <div class="comments__top-block__quote">“</div>
-                                <div class="comments__top-block__content">
-                                    <p>Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!</p>
+                                <div class="comments__bottom-block__bubble">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
                                 </div>
                             </div>
                         </div>
@@ -1375,6 +1379,53 @@
                                 <div class="comments__top-block__quote">“</div>
                                 <div class="comments__top-block__content">
                                     <p>Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!</p>
+                                </div>
+                                <div class="comments__bottom-block__bubble">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comments__top-block"> 
+                            <div class="comments__top-block__wrapper">
+                                <div class="comments__top-block__title">Что говорят наши клиенты</div>
+                                <div class="comments__top-block__quote">“</div>
+                                <div class="comments__top-block__content">
+                                    <p>Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!</p>
+                                </div>
+                                <div class="comments__bottom-block__bubble">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comments__top-block"> 
+                            <div class="comments__top-block__wrapper">
+                                <div class="comments__top-block__title">Что говорят наши клиенты</div>
+                                <div class="comments__top-block__quote">“</div>
+                                <div class="comments__top-block__content">
+                                    <p>Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!</p>
+                                </div>
+                                <div class="comments__bottom-block__bubble">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comments__top-block"> 
+                            <div class="comments__top-block__wrapper">
+                                <div class="comments__top-block__title">Что говорят наши клиенты</div>
+                                <div class="comments__top-block__quote">“</div>
+                                <div class="comments__top-block__content">
+                                    <p>Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!</p>
+                                </div>
+                                <div class="comments__bottom-block__bubble">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
                                 </div>
                             </div>
                         </div>
@@ -1385,108 +1436,77 @@
                                 <div class="comments__top-block__content">
                                     <p>Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!</p>
                                 </div>
+                                <div class="comments__bottom-block__bubble">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="comments__carousel-bottom">
                         <ul>
                             <li>
+                                <div class="comments__bottom-block comments__bottom-block--form">
+                                    <div class="comments__bottom-block-img">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="-6.333 183.667 26 26">
+                                            <path d="M17.067 183.667h-20.8a2.588 2.588 0 0 0-2.587 2.6l-.013 23.4 5.2-5.2h18.2a2.6 2.6 0 0 0 2.6-2.6v-15.6a2.6 2.6 0 0 0-2.6-2.6zm-18.2 15.6v-3.217l8.944-8.944a.647.647 0 0 1 .916 0l2.301 2.3a.647.647 0 0 1 0 .917l-8.944 8.944h-3.217zm15.6 0h-9.75l2.6-2.6h7.15v2.6z" fill="#fff"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
                                 <div class="comments__bottom-block">
                                     <div class="comments__bottom-block-img"><img src="./img/comment-img-people-1.png" alt=""></div>
                                     <div class="comments__bottom-block-name">Ирина 1</div>
-                                    <div class="comments__bottom-block__bubble">
-                                        <div></div>
-                                        <div></div>
-                                    </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="comments__bottom-block">
                                     <div class="comments__bottom-block-img"><img src="./img/comment-img-people-1.png" alt=""></div>
                                     <div class="comments__bottom-block-name">Ирина 2</div>
-                                    <div class="comments__bottom-block__bubble">
-                                        <div></div>
-                                        <div></div>
-                                    </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="comments__bottom-block">
                                     <div class="comments__bottom-block-img"><img src="./img/comment-img-people-1.png" alt=""></div>
                                     <div class="comments__bottom-block-name">Ирина 3</div>
-                                    <div class="comments__bottom-block__bubble">
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="comments__bottom-block comments__bottom-block--form">
-                                    <div class="comments__bottom-block-img"></div>
-                                    <div class="comments__bottom-block__bubble">
-                                        <div></div>
-                                        <div></div>
-                                    </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="comments__bottom-block">
                                     <div class="comments__bottom-block-img"><img src="./img/comment-img-people-1.png" alt=""></div>
                                     <div class="comments__bottom-block-name">Ирина 5</div>
-                                    <div class="comments__bottom-block__bubble">
-                                        <div></div>
-                                        <div></div>
-                                    </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="comments__bottom-block">
                                     <div class="comments__bottom-block-img"><img src="./img/comment-img-people-1.png" alt=""></div>
                                     <div class="comments__bottom-block-name">Ирина 6</div>
-                                    <div class="comments__bottom-block__bubble">
-                                        <div></div>
-                                        <div></div>
-                                    </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="comments__bottom-block">
                                     <div class="comments__bottom-block-img"><img src="./img/comment-img-people-1.png" alt=""></div>
                                     <div class="comments__bottom-block-name">Ирина 7</div>
-                                    <div class="comments__bottom-block__bubble">
-                                        <div></div>
-                                        <div></div>
-                                    </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="comments__bottom-block">
                                     <div class="comments__bottom-block-img"><img src="./img/comment-img-people-1.png" alt=""></div>
                                     <div class="comments__bottom-block-name">Ирина 8</div>
-                                    <div class="comments__bottom-block__bubble">
-                                        <div></div>
-                                        <div></div>
-                                    </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="comments__bottom-block">
                                     <div class="comments__bottom-block-img"><img src="./img/comment-img-people-1.png" alt=""></div>
                                     <div class="comments__bottom-block-name">Ирина 9</div>
-                                    <div class="comments__bottom-block__bubble">
-                                        <div></div>
-                                        <div></div>
-                                    </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="comments__bottom-block">
                                     <div class="comments__bottom-block-img"><img src="./img/comment-img-people-1.png" alt=""></div>
                                     <div class="comments__bottom-block-name">Ирина 10</div>
-                                    <div class="comments__bottom-block__bubble">
-                                        <div></div>
-                                        <div></div>
-                                    </div>
                                 </div>
                             </li>
                         </ul>
@@ -1566,9 +1586,14 @@
         </div>
         <div id="whe-work" class="section whe-work no--p">
             <div class="whe-work__top">
-                <div class="container">
-                    <div class="whe-work__top-wrapper">
-                        <div class="whe-work__top-auto"><img src="./img/whe-work-img-auto.png" alt=""></div>
+                <div class="whe-work__top-wrapper">
+                    <div class="whe-work__top-auto whe-work__top-auto--top">
+                        <div class="whe-work__top-auto-body whe-work__top-auto-body--top"><img src="./img/car-wave-1.jpg" alt="" class="whe-work__top-auto-img"><img src="./img/wheel_blur.png" alt="" class="whe-work__top-auto-wheel whe-work__top-auto-wheel--11"><img src="./img/wheel_blur.png" alt="" class="whe-work__top-auto-wheel whe-work__top-auto-wheel--12"></div>
+                    </div>
+                    <div class="whe-work__top-auto whe-work__top-auto--bottom">
+                        <div class="whe-work__top-auto-body whe-work__top-auto-body--bottom"><img src="./img/car-wave-2.png" alt="" class="whe-work__top-auto-img"><img src="./img/wheel.png" alt="" class="whe-work__top-auto-wheel whe-work__top-auto-wheel--21"><img src="./img/wheel.png" alt="" class="whe-work__top-auto-wheel whe-work__top-auto-wheel--22"></div>
+                    </div>
+                    <div class="container">
                         <div class="whe-work__top-images">
                             <div>
                                 <div class="whe-work__top-img whe-work__top-img--1"><img src="./img/whe-work-img11.png" alt=""><img src="./img/whe-work-img12.png" alt=""></div>
@@ -1694,10 +1719,10 @@
         <script src="./js/libs/slick/slick.js"></script>
         <script src="./js/libs/bootstrap/bootstrap.min.js"></script>
         <script src="./js/libs/readmore/readmore.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+        <script src="./js/libs/gsap/TweenMax.min.js"></script>
+        <script src="./js/libs/gsap/ScrollMagic.min.js"></script>
+        <script src="./js/libs/gsap/animation.gsap.js"></script>
+        <script src="./js/libs/gsap/debug.addIndicators.min.js"></script>
         <script src="./js/common.js"></script>
     </body>
 </html>
