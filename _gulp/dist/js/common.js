@@ -103,10 +103,20 @@ $(document).on('ready', function(){
 
   indexAnimate();
 
+  $('input[name="phone"]').each(function(){
+    $(this).mask("+7(999) 999-9999");
+  });
+
   // simpleForm version 2015-09-23 14:30 GMT +2
-  simpleForm('form.form-master');
-  simpleForm('form.form-master-block');
-  simpleForm('form.form-сomment');
+  simpleForm('form.form-master', function(){
+    $('input[name="phone"]').mask("+7(999) 999-9999");
+  });
+  simpleForm('form.form-master-block', function(){
+    $('input[name="phone"]').mask("+7(999) 999-9999");
+  });
+  simpleForm('form.form-сomment', function(){
+    $('input[name="phone"]').mask("+7(999) 999-9999");
+  });
 });
 
 $(window).on('load', function() {
@@ -649,12 +659,12 @@ function indexAnimate(){
 
     var wheWorkAutoTl = new TimelineMax();
     wheWorkAutoTl
-      .fromTo(auto2, 3, {marginLeft:'100%', x: '100%'}, {marginLeft:'0%', x: '-100%', ease: Power0.easeNone})
-      .to(wheel21, 4, {rotation: '-1220deg', transformOrigin: "50% 50%", ease: Power0.easeNone}, 0)
-      .to(wheel22, 4, {rotation: '-1220deg', transformOrigin: "50% 50%", ease: Power0.easeNone}, 0)
-      .fromTo(auto1, 3, {marginLeft:'0%', x: '-100%'}, {marginLeft:'100%', x: '100%', ease: Power0.easeNone}, 'auto1', '-=7')
-      .to(wheel11, 4, {rotation: '1220deg', transformOrigin: "50% 50%", ease: Power0.easeNone}, 'auto1', 0)
-      .to(wheel12, 4, {rotation: '1220deg', transformOrigin: "50% 50%", ease: Power0.easeNone}, 'auto1', 0)
+      .fromTo(auto2, 3, {marginLeft:'100%', x: '100%'}, {marginLeft:'0%', x: '-100%', ease: Power0.easeNone}, 'auto2')
+      .to(wheel21, 4, {rotation: '-1220deg', transformOrigin: "50% 50%", ease: Power0.easeNone}, 'auto2', 0)
+      .to(wheel22, 4, {rotation: '-1220deg', transformOrigin: "50% 50%", ease: Power0.easeNone}, 'auto2', 0)
+      .fromTo(auto1, 3, {marginLeft:'0%', x: '-100%'}, {marginLeft:'100%', x: '100%', ease: Power0.easeNone}, 'auto2+=2.5')
+      .to(wheel11, 4, {rotation: '1220deg', transformOrigin: "50% 50%", ease: Power0.easeNone}, 'auto2+=2.5')
+      .to(wheel12, 4, {rotation: '1220deg', transformOrigin: "50% 50%", ease: Power0.easeNone}, 'auto2+=2.5')
       .set($('.whe-work__top-img--1'), {className: '+=is-active'}, '-=3.5')
       .set($('.whe-work__top-img--2'), {className: '+=is-active'}, '-=3.2')
       .set($('.whe-work__top-img--3'), {className: '+=is-active'}, '-=2.9')
@@ -666,12 +676,12 @@ function indexAnimate(){
       reverse: false
   	})
   		.setTween(wheWorkAutoTl)
-  		.addIndicators({
-        name: 'auto',
-        colorStart: 'red',
-        colorEnd: 'red',
-        colorTrigger: 'red'
-      })
+  		// .addIndicators({
+    //     name: 'auto',
+    //     colorStart: 'red',
+    //     colorEnd: 'red',
+    //     colorTrigger: 'red'
+    //   })
   		.addTo(controller)
     ;
 

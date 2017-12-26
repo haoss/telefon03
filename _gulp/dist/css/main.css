@@ -4166,7 +4166,8 @@ label {
   width: 100%;
   top: 0;
   -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 7px rgba(0, 0, 0, 0.1); }
+          box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+  z-index: 1000; }
   .header::after {
     clear: both;
     content: "";
@@ -4732,11 +4733,15 @@ label {
 .product__img {
   float: left;
   padding-left: 10px;
-  width: 361px; }
-  .product__img img {
+  width: 361px;
+  position: relative; }
+  .product__img .img {
     max-width: 100%;
     height: auto;
     display: block; }
+    .product__img .img--breaking {
+      position: absolute;
+      z-index: 5; }
 
 .product__info {
   float: right; }
@@ -6083,17 +6088,21 @@ label {
 
 @media only screen and (max-width: 1599px) {
   .main-slide {
-    margin-top: 0; }
+    margin-top: 0;
+    margin-bottom: 0; }
     .main-slide__form {
-      margin-top: -74px; }
+      margin-top: -154px; }
     .main-slide__wrapper {
-      height: 522px; }
+      height: 610px;
+      background: url("../img/main-slider/ms-background-1200.jpg") top center no-repeat;
+      background-size: auto 546px; }
       .main-slide__wrapper-body {
-        height: 522px;
-        width: 1199px; }
+        height: 540px;
+        width: 1199px;
+        background-size: cover; }
     .main-slide__blockRight img.main-slide__blockRight-img1 {
       margin-right: 20px;
-      margin-top: 100px;
+      margin-top: 118px;
       width: 295px; }
     .main-slide__blockRight img.main-slide__blockRight-img2 {
       width: 80px;
@@ -6143,7 +6152,7 @@ label {
       margin-right: 433px; }
     .main-slide__blockLeft img.main-slide__blockLeft-img1 {
       margin-left: 7px;
-      margin-top: 80px;
+      margin-top: 78px;
       width: 311px; }
     .main-slide__blockLeft img.main-slide__blockLeft-img2 {
       margin-left: 85px;
@@ -6337,7 +6346,8 @@ label {
     -webkit-transition: -webkit-transform 0.35s;
     transition: -webkit-transform 0.35s;
     transition: transform 0.35s;
-    transition: transform 0.35s, -webkit-transform 0.35s; }
+    transition: transform 0.35s, -webkit-transform 0.35s;
+    visibility: hidden; }
     .navigation::before {
       position: absolute;
       content: '';
@@ -6392,7 +6402,8 @@ label {
       opacity: 1;
       z-index: 1050;
       -webkit-transform: translateY(0);
-              transform: translateY(0); }
+              transform: translateY(0);
+      visibility: visible; }
   .articles__block {
     margin-bottom: 40px; }
   .contact__img {
@@ -6473,19 +6484,19 @@ label {
   .main-slide {
     padding-bottom: 15px; }
     .main-slide__form {
-      margin-top: -104px;
+      margin-top: -82px;
       position: relative;
       z-index: 40; }
     .main-slide__wrapper {
       height: 473px; }
       .main-slide__wrapper-body {
-        height: 473px;
+        height: 437px;
         width: 991px;
         background-image: url("../img/main-slider/ms-background-750.jpg"); }
     .main-slide__blockRight img.main-slide__blockRight-img1 {
       width: 237px;
       margin-right: 101px;
-      margin-top: 74px; }
+      margin-top: 102px; }
     .main-slide__blockRight img.main-slide__blockRight-img2 {
       width: 30px;
       margin-right: 90px;
@@ -6503,7 +6514,7 @@ label {
       display: block;
       width: 65px;
       margin-top: 306px;
-      margin-right: 79px; }
+      margin-right: 0; }
     .main-slide__blockRight img.main-slide__blockRight-img6 {
       display: block;
       width: 75px;
@@ -6553,7 +6564,7 @@ label {
       width: 63px;
       margin-top: 192px;
       display: block;
-      left: 66px; }
+      left: 0; }
     .main-slide__blockLeft img.main-slide__blockLeft-img4 {
       margin-top: 336px;
       margin-left: 264px;
@@ -6802,11 +6813,10 @@ label {
   .product__img {
     float: none;
     width: 100%;
-    margin-bottom: 35px; }
-    .product__img--phone {
-      margin-left: 0; }
-      .product__img--phone ~ .product__center {
-        padding-top: 0; }
+    width: 210px;
+    margin: 0 auto 35px; }
+    .product__img--phone ~ .product__center {
+      padding-top: 0; }
     .product__img img {
       margin: 0 auto;
       display: block;

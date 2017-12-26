@@ -380,10 +380,14 @@
     float: left
     padding-left: 10px
     width: 361px
-    img
+    position: relative
+    .img
       max-width: 100%
       height: auto
       display: block
+      &--breaking
+        position: absolute
+        z-index: 5
   &__info
     float: right
     &-wrapper
