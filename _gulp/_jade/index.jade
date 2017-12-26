@@ -7,7 +7,7 @@ html(lang="ru")
 
   include ./_include/_head
 
-  body.main-body
+  body#body
     
     // Preloader
     include ./_include/_preloader
@@ -16,35 +16,62 @@ html(lang="ru")
     
     .main-slide
       .main-slide__wrapper
-        img(src="./img/main-slide.png", alt="")
-      .main-slide__form
-        .wave__form
-          .wave__form-wrapper
-            form(action="#!")
-              .wave__form-body
-                div
-                  //- input(type="text" placeholder="Как вас зовут?").wave__input.has-error
-                  input(type="text" placeholder="Как вас зовут?").wave__input
-                  i.ion-alert-circled
-                div
-                  input(type="text" placeholder="Контактный телефон").wave__input
-                  i.ion-alert-circled
-                div
-                  button(type="submit").wave__btn Вызвать мастера
-              label(for="checkbox").label__checked
-                input(type="checkbox" checked)#checkbox
-                i.ion-android-checkbox-outline-blank
-                i.ion-android-checkbox-outline
-                span Отправляя данные, я принимаю условия 
-                  a(href="#!") пользовательского соглашения
-                  
-        .wave__bottom.wave__bottom--main
-          a(href="#popup1").wave__btn.open-popup-link Вызвать мастера
+        .main-slide__wrapper-body
+          
+          .main-slide__blockLeft
+            img(src="./img/main-slider/ms-man-left.png", alt="").main-slide__blockLeft-img1
+            img(src="./img/main-slider/ms-bubble-left-1.png", alt="").main-slide__blockLeft-img2
+            img(src="./img/main-slider/ms-bubble-left-2.png", alt="").main-slide__blockLeft-img3
+            img(src="./img/main-slider/ms-bubble-left-3.png", alt="").main-slide__blockLeft-img4
+          .main-slide__blockCenter
+            img(src="./img/main-slider/ms-mobile-left.png", alt="").main-slide__blockCenter-img1
+            img(src="./img/main-slider/ms-mobile-right.png", alt="").main-slide__blockCenter-img2
+            img(src="./img/main-slider/ms-glass-1.png", alt="").main-slide__blockCenter-img3
+            img(src="./img/main-slider/ms-glass-2.png", alt="").main-slide__blockCenter-img4
+            img(src="./img/main-slider/ms-glass-3.png", alt="").main-slide__blockCenter-img5
+            img(src="./img/main-slider/ms-glass-4.png", alt="").main-slide__blockCenter-img6
+            img(src="./img/main-slider/ms-glass-5.png", alt="").main-slide__blockCenter-img7
+            img(src="./img/main-slider/ms-glass-6.png", alt="").main-slide__blockCenter-img8
+            
+          .main-slide__blockRight
+            img(src="./img/main-slider/ms-woman-right.png", alt="").main-slide__blockRight-img1
+            img(src="./img/main-slider/ms-bubble-right-1.png", alt="").main-slide__blockRight-img2
+            img(src="./img/main-slider/ms-bubble-right-2.png", alt="").main-slide__blockRight-img3
+            img(src="./img/main-slider/ms-bubble-right-3.png", alt="").main-slide__blockRight-img4
+            img(src="./img/main-slider/ms-bubble-right-4.png", alt="").main-slide__blockRight-img5
+            img(src="./img/main-slider/ms-bubble-right-5.png", alt="").main-slide__blockRight-img6
+      
+      .main-banner.main-banner--mobile
+      
+      .container
+        .main-slide__form
+          .wave__form
+            .wave__form-wrapper
+              form(action="#!")
+                .wave__form-body
+                  div
+                    //- input(type="text" placeholder="Как вас зовут?").wave__input.has-error
+                    input(type="text" placeholder="Как вас зовут?").wave__input.has-error
+                    i.ion-alert-circled
+                  div
+                    input(type="text" placeholder="Контактный телефон").wave__input
+                    i.ion-alert-circled
+                  div
+                    button(type="submit").wave__btn Вызвать мастера
+                label(for="checkbox111").label__checked
+                  input(type="checkbox" checked)#checkbox111
+                  i.ion-android-checkbox-outline-blank
+                  i.ion-android-checkbox-outline
+                  span Отправляя данные, я принимаю условия 
+                    a(href="#!") пользовательского соглашения
+                    
+          .wave__bottom.wave__bottom--main
+            a(href="#popup1").wave__btn.open-popup-link Вызвать мастера
     
     .content
       .container
         
-        .section.no--p
+        #tabCarousel.section.no--p
           
           .content__head
             .h1 Выберите модель устройства и поломку
@@ -1793,7 +1820,7 @@ html(lang="ru")
                                 div
                                   span 1000 р
 
-    .wave
+    #wave.wave
       .wave__wrapper
         .wave__container.wave__container--main
           .container
@@ -1807,7 +1834,7 @@ html(lang="ru")
                 img(src="./img/wave-phone.png", alt="")
               .wave__content-body
                 .wave__content-row
-                  .wave__content-block
+                  .wave__content-block.wave__content-block--one
                     div Мастер приедет в 
                       br
                       | любую точку Москвы в 
@@ -1815,7 +1842,7 @@ html(lang="ru")
                       | течение 1 часа 
                     div
                       img(src="./img/wave-icon-1.svg", alt="")
-                  .wave__content-block
+                  .wave__content-block.wave__content-block--two
                     div Профессиональный 
                       br
                       | ремонт при вас за 
@@ -1824,7 +1851,7 @@ html(lang="ru")
                     div
                       img(src="./img/wave-icon-2.svg", alt="")
                 .wave__content-row
-                  .wave__content-block
+                  .wave__content-block.wave__content-block--one
                     div Используем 
                       br
                       | оригинальные детали 
@@ -1832,7 +1859,7 @@ html(lang="ru")
                       | с гарантией 
                     div
                       img(src="./img/wave-icon-3.svg", alt="")
-                  .wave__content-block
+                  .wave__content-block.wave__content-block--two
                     div Можно оплатить 
                       br
                       | наличными или 
@@ -1841,12 +1868,28 @@ html(lang="ru")
                     div
                       img(src="./img/wave-icon-4.svg", alt="")
 
-    .section.comments
+    #comments.section.comments
         
       .comments__wrapper
         
         .comments__carousel
           .comments__top
+            .comments__top-block 
+            
+              .comments__top-block__wrapper
+                .comments__top-block__title Напишите отзыв
+                .comments__top-block__quote “
+                .comments__top-block__content
+                  form(action="#!")
+                    textarea.textarea(name="", cols="30", rows="10" placeholder="Введите текстовое сообщение")
+                    .comments__top-block__input
+                      input(type="text" name="name" placeholder="Ваше имя")
+                      button(type="button") отправить
+                .comments__bottom-block__bubble
+                  div
+                  div
+                  div
+                    
             .comments__top-block
               
               .comments__top-block__wrapper
@@ -1854,6 +1897,10 @@ html(lang="ru")
                 .comments__top-block__quote “
                 .comments__top-block__content
                   p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
+                  .comments__bottom-block__bubble
+                    div
+                    div
+                    div
                   
             .comments__top-block
               
@@ -1863,6 +1910,34 @@ html(lang="ru")
                 .comments__top-block__content
                   p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. 
                   p Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
+                .comments__bottom-block__bubble
+                  div
+                  div
+                  div
+                    
+            .comments__top-block 
+            
+              .comments__top-block__wrapper
+                .comments__top-block__title Что говорят наши клиенты
+                .comments__top-block__quote “
+                .comments__top-block__content
+                  p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
+                .comments__bottom-block__bubble
+                  div
+                  div
+                  div
+  
+            .comments__top-block 
+            
+              .comments__top-block__wrapper
+                .comments__top-block__title Что говорят наши клиенты
+                .comments__top-block__quote “
+                .comments__top-block__content
+                  p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
+                .comments__bottom-block__bubble
+                  div
+                  div
+                  div
               
             .comments__top-block 
             
@@ -1871,18 +1946,10 @@ html(lang="ru")
                 .comments__top-block__quote “
                 .comments__top-block__content
                   p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
-              
-            .comments__top-block 
-            
-              .comments__top-block__wrapper
-                .comments__top-block__title Напишите отзыв
-                .comments__top-block__quote “
-                .comments__top-block__content
-                  form(action="#!")
-                    textarea(name="", cols="30", rows="10" placeholder="Введите текстовое сообщение")
-                    .comments__top-block__input
-                      input(type="text" name="name" placeholder="Ваше имя")
-                      button(type="button") отправить
+                .comments__bottom-block__bubble
+                  div
+                  div
+                  div
               
             .comments__top-block 
             
@@ -1891,6 +1958,10 @@ html(lang="ru")
                 .comments__top-block__quote “
                 .comments__top-block__content
                   p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
+                .comments__bottom-block__bubble
+                  div
+                  div
+                  div
               
             .comments__top-block 
             
@@ -1899,6 +1970,10 @@ html(lang="ru")
                 .comments__top-block__quote “
                 .comments__top-block__content
                   p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
+                .comments__bottom-block__bubble
+                  div
+                  div
+                  div
               
             .comments__top-block 
             
@@ -1907,22 +1982,10 @@ html(lang="ru")
                 .comments__top-block__quote “
                 .comments__top-block__content
                   p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
-              
-            .comments__top-block 
-            
-              .comments__top-block__wrapper
-                .comments__top-block__title Что говорят наши клиенты
-                .comments__top-block__quote “
-                .comments__top-block__content
-                  p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
-              
-            .comments__top-block 
-            
-              .comments__top-block__wrapper
-                .comments__top-block__title Что говорят наши клиенты
-                .comments__top-block__quote “
-                .comments__top-block__content
-                  p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
+                .comments__bottom-block__bubble
+                  div
+                  div
+                  div
               
             .comments__top-block
               
@@ -1931,89 +1994,76 @@ html(lang="ru")
                 .comments__top-block__quote “
                 .comments__top-block__content
                   p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
+                .comments__bottom-block__bubble
+                  div
+                  div
+                  div
           
           .comments__carousel-bottom
             ul
+              li
+                .comments__bottom-block.comments__bottom-block--form
+                  .comments__bottom-block-img
+                    svg(xmlns='http://www.w3.org/2000/svg', viewbox='-6.333 183.667 26 26')
+                      path(d='M17.067 183.667h-20.8a2.588 2.588 0 0 0-2.587 2.6l-.013 23.4 5.2-5.2h18.2a2.6 2.6 0 0 0 2.6-2.6v-15.6a2.6 2.6 0 0 0-2.6-2.6zm-18.2 15.6v-3.217l8.944-8.944a.647.647 0 0 1 .916 0l2.301 2.3a.647.647 0 0 1 0 .917l-8.944 8.944h-3.217zm15.6 0h-9.75l2.6-2.6h7.15v2.6z', fill='#fff')
+
+                  
               li
                 .comments__bottom-block
                   .comments__bottom-block-img
                     img(src="./img/comment-img-people-1.png", alt="")
                   .comments__bottom-block-name Ирина 1
-                  .comments__bottom-block__bubble
-                    div
-                    div
+                  
               li
                 .comments__bottom-block
                   .comments__bottom-block-img
                     img(src="./img/comment-img-people-1.png", alt="")
                   .comments__bottom-block-name Ирина 2
-                  .comments__bottom-block__bubble
-                    div
-                    div
+                  
               li
                 .comments__bottom-block
                   .comments__bottom-block-img
                     img(src="./img/comment-img-people-1.png", alt="")
                   .comments__bottom-block-name Ирина 3
-                  .comments__bottom-block__bubble
-                    div
-                    div
-              li
-                .comments__bottom-block.comments__bottom-block--form
-                  .comments__bottom-block-img
-                  .comments__bottom-block__bubble
-                    div
-                    div
+                  
+              
               li
                 .comments__bottom-block
                   .comments__bottom-block-img
                     img(src="./img/comment-img-people-1.png", alt="")
                   .comments__bottom-block-name Ирина 5
-                  .comments__bottom-block__bubble
-                    div
-                    div
+                  
               li
                 .comments__bottom-block
                   .comments__bottom-block-img
                     img(src="./img/comment-img-people-1.png", alt="")
                   .comments__bottom-block-name Ирина 6
-                  .comments__bottom-block__bubble
-                    div
-                    div
+                  
               li
                 .comments__bottom-block
                   .comments__bottom-block-img
                     img(src="./img/comment-img-people-1.png", alt="")
                   .comments__bottom-block-name Ирина 7
-                  .comments__bottom-block__bubble
-                    div
-                    div
+                  
               li
                 .comments__bottom-block
                   .comments__bottom-block-img
                     img(src="./img/comment-img-people-1.png", alt="")
                   .comments__bottom-block-name Ирина 8
-                  .comments__bottom-block__bubble
-                    div
-                    div
+                  
               li
                 .comments__bottom-block
                   .comments__bottom-block-img
                     img(src="./img/comment-img-people-1.png", alt="")
                   .comments__bottom-block-name Ирина 9
-                  .comments__bottom-block__bubble
-                    div
-                    div
+                  
               li
                 .comments__bottom-block
                   .comments__bottom-block-img
                     img(src="./img/comment-img-people-1.png", alt="")
                   .comments__bottom-block-name Ирина 10
-                  .comments__bottom-block__bubble
-                    div
-                    div
-        
-    .section.faq
+                  
+    #faq.section.faq
       .container
         
         .content__head
@@ -2085,14 +2135,22 @@ html(lang="ru")
                   .faq__block-answer__wrapper    
                     p Оплата осуществляется только после того как ваше устройство отремонтировано. Вы можете оплатить работы мастеру наличными   или картой без %.
         
-    .section.whe-work.no--p
+    #whe-work.section.whe-work.no--p
       
       .whe-work__top
-        .container
           
-          .whe-work__top-wrapper
-            .whe-work__top-auto
-              img(src="./img/whe-work-img-auto.png", alt="")
+        .whe-work__top-wrapper
+          .whe-work__top-auto.whe-work__top-auto--top
+            .whe-work__top-auto-body.whe-work__top-auto-body--top
+              img(src="./img/car-wave-1.jpg", alt="").whe-work__top-auto-img
+              img(src="./img/wheel_blur.png", alt="").whe-work__top-auto-wheel.whe-work__top-auto-wheel--11
+              img(src="./img/wheel_blur.png", alt="").whe-work__top-auto-wheel.whe-work__top-auto-wheel--12
+          .whe-work__top-auto.whe-work__top-auto--bottom
+            .whe-work__top-auto-body.whe-work__top-auto-body--bottom
+              img(src="./img/car-wave-2.png", alt="").whe-work__top-auto-img
+              img(src="./img/wheel.png", alt="").whe-work__top-auto-wheel.whe-work__top-auto-wheel--21
+              img(src="./img/wheel.png", alt="").whe-work__top-auto-wheel.whe-work__top-auto-wheel--22
+          .container
             .whe-work__top-images
               div
                 .whe-work__top-img.whe-work__top-img--1
@@ -2119,28 +2177,28 @@ html(lang="ru")
             
           .whe-work__wrapper
             .whe-work__wrapper-div
-              .whe-work__wrapper-block
+              .whe-work__wrapper-block.whe-work__wrapper-block--one
                 .whe-work__wrapper-number 1
                 img(src="./img/whe-work-arrow.png", alt="").whe-work__wrapper-arrow
                 .whe-work__wrapper-img
                   img(src="./img/whe-work-img-1.svg", alt="")
                 .whe-work__wrapper-text Вы оставляете заявку на сайте или звоните нам
             .whe-work__wrapper-div
-              .whe-work__wrapper-block
+              .whe-work__wrapper-block.whe-work__wrapper-block--two
                 .whe-work__wrapper-number 2
                 img(src="./img/whe-work-arrow2.png", alt="").whe-work__wrapper-arrow.whe-work__wrapper-arrow--2
                 .whe-work__wrapper-img
                   img(src="./img/whe-work-img-2.svg", alt="")
                 .whe-work__wrapper-text Мастер перезванивает и приезжает в удобное для вас место и время
             .whe-work__wrapper-div
-              .whe-work__wrapper-block
+              .whe-work__wrapper-block.whe-work__wrapper-block--three
                 .whe-work__wrapper-number 3
                 img(src="./img/whe-work-arrow.png", alt="").whe-work__wrapper-arrow
                 .whe-work__wrapper-img
                   img(src="./img/whe-work-img-3.svg", alt="")
                 .whe-work__wrapper-text При вас производится ремонт устройства в течение 20 минут
             .whe-work__wrapper-div
-              .whe-work__wrapper-block
+              .whe-work__wrapper-block.whe-work__wrapper-block--four
                 .whe-work__wrapper-number 4
                 .whe-work__wrapper-arrow
                 .whe-work__wrapper-img
@@ -2154,15 +2212,15 @@ html(lang="ru")
                   .wave__form-body
                     div
                       //- input(type="text" placeholder="Как вас зовут?").wave__input.has-error
-                      input(type="text" placeholder="Как вас зовут?").wave__input
+                      input(type="text" placeholder="Как вас зовут?").wave__input.has-error
                       i.ion-alert-circled
                     div
                       input(type="text" placeholder="Контактный телефон").wave__input
                       i.ion-alert-circled
                     div
                       button(type="submit").wave__btn Вызвать мастера
-                  label(for="checkbox").label__checked
-                    input(type="checkbox" checked)#checkbox
+                  label(for="checkbox222").label__checked
+                    input(type="checkbox" checked)#checkbox222
                     i.ion-android-checkbox-outline-blank
                     i.ion-android-checkbox-outline
                     span Отправляя данные, я принимаю условия 
@@ -2171,7 +2229,7 @@ html(lang="ru")
             .wave__bottom.wave__bottom--main
               a(href="#popup1").wave__btn.wave__btn--dark.open-popup-link Вызвать мастера
     
-    .section.about
+    #about.section.about
       .container
         
         .row
@@ -2182,10 +2240,8 @@ html(lang="ru")
             .h1 О компании
             
             .about__content
-              .about__content-wrapper
-                p Грамотная диагностика iPhone — это то с чего нужно начинать любой вид ремонта девайсов от Apple. Диагностика позволяет выявить все видимые и не видимые поломки, которые необходимо устранить для того, что бы ваш айфон работал корректно.
-                p В сервисном центре наши мастера смогут провести диагностику вашего айфона абсолютно бесплатно.
-                p Обратите внимание, что диагностика телефона должна быть началом любого ремонта, даже если вы или мастера по ремонту техники Apple точно уверенны в чем проблема.
+              .about__content-wrapper.readmore
+                p Грамотная диагностика iPhone — это то с чего нужно начинать любой вид ремонта девайсов от Apple. Диагностика позволяет выявить все видимые и не видимые поломки, которые необходимо устранить для того, что бы ваш айфон работал корректно. В сервисном центре наши мастера смогут провести диагностику вашего айфона абсолютно бесплатно. Обратите внимание, что диагностика телефона должна быть началом любого ремонта, даже если вы или мастера по ремонту техники Apple точно уверенны в чем проблема.
                 p Грамотная диагностика iPhone — это то с чего нужно начинать любой вид ремонта девайсов от Apple. Диагностика позволяет выявить все видимые и не видимые поломки, которые необходимо устранить для того, что бы ваш айфон работал корректно.
                 p В сервисном центре наши мастера смогут провести диагностику вашего айфона абсолютно бесплатно.
                 p Обратите внимание, что диагностика телефона должна быть началом любого ремонта, даже если вы или мастера по ремонту техники Apple точно уверенны в чем проблема.

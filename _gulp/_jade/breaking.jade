@@ -7,7 +7,7 @@ html(lang="ru")
 
   include ./_include/_head
 
-  body
+  body.body
     
     // Preloader
     include ./_include/_preloader
@@ -92,8 +92,8 @@ html(lang="ru")
                       i.ion-alert-circled
                     div
                       button(type="submit").wave__btn Вызвать мастера
-                  label(for="checkbox").label__checked
-                    input(type="checkbox" checked)#checkbox
+                  label(for="checkbox444").label__checked
+                    input(type="checkbox" checked)#checkbox444
                     i.ion-android-checkbox-outline-blank
                     i.ion-android-checkbox-outline
                     span Отправляя данные, я принимаю условия 
@@ -106,7 +106,7 @@ html(lang="ru")
               .col-lg-10.col-lg-push-1
           
                 .product__content
-                  .product__content-wrapper
+                  .product__content-wrapper.readmore
                     p iPhone 7 – тот, который с 4,7-дюймовым экраном, iPhone 7 Plus – тот, который с 5,5-дюймовым, здесь мы не удивлены. Слухи опять подтвердились, ничего нового. Что касается разрешения: 1334 х 750 и 1920 х 1080 соответственно. Разница с разрешением iPhone 6 и iPhone 6 Plus никакая, хотелось бы Full HD в «семерке». Apple на этот раз не уделила внимание размерам, сделав новые iPhone такими же, как прошлое поколение. Толщина iPhone 7 составляет всего 6,9 миллиметра, iPhone 7 Plus немного больше – 7,3 миллиметра. Скоро новые устройства от Apple будут толщиной с лист бумаги, забавно. Но тенденция хорошая, не поспоришь. А вот аудиоразъем все же убрали: наушники EarPods теперь подключаются по Lightning. Есть, конечно, и адаптер в комплекте для тех, кто не хочет продавать свои наушники с интерфейсом 3,5 мм. А если захотите подключить наушники по Bluetooth, Apple представила беспроводные AirPods. 
                     p iPhone 7 – тот, который с 4,7-дюймовым экраном, iPhone 7 Plus – тот, который с 5,5-дюймовым, здесь мы не удивлены. Слухи опять подтвердились, ничего нового. Что касается разрешения: 1334 х 750 и 1920 х 1080 соответственно. Разница с разрешением iPhone 6 и iPhone 6 Plus никакая, хотелось бы Full HD в «семерке». Apple на этот раз не уделила внимание размерам, сделав новые iPhone такими же, как прошлое поколение.
                     p Толщина iPhone 7 составляет всего 6,9 миллиметра, iPhone 7 Plus немного больше – 7,3 миллиметра. Скоро новые устройства от Apple будут толщиной с лист бумаги, забавно. Но тенденция хорошая, не поспоришь. А вот аудиоразъем все же убрали: наушники EarPods теперь подключаются по Lightning. Есть, конечно, и адаптер в комплекте для тех, кто не хочет продавать свои наушники с интерфейсом 3,5 мм. А если захотите подключить наушники по Bluetooth, Apple представила беспроводные AirPods. 
@@ -774,6 +774,22 @@ html(lang="ru")
         
         .comments__carousel
           .comments__top
+            .comments__top-block 
+            
+              .comments__top-block__wrapper
+                .comments__top-block__title Напишите отзыв
+                .comments__top-block__quote “
+                .comments__top-block__content
+                  form(action="#!")
+                    textarea.textarea(name="", cols="30", rows="10" placeholder="Введите текстовое сообщение")
+                    .comments__top-block__input
+                      input(type="text" name="name" placeholder="Ваше имя")
+                      button(type="button") отправить
+                .comments__bottom-block__bubble
+                  div
+                  div
+                  div
+                    
             .comments__top-block
               
               .comments__top-block__wrapper
@@ -781,6 +797,10 @@ html(lang="ru")
                 .comments__top-block__quote “
                 .comments__top-block__content
                   p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
+                  .comments__bottom-block__bubble
+                    div
+                    div
+                    div
                   
             .comments__top-block
               
@@ -790,6 +810,34 @@ html(lang="ru")
                 .comments__top-block__content
                   p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. 
                   p Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
+                .comments__bottom-block__bubble
+                  div
+                  div
+                  div
+                    
+            .comments__top-block 
+            
+              .comments__top-block__wrapper
+                .comments__top-block__title Что говорят наши клиенты
+                .comments__top-block__quote “
+                .comments__top-block__content
+                  p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
+                .comments__bottom-block__bubble
+                  div
+                  div
+                  div
+  
+            .comments__top-block 
+            
+              .comments__top-block__wrapper
+                .comments__top-block__title Что говорят наши клиенты
+                .comments__top-block__quote “
+                .comments__top-block__content
+                  p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
+                .comments__bottom-block__bubble
+                  div
+                  div
+                  div
               
             .comments__top-block 
             
@@ -798,18 +846,10 @@ html(lang="ru")
                 .comments__top-block__quote “
                 .comments__top-block__content
                   p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
-              
-            .comments__top-block 
-            
-              .comments__top-block__wrapper
-                .comments__top-block__title Напишите отзыв
-                .comments__top-block__quote “
-                .comments__top-block__content
-                  form(action="#!")
-                    textarea(name="", cols="30", rows="10" placeholder="Введите текстовое сообщение")
-                    .comments__top-block__input
-                      input(type="text" name="name" placeholder="Ваше имя")
-                      button(type="button") отправить
+                .comments__bottom-block__bubble
+                  div
+                  div
+                  div
               
             .comments__top-block 
             
@@ -818,6 +858,10 @@ html(lang="ru")
                 .comments__top-block__quote “
                 .comments__top-block__content
                   p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
+                .comments__bottom-block__bubble
+                  div
+                  div
+                  div
               
             .comments__top-block 
             
@@ -826,6 +870,10 @@ html(lang="ru")
                 .comments__top-block__quote “
                 .comments__top-block__content
                   p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
+                .comments__bottom-block__bubble
+                  div
+                  div
+                  div
               
             .comments__top-block 
             
@@ -834,22 +882,10 @@ html(lang="ru")
                 .comments__top-block__quote “
                 .comments__top-block__content
                   p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
-              
-            .comments__top-block 
-            
-              .comments__top-block__wrapper
-                .comments__top-block__title Что говорят наши клиенты
-                .comments__top-block__quote “
-                .comments__top-block__content
-                  p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
-              
-            .comments__top-block 
-            
-              .comments__top-block__wrapper
-                .comments__top-block__title Что говорят наши клиенты
-                .comments__top-block__quote “
-                .comments__top-block__content
-                  p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
+                .comments__bottom-block__bubble
+                  div
+                  div
+                  div
               
             .comments__top-block
               
@@ -858,87 +894,74 @@ html(lang="ru")
                 .comments__top-block__quote “
                 .comments__top-block__content
                   p Когда у меня сломался айфон, я вызвала мастера из сервисного центра в кафе, через 40 минут он приехал и за 18 минут отремонтировал мой телефон. В начале по боялась быстрого ремонта, но потом поняла, что мои опасения были напрасны. Да и мастера оказались вежливыми, приятно было общаться с ними. Очень довольна, Всем советую!
+                .comments__bottom-block__bubble
+                  div
+                  div
+                  div
           
           .comments__carousel-bottom
             ul
+              li
+                .comments__bottom-block.comments__bottom-block--form
+                  .comments__bottom-block-img
+                    svg(xmlns='http://www.w3.org/2000/svg', viewbox='-6.333 183.667 26 26')
+                      path(d='M17.067 183.667h-20.8a2.588 2.588 0 0 0-2.587 2.6l-.013 23.4 5.2-5.2h18.2a2.6 2.6 0 0 0 2.6-2.6v-15.6a2.6 2.6 0 0 0-2.6-2.6zm-18.2 15.6v-3.217l8.944-8.944a.647.647 0 0 1 .916 0l2.301 2.3a.647.647 0 0 1 0 .917l-8.944 8.944h-3.217zm15.6 0h-9.75l2.6-2.6h7.15v2.6z', fill='#fff')
+                  
               li
                 .comments__bottom-block
                   .comments__bottom-block-img
                     img(src="./img/comment-img-people-1.png", alt="")
                   .comments__bottom-block-name Ирина 1
-                  .comments__bottom-block__bubble
-                    div
-                    div
+                  
               li
                 .comments__bottom-block
                   .comments__bottom-block-img
                     img(src="./img/comment-img-people-1.png", alt="")
                   .comments__bottom-block-name Ирина 2
-                  .comments__bottom-block__bubble
-                    div
-                    div
+                  
               li
                 .comments__bottom-block
                   .comments__bottom-block-img
                     img(src="./img/comment-img-people-1.png", alt="")
                   .comments__bottom-block-name Ирина 3
-                  .comments__bottom-block__bubble
-                    div
-                    div
-              li
-                .comments__bottom-block.comments__bottom-block--form
-                  .comments__bottom-block-img
-                  .comments__bottom-block__bubble
-                    div
-                    div
+                  
+              
               li
                 .comments__bottom-block
                   .comments__bottom-block-img
                     img(src="./img/comment-img-people-1.png", alt="")
                   .comments__bottom-block-name Ирина 5
-                  .comments__bottom-block__bubble
-                    div
-                    div
+                  
               li
                 .comments__bottom-block
                   .comments__bottom-block-img
                     img(src="./img/comment-img-people-1.png", alt="")
                   .comments__bottom-block-name Ирина 6
-                  .comments__bottom-block__bubble
-                    div
-                    div
+                  
               li
                 .comments__bottom-block
                   .comments__bottom-block-img
                     img(src="./img/comment-img-people-1.png", alt="")
                   .comments__bottom-block-name Ирина 7
-                  .comments__bottom-block__bubble
-                    div
-                    div
+                  
               li
                 .comments__bottom-block
                   .comments__bottom-block-img
                     img(src="./img/comment-img-people-1.png", alt="")
                   .comments__bottom-block-name Ирина 8
-                  .comments__bottom-block__bubble
-                    div
-                    div
+                  
               li
                 .comments__bottom-block
                   .comments__bottom-block-img
                     img(src="./img/comment-img-people-1.png", alt="")
                   .comments__bottom-block-name Ирина 9
-                  .comments__bottom-block__bubble
-                    div
-                    div
+                  
               li
                 .comments__bottom-block
                   .comments__bottom-block-img
                     img(src="./img/comment-img-people-1.png", alt="")
                   .comments__bottom-block-name Ирина 10
-                  .comments__bottom-block__bubble
-                    div
-                    div
+                    
         
     
     include ./_include/_footer
