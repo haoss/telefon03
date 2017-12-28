@@ -514,7 +514,7 @@ function indexAnimate(){
     .from($('#body .main-slide__blockRight-img6'), 1, {autoAlpha: 0, y: 45}, 'header')
     .from($('#body .main-slide__blockRight-img7'), 1, {autoAlpha: 0, x: 35}, 'header')
     .from($('#body .main-slide__blockCenter-img1'), 2.5, {left: '-100%', rotation: '-420deg', transformOrigin:"50% 50%"}, 'header', '+=2')
-    .from($('#body .main-slide__blockCenter-img2'), 2.5, {right: '-100%', rotation: '420deg', transformOrigin:"50% 50%"}, 'header', '+=2')
+    .from($('#body .main-slide__blockCenter-img2'), 2.5, {left: '100%', rotation: '400deg', transformOrigin:"50% 50%"}, 'header', '+=2')
     .from($('.main-slide__blockCenter-img8'), 0.5, {autoAlpha: 0})
     .from($('#body .main-slide__blockLeft-img1'), 0.5, {autoAlpha: 0, x: -45}, '-=0.5', 'people')
     .from($('#body .main-slide__blockRight-img1'), 0.5, {autoAlpha: 0, x: 45}, '-=0.5', 'people')
@@ -523,7 +523,13 @@ function indexAnimate(){
     .from($('.main-slide__blockCenter-img7'), 0.3, {autoAlpha: 0})
     .from($('.main-slide__blockCenter-img3'), 0.3, {autoAlpha: 0})
     .from($('.main-slide__blockCenter-img4'), 0.3, {autoAlpha: 0})
+    // .to($('#body .main-slide__blockCenter'), 1, {x: 230, y: 90, scaleX:0.8, scaleY:0.8, transformOrigin:"50% 50%"})
+    .set($('#body .main-slide__blockCenter'), {className: '+=is-active'})
+    .from($('#body .main-slide__title-1'), 1.5, {autoAlpha: 0, y: 45}, 'title')
+    .from($('#body .main-slide__title-2'), 1.5, {autoAlpha: 0, y: 45}, 'title')
+    .from($('#body .main-slide__title-3'), 1, {autoAlpha: 0, y: 45}, '-=1')
     .from($('#body .main-slide__form'), 0.5, {autoAlpha: 0, y: 30})
+
   ;
 
   masterTimeline.add([headerTl]);
@@ -531,6 +537,7 @@ function indexAnimate(){
   if( width > 767) {
     $(window).on('load', function(){
       masterTimeline.play();
+      // masterTimeline.progress(1);
     });
     initScrollMagic()
   } else if ( width < 768 ) {
